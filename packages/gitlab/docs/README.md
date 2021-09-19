@@ -46,6 +46,7 @@ The `production` dataset collects the `production_json.log` file. It contains a 
 | event.module | Event module | constant_keyword |
 | event.type | This is one of four ECS Categorization Fields, and indicates the third level in the ECS category hierarchy. `event.type` represents a categorization "sub-bucket" that, when used along with the `event.category` field values, enables filtering events down to a level appropriate for single visualization. This field is an array. This will allow proper categorization of some events that fall in multiple event types. | keyword |
 | gitlab.correlation_id | A unique identifier to connect related events | keyword |
+| gitlab.group.id | GitLab group ID | keyword |
 | gitlab.group.name | GitLab group name | keyword |
 | gitlab.params | GitLab request parameters | flattened |
 | gitlab.production.controller | The web controller handling the request | keyword |
@@ -66,6 +67,8 @@ The `production` dataset collects the `production_json.log` file. It contains a 
 | gitlab.project.id | GitLab project ID | keyword |
 | gitlab.project.name | GitLab project name | keyword |
 | gitlab.project.path | GitLab project path | keyword |
+| gitlab.repo.name | GitLab repo name | keyword |
+| gitlab.repo.path | GitLab repo path | keyword |
 | host.architecture | Operating system architecture. | keyword |
 | host.containerized | If the host is a container. | boolean |
 | host.domain | Name of the domain of which the host is a member. For example, on Windows this could be the host's Active Directory domain or NetBIOS domain name. For Linux this could be the domain of the host's LDAP provider. | keyword |
@@ -161,11 +164,14 @@ The `application` dataset collects the `application_json.log` file. It helps you
 | gitlab.application.queue | The job queue | keyword |
 | gitlab.application.root_namespace | Root namespace | keyword |
 | gitlab.correlation_id | A unique identifier to connect related events | keyword |
+| gitlab.group.id | GitLab group ID | keyword |
 | gitlab.group.name | GitLab group name | keyword |
 | gitlab.params | GitLab request parameters | flattened |
 | gitlab.project.id | GitLab project ID | keyword |
 | gitlab.project.name | GitLab project name | keyword |
 | gitlab.project.path | GitLab project path | keyword |
+| gitlab.repo.name | GitLab repo name | keyword |
+| gitlab.repo.path | GitLab repo path | keyword |
 | host.architecture | Operating system architecture. | keyword |
 | host.containerized | If the host is a container. | boolean |
 | host.domain | Name of the domain of which the host is a member. For example, on Windows this could be the host's Active Directory domain or NetBIOS domain name. For Linux this could be the domain of the host's LDAP provider. | keyword |
@@ -261,11 +267,14 @@ The `api` dataset collects the `api_json.log` file. It helps you see requests ma
 | gitlab.api.route | The web controller route handling the request | keyword |
 | gitlab.api.view_duration | Total time inside the Rails views | long |
 | gitlab.correlation_id | A unique identifier to connect related events | keyword |
+| gitlab.group.id | GitLab group ID | keyword |
 | gitlab.group.name | GitLab group name | keyword |
 | gitlab.params | GitLab request parameters | flattened |
 | gitlab.project.id | GitLab project ID | keyword |
 | gitlab.project.name | GitLab project name | keyword |
 | gitlab.project.path | GitLab project path | keyword |
+| gitlab.repo.name | GitLab repo name | keyword |
+| gitlab.repo.path | GitLab repo path | keyword |
 | host.architecture | Operating system architecture. | keyword |
 | host.containerized | If the host is a container. | boolean |
 | host.domain | Name of the domain of which the host is a member. For example, on Windows this could be the host's Active Directory domain or NetBIOS domain name. For Linux this could be the domain of the host's LDAP provider. | keyword |
@@ -357,6 +366,7 @@ The `integrations` dataset collects the `integrations_json.log` file. It contain
 | event.module | Event module | constant_keyword |
 | event.type | This is one of four ECS Categorization Fields, and indicates the third level in the ECS category hierarchy. `event.type` represents a categorization "sub-bucket" that, when used along with the `event.category` field values, enables filtering events down to a level appropriate for single visualization. This field is an array. This will allow proper categorization of some events that fall in multiple event types. | keyword |
 | gitlab.correlation_id | A unique identifier to connect related events | keyword |
+| gitlab.group.id | GitLab group ID | keyword |
 | gitlab.group.name | GitLab group name | keyword |
 | gitlab.integrations.client_url | The URL of the integration | keyword |
 | gitlab.integrations.error | The error caused by the integration | keyword |
@@ -364,6 +374,8 @@ The `integrations` dataset collects the `integrations_json.log` file. It contain
 | gitlab.project.id | GitLab project ID | keyword |
 | gitlab.project.name | GitLab project name | keyword |
 | gitlab.project.path | GitLab project path | keyword |
+| gitlab.repo.name | GitLab repo name | keyword |
+| gitlab.repo.path | GitLab repo path | keyword |
 | host.architecture | Operating system architecture. | keyword |
 | host.containerized | If the host is a container. | boolean |
 | host.domain | Name of the domain of which the host is a member. For example, on Windows this could be the host's Active Directory domain or NetBIOS domain name. For Linux this could be the domain of the host's LDAP provider. | keyword |

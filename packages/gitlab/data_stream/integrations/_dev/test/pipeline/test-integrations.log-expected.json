@@ -20,7 +20,7 @@
                 }
             },
             "event": {
-                "ingested": "2021-09-19T15:29:35.888402975Z",
+                "ingested": "2021-09-19T22:19:36.385357836Z",
                 "original": "{\"severity\":\"ERROR\",\"time\":\"2018-09-06T14:56:20.439Z\",\"service_class\":\"Integrations::Jira\",\"project_id\":8,\"project_path\":\"h5bp/html5-boilerplate\",\"message\":\"Error sending message\",\"client_url\":\"http://jira.gitlap.com:8080\",\"error\":\"execution expired\"}",
                 "category": "web",
                 "type": [
@@ -60,7 +60,7 @@
                 }
             },
             "event": {
-                "ingested": "2021-09-19T15:29:35.888407609Z",
+                "ingested": "2021-09-19T22:19:36.385362569Z",
                 "original": "{\"severity\":\"INFO\",\"time\":\"2018-09-06T17:15:16.365Z\",\"service_class\":\"Integrations::Jira\",\"project_id\":3,\"project_path\":\"namespace2/project2\",\"message\":\"Successfully posted\",\"client_url\":\"http://jira.example.com\"}",
                 "category": "web",
                 "kind": "event"

@@ -43,16 +43,24 @@ processors:
       field: message
       patterns:
         - '^User "%{USERNAME:user.name}" \(%{EMAILADDRESS:user.email}\) was %{WORD:event.action}'
-        - '^Project "%{DATA:gitlab.project.name}" was %{WORD:event.action}'
+        - '^Project "%{PROJECT_PATH:gitlab.project.path}" was %{WORD:event.action}'
         - '^%{DATA:gitlab.group.name} created a new project "%{PROJECT_PATH:gitlab.project.path}"$'
         - '^Group "%{DATA:gitlab.group.name}" was %{WORD:event.action}'
         - '^%{WORD:_tmp.outcome} Login: username=%{USERNAME:user.name} ip=%{IP:source.address} %{GREEDYDATA}'
         - '^User %{WORD:event.action}: username=%{USERNAME:user.name} ip=%{IP:source.address}'
         - '^%{WORD:_tmp.outcome} %{WORD:event.action}: username=%{USERNAME:user.name} ip=%{IP:source.address}'
         - '^User %{USERNAME:user.name} has %{DATA:event.action} %{USERNAME:user.effective.name}$'
+        - '^Repository "%{REPO_PATH:gitlab.repo.path}" was %{WORD:event.action}$'
+        - '^User %{POSINT:user.id} %{DATA:event.action} of (project %{PROJECT_PATH:gitlab.project.path}|group ID %{POSINT:gitlab.group.id}) with job ID %{NOTSPACE:gitlab.application.jid}$'
       ignore_failure: true
       pattern_definitions:
-        PROJECT_PATH: '%{DATA}/%{SPACE}?%{DATA:gitlab.project.name}'
+        PROJECT_PATH: '(%{DATA}/)?%{SPACE}?%{DATA:gitlab.project.name}'
+        REPO_PATH: '(%{DATA}/)?%{SPACE}?%{DATA:gitlab.repo.name}'
+  - gsub:
+      field: gitlab.project.path
+      pattern: \s\/\s
+      replacement: "/"
+      ignore_missing: true
 #   - set:
 #       field: event.outcome
 #       value: success

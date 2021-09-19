@@ -38,7 +38,12 @@ processors:
         - '^%{PROJECT_PATH:gitlab.project.path}$'
       ignore_failure: true
       pattern_definitions:
-        PROJECT_PATH: '%{DATA}/%{SPACE}?%{DATA:gitlab.project.name}'
+        PROJECT_PATH: '(%{DATA}/)?%{SPACE}?%{DATA:gitlab.project.name}'
+  - gsub:
+      field: gitlab.project.path
+      pattern: \s\/\s
+      replacement: "/"
+      ignore_missing: true
   - rename:
       field: json.message
       target_field: message

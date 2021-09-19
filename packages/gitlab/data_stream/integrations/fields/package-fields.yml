@@ -21,7 +21,19 @@
       type: keyword
       description: |
         GitLab group name
+    - name: group.id
+      type: keyword
+      description: |
+        GitLab group ID
     - name: params
       type: flattened
       description: |
         GitLab request parameters
+    - name: repo.path
+      type: keyword
+      description: |
+        GitLab repo path
+    - name: repo.name
+      type: keyword
+      description: |
+        GitLab repo name
