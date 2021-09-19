@@ -1,5 +1,5 @@
 ---
-description: Pipeline for normalizing Zeek conn.log
+description: Pipeline for normalizing GitLab application_json.log
 processors:
   - rename:
       field: message
@@ -43,14 +43,16 @@ processors:
       field: message
       patterns:
         - '^User "%{USERNAME:user.name}" \(%{EMAILADDRESS:user.email}\) was %{WORD:event.action}'
-        - '^Project "%{DATA:gitlab.project}" was %{WORD:event.action}'
-        - '^%{DATA:gitlab.group} created a new project "%{DATA:gitlab.project}"'
-        - '^Group "%{DATA:gitlab.group}" was %{WORD:event.action}'
+        - '^Project "%{DATA:gitlab.project.name}" was %{WORD:event.action}'
+        - '^%{DATA:gitlab.group.name} created a new project "%{PROJECT_PATH:gitlab.project.path}"$'
+        - '^Group "%{DATA:gitlab.group.name}" was %{WORD:event.action}'
         - '^%{WORD:_tmp.outcome} Login: username=%{USERNAME:user.name} ip=%{IP:source.address} %{GREEDYDATA}'
         - '^User %{WORD:event.action}: username=%{USERNAME:user.name} ip=%{IP:source.address}'
         - '^%{WORD:_tmp.outcome} %{WORD:event.action}: username=%{USERNAME:user.name} ip=%{IP:source.address}'
         - '^User %{USERNAME:user.name} has %{DATA:event.action} %{USERNAME:user.effective.name}$'
       ignore_failure: true
+      pattern_definitions:
+        PROJECT_PATH: '%{DATA}/%{SPACE}?%{DATA:gitlab.project.name}'
 #   - set:
 #       field: event.outcome
 #       value: success

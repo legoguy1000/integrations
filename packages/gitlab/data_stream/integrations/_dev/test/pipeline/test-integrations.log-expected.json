@@ -1,0 +1,80 @@
+{
+    "expected": [
+        {
+            "@timestamp": "2018-09-06T14:56:20.439Z",
+            "ecs": {
+                "version": "1.12.0"
+            },
+            "log": {
+                "level": "ERROR"
+            },
+            "gitlab": {
+                "project": {
+                    "name": "html5-boilerplate",
+                    "path": "h5bp/html5-boilerplate",
+                    "id": "8"
+                },
+                "integrations": {
+                    "client_url": "http://jira.gitlap.com:8080",
+                    "error": "execution expired"
+                }
+            },
+            "event": {
+                "ingested": "2021-09-19T15:29:35.888402975Z",
+                "original": "{\"severity\":\"ERROR\",\"time\":\"2018-09-06T14:56:20.439Z\",\"service_class\":\"Integrations::Jira\",\"project_id\":8,\"project_path\":\"h5bp/html5-boilerplate\",\"message\":\"Error sending message\",\"client_url\":\"http://jira.gitlap.com:8080\",\"error\":\"execution expired\"}",
+                "category": "web",
+                "type": [
+                    "error"
+                ],
+                "kind": "event",
+                "outcome": "failure"
+            },
+            "message": "Error sending message",
+            "url": {
+                "path": "",
+                "original": "http://jira.gitlap.com:8080",
+                "scheme": "http",
+                "port": 8080,
+                "domain": "jira.gitlap.com"
+            },
+            "tags": [
+                "preserve_original_event"
+            ]
+        },
+        {
+            "@timestamp": "2018-09-06T17:15:16.365Z",
+            "ecs": {
+                "version": "1.12.0"
+            },
+            "log": {
+                "level": "INFO"
+            },
+            "gitlab": {
+                "project": {
+                    "name": "project2",
+                    "path": "namespace2/project2",
+                    "id": "3"
+                },
+                "integrations": {
+                    "client_url": "http://jira.example.com"
+                }
+            },
+            "event": {
+                "ingested": "2021-09-19T15:29:35.888407609Z",
+                "original": "{\"severity\":\"INFO\",\"time\":\"2018-09-06T17:15:16.365Z\",\"service_class\":\"Integrations::Jira\",\"project_id\":3,\"project_path\":\"namespace2/project2\",\"message\":\"Successfully posted\",\"client_url\":\"http://jira.example.com\"}",
+                "category": "web",
+                "kind": "event"
+            },
+            "message": "Successfully posted",
+            "url": {
+                "path": "",
+                "original": "http://jira.example.com",
+                "scheme": "http",
+                "domain": "jira.example.com"
+            },
+            "tags": [
+                "preserve_original_event"
+            ]
+        }
+    ]
+}

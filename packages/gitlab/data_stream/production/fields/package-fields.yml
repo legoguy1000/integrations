@@ -5,11 +5,23 @@
       type: keyword
       description: |
         A unique identifier to connect related events
-    - name: project
+    - name: project.path
+      type: keyword
+      description: |
+        GitLab project path
+    - name: project.id
+      type: keyword
+      description: |
+        GitLab project ID
+    - name: project.name
       type: keyword
       description: |
         GitLab project name
-    - name: group
+    - name: group.name
       type: keyword
       description: |
         GitLab group name
+    - name: params
+      type: flattened
+      description: |
+        GitLab request parameters

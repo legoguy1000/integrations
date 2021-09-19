@@ -1,0 +1,11 @@
+- name: gitlab.integrations
+  type: group
+  fields:
+    - name: client_url
+      type: keyword
+      description: |
+        The URL of the integration
+    - name: error
+      type: keyword
+      description: |
+        The error caused by the integration
