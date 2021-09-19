@@ -1,0 +1,230 @@
+---
+description: Pipeline for normalizing Zeek conn.log
+processors:
+  - rename:
+      field: message
+      target_field: event.original
+  - json:
+      field: event.original
+      target_field: json
+  - set:
+      field: event.ingested
+      value: "{{_ingest.timestamp}}"
+  - set:
+      field: ecs.version
+      value: '1.12.0'
+  - set:
+      field: event.category
+      value: web
+  - set:
+      field: event.kind
+      value: event
+  - date:
+      field: json.time
+      formats:
+        - ISO8601
+  - rename:
+      field: json.method
+      target_field: http.request.method
+      ignore_missing: true
+  - convert:
+      field: json.status
+      target_field: http.response.status_code
+      type: long
+      ignore_missing: true
+  - uri_parts:
+      field: json.path
+      target_field: url
+      if: ctx?.json?.path != null
+  - rename:
+      field: json.remote_ip
+      target_field: source.address
+      ignore_missing: true
+  - convert:
+      field: source.address
+      target_field: source.ip
+      type: ip
+      ignore_missing: true
+  - script:
+      source: ctx.event.duration = Math.round(ctx.json.duration_s * params.scale)
+      params:
+        scale: 1000000000
+      if: ctx.json?.duration_s != null
+  - rename:
+      field: json.format
+      target_field: gitlab.production.format
+      ignore_missing: true
+  - rename:
+      field: json.controller
+      target_field: gitlab.production.controller
+      ignore_missing: true
+  - rename:
+      field: json.action
+      target_field: event.action
+      ignore_missing: true
+  - convert:
+      field: json.user_id
+      target_field: user.id
+      type: string
+      ignore_missing: true
+  - rename:
+      field: json.username
+      target_field: user.name
+      ignore_missing: true
+  - rename:
+      field: json.queue_duration_s
+      target_field: gitlab.production.queue_duration
+      ignore_missing: true
+  - rename:
+      field: json.gitaly_calls
+      target_field: gitlab.production.gitaly.calls
+      ignore_missing: true
+  - rename:
+      field: json.gitaly_duration_s
+      target_field: gitlab.production.gitaly.duration
+      ignore_missing: true
+  - rename:
+      field: json.redis_calls
+      target_field: gitlab.production.redis.calls
+      ignore_missing: true
+  - rename:
+      field: json.redis_duration_s
+      target_field: gitlab.production.redis.duration
+      ignore_missing: true
+  - rename:
+      field: json.redis_read_bytes
+      target_field: gitlab.production.redis.read_bytes
+      ignore_missing: true
+  - rename:
+      field: json.redis_write_bytes
+      target_field: gitlab.production.redis.write_bytes
+      ignore_missing: true
+  - rename:
+      field: json.correlation_id
+      target_field: gitlab.correlation_id
+      ignore_missing: true
+  - set:
+      field: event.id
+      copy_from: gitlab.correlation_id
+      ignore_empty_value: true
+  - set:
+      field: http.request.id
+      copy_from: gitlab.correlation_id
+      ignore_empty_value: true
+  - user_agent:
+      field: json.ua
+      ignore_missing: true
+  - rename:
+      field: json.cpu_s
+      target_field: gitlab.production.cpu_duration
+      ignore_missing: true
+  - rename:
+      field: json.db_duration_s
+      target_field: gitlab.production.db_duration
+      ignore_missing: true
+  - rename:
+      field: json.view_duration_s
+      target_field: gitlab.production.view_duration
+      ignore_missing: true
+  - rename:
+      field: json.pid
+      target_field: process.pid
+      ignore_missing: true
+  - dot_expander:
+      path: json
+      field: exception.class
+      ignore_failure: true
+  - rename:
+      field: json.exception.class
+      target_field: gitlab.production.exception.class
+      ignore_missing: true
+  - dot_expander:
+      path: json
+      field: exception.message
+      ignore_failure: true
+  - rename:
+      field: json.exception.message
+      target_field: gitlab.production.exception.message
+      ignore_missing: true
+  - dot_expander:
+      path: json
+      field: exception.backtrace
+      ignore_failure: true
+  - rename:
+      field: json.exception.backtrace
+      target_field: gitlab.production.exception.stack_trace
+      ignore_missing: true
+  - set:
+      field: event.outcome
+      value: failure
+      if: ctx?.error?.type != null
+  - append:
+      field: event.type
+      value: error
+      if: ctx?.error?.type != null
+  - append:
+      field: related.ip
+      value: "{{source.ip}}"
+      if: ctx?.source?.ip != null
+      allow_duplicates: false
+  - geoip:
+      field: source.ip
+      target_field: source.geo
+      if: ctx?.source?.ip != null
+  - geoip:
+      database_file: GeoLite2-ASN.mmdb
+      field: source.ip
+      target_field: source.as
+      properties:
+        - asn
+        - organization_name
+      ignore_missing: true
+  - rename:
+      field: source.as.asn
+      target_field: source.as.number
+      ignore_missing: true
+  - rename:
+      field: source.as.organization_name
+      target_field: source.as.organization.name
+      ignore_missing: true
+  - remove:
+      field:
+        - json
+      ignore_missing: true
+  - script:
+      lang: painless
+      description: This script processor iterates over the whole document to remove fields with null values.
+      source: |
+        void handleMap(Map map) {
+          for (def x : map.values()) {
+            if (x instanceof Map) {
+                handleMap(x);
+            } else if (x instanceof List) {
+                handleList(x);
+            }
+          }
+          map.values().removeIf(v -> v == null);
+        }
+        void handleList(List list) {
+          for (def x : list) {
+              if (x instanceof Map) {
+                  handleMap(x);
+              } else if (x instanceof List) {
+                  handleList(x);
+              }
+          }
+        }
+        handleMap(ctx);
+  - remove:
+      field: event.original
+      if: "ctx?.tags == null || !(ctx.tags.contains('preserve_original_event'))"
+      ignore_failure: true
+      ignore_missing: true
+on_failure:
+  - remove:
+      field:
+        - json
+      ignore_missing: true
+  - set:
+      field: error.message
+      value: "{{ _ingest.on_failure_message }}"

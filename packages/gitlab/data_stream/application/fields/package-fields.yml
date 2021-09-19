@@ -1,0 +1,15 @@
+- name: gitlab
+  type: group
+  fields:
+    - name: correlation_id
+      type: keyword
+      description: |
+        A unique identifier to connect related events
+    - name: project
+      type: keyword
+      description: |
+        GitLab project name
+    - name: group
+      type: keyword
+      description: |
+        GitLab group name

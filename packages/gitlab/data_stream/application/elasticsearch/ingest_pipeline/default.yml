@@ -1,0 +1,213 @@
+---
+description: Pipeline for normalizing Zeek conn.log
+processors:
+  - rename:
+      field: message
+      target_field: event.original
+  - json:
+      field: event.original
+      target_field: json
+  - set:
+      field: event.ingested
+      value: "{{_ingest.timestamp}}"
+  - set:
+      field: ecs.version
+      value: '1.12.0'
+  - set:
+      field: event.category
+      value: web
+  - set:
+      field: event.kind
+      value: event
+  - date:
+      field: json.time
+      formats:
+        - ISO8601
+  - rename:
+      field: json.severity
+      target_field: log.level
+      ignore_missing: true
+  - rename:
+      field: json.correlation_id
+      target_field: gitlab.correlation_id
+      ignore_missing: true
+  - set:
+      field: event.id
+      copy_from: gitlab.correlation_id
+      ignore_empty_value: true
+  - rename:
+      field: json.message
+      target_field: message
+      ignore_missing: true
+  - grok:
+      field: message
+      patterns:
+        - '^User "%{USERNAME:user.name}" \(%{EMAILADDRESS:user.email}\) was %{WORD:event.action}'
+        - '^Project "%{DATA:gitlab.project}" was %{WORD:event.action}'
+        - '^%{DATA:gitlab.group} created a new project "%{DATA:gitlab.project}"'
+        - '^Group "%{DATA:gitlab.group}" was %{WORD:event.action}'
+        - '^%{WORD:_tmp.outcome} Login: username=%{USERNAME:user.name} ip=%{IP:source.address} %{GREEDYDATA}'
+        - '^User %{WORD:event.action}: username=%{USERNAME:user.name} ip=%{IP:source.address}'
+        - '^%{WORD:_tmp.outcome} %{WORD:event.action}: username=%{USERNAME:user.name} ip=%{IP:source.address}'
+        - '^User %{USERNAME:user.name} has %{DATA:event.action} %{USERNAME:user.effective.name}$'
+      ignore_failure: true
+#   - set:
+#       field: event.outcome
+#       value: success
+#       if: ['Successful'].contains(ctx?._tmp?.outcome)
+#   - set:
+#       field: event.outcome
+#       value: failure
+#       if: ['Failed'].contains(ctx?._tmp?.outcome)
+  - append:
+      field: event.type
+      value: start
+      if: ctx?.event?.action != null && ctx?.event?.action.contains('start')
+  - append:
+      field: event.type
+      value: end
+      if: ctx?.event?.action != null && ctx?.event?.action.contains('stop')
+  - dot_expander:
+      path: json
+      field: meta.user
+      ignore_failure: true
+  - rename:
+      field: json.meta.user
+      target_field: user.name
+      ignore_missing: true
+  - dot_expander:
+      path: json
+      field: meta.remote_ip
+      ignore_failure: true
+  - rename:
+      field: json.meta.remote_ip
+      target_field: source.address
+      ignore_missing: true
+  - convert:
+      field: source.address
+      target_field: source.ip
+      type: ip
+      ignore_missing: true
+  - append:
+      field: related.ip
+      value: "{{source.ip}}"
+      if: ctx?.source?.ip != null
+      allow_duplicates: false
+  - geoip:
+      field: source.ip
+      target_field: source.geo
+      if: ctx?.source?.ip != null
+  - geoip:
+      database_file: GeoLite2-ASN.mmdb
+      field: source.ip
+      target_field: source.as
+      properties:
+        - asn
+        - organization_name
+      ignore_missing: true
+  - rename:
+      field: source.as.asn
+      target_field: source.as.number
+      ignore_missing: true
+  - rename:
+      field: source.as.organization_name
+      target_field: source.as.organization.name
+      ignore_missing: true
+  - dot_expander:
+      path: json
+      field: meta.class
+      ignore_failure: true
+  - rename:
+      field: json.meta.class
+      target_field: log.logger
+      ignore_missing: true
+  - dot_expander:
+      path: json
+      field: meta.root_namespace
+      ignore_failure: true
+  - rename:
+      field: json.meta.root_namespace
+      target_field: gitlab.application.root_namespace
+      ignore_missing: true
+  - dot_expander:
+      path: json
+      field: meta.feature_category
+      ignore_failure: true
+  - rename:
+      field: json.meta.feature_category
+      target_field: gitlab.application.feature_category
+      ignore_missing: true
+  - dot_expander:
+      path: json
+      field: meta.client_id
+      ignore_failure: true
+  - rename:
+      field: json.meta.client_id
+      target_field: gitlab.application.client_id
+      ignore_missing: true
+  - dot_expander:
+      path: json
+      field: meta.caller_id
+      ignore_failure: true
+  - rename:
+      field: json.meta.caller_id
+      target_field: gitlab.application.caller_id
+      ignore_missing: true
+  - dot_expander:
+      path: json
+      field: meta.job_status
+      ignore_failure: true
+  - rename:
+      field: json.job_status
+      target_field: gitlab.application.job_status
+      ignore_missing: true
+  - rename:
+      field: json.queue
+      target_field: gitlab.application.queue
+      ignore_missing: true
+  - rename:
+      field: json.meta.jid
+      target_field: gitlab.application.jid
+      ignore_missing: true
+  - remove:
+      field:
+        - json
+        - _tmp
+      ignore_missing: true
+  - script:
+      lang: painless
+      description: This script processor iterates over the whole document to remove fields with null values.
+      source: |
+        void handleMap(Map map) {
+          for (def x : map.values()) {
+            if (x instanceof Map) {
+                handleMap(x);
+            } else if (x instanceof List) {
+                handleList(x);
+            }
+          }
+          map.values().removeIf(v -> v == null);
+        }
+        void handleList(List list) {
+          for (def x : list) {
+              if (x instanceof Map) {
+                  handleMap(x);
+              } else if (x instanceof List) {
+                  handleList(x);
+              }
+          }
+        }
+        handleMap(ctx);
+  - remove:
+      field: event.original
+      if: "ctx?.tags == null || !(ctx.tags.contains('preserve_original_event'))"
+      ignore_failure: true
+      ignore_missing: true
+on_failure:
+  - remove:
+      field:
+        - json
+      ignore_missing: true
+  - set:
+      field: error.message
+      value: "{{ _ingest.on_failure_message }}"

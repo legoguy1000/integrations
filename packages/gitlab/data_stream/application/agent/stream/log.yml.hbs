@@ -1,0 +1,22 @@
+paths:
+{{#each base_paths}}
+  {{#each ../filenames}}
+ - {{../this}}/{{this}}
+  {{/each}}
+{{/each}}
+exclude_files: [".gz$"]
+exclude_lines: ['^#']
+tags:
+{{#if preserve_original_event}}
+  - preserve_original_event
+{{/if}}
+{{#each tags as |tag i|}}
+  - {{tag}}
+{{/each}}
+{{#contains tags "forwarded"}}
+publisher_pipeline.disable_host: true
+{{/contains}}
+{{#if processors}}
+processors:
+{{processors}}
+{{/if}}

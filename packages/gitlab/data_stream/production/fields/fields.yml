@@ -1,0 +1,77 @@
+- name: gitlab.production
+  type: group
+  fields:
+    - name: controller
+      type: keyword
+      description: |
+        The web controller handling the request
+
+    - name: format
+      type: keyword
+      description: |
+        The format
+
+    - name: cpu_duration
+      type: long
+      description: |
+        Total time spent on CPU
+
+    - name: db_duration
+      type: long
+      description: |
+        Total time to retrieve data from PostgreSQL
+
+    - name: queue_duration
+      type: long
+      description: |
+        Total time the request was queued inside GitLab Workhorse
+
+    - name: view_duration
+      type: long
+      description: |
+        Total time inside the Rails views
+        
+    - name: redis.calls
+      type: long
+      description: |
+        Total number of calls made to Redis
+        
+    - name: redis.duration
+      type: long
+      description: |
+        Total time to retrieve data from Redis
+        
+    - name: redis.read_bytes
+      type: long
+      description: |
+        Total bytes read from Redis
+        
+    - name: redis.write_bytes
+      type: long
+      description: |
+        Total bytes written to Redis
+
+    - name: exception.class
+      type: keyword
+      description: |
+        The class that threw the exception
+
+    - name: exception.message
+      type: keyword
+      description: |
+        The exception message
+
+    - name: exception.stack_trace
+      type: keyword
+      description: |
+        The exception stack trace
+
+    - name: gitaly.calls
+      type: long
+      description: |
+        Total number of calls made to Gitaly
+
+    - name: gitaly.duration
+      type: long
+      description: |
+        Total time by Gitaly calls

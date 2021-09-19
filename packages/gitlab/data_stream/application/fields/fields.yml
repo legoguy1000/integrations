@@ -1,0 +1,31 @@
+- name: gitlab.application
+  type: group
+  fields:
+    - name: root_namespace
+      type: keyword
+      description: |
+        Root namespace
+    - name: feature_category
+      type: keyword
+      description: |
+        Feature category
+    - name: caller_id
+      type: keyword
+      description: |
+        The controller and route that handled the request
+    - name: client_id
+      type: keyword
+      description: |
+        Client ID
+    - name: job_status
+      type: keyword
+      description: |
+        The status of the background job
+    - name: queue
+      type: keyword
+      description: |
+        The job queue
+    - name: jid
+      type: keyword
+      description: |
+        The job ID

@@ -1,0 +1,40 @@
+name: gitlab
+title: GitLab
+version: 0.1.0
+release: beta
+description: This Elastic integration collects logs from GitLab
+type: integration
+icons:
+  - src: /img/gitlab.svg
+    title: gitlab
+    size: 865x764
+    type: image/svg+xml
+format_version: 1.0.0
+license: basic
+categories:
+  - network
+  - monitoring
+  - security
+conditions:
+  kibana.version: '^7.15.0'
+policy_templates:
+  - name: gitlab
+    title: GitLab logs
+    description: Collect logs from GitLab
+    inputs:
+      - type: logfile
+        title: "Collect GitLab logs"
+        description: "Collects logs from GitLab"
+        vars:
+          - name: base_paths
+            required: true
+            show_user: true
+            title: Base Path
+            description: Base paths to GitLab log files (eg. /var/log/gitlab/)
+            type: text
+            multi: true
+            default:
+              - /var/log/gitlab/gitlab-rails
+              - /home/git/gitlab/log
+owner:
+  github: elastic/integrations
