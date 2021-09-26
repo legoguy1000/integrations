@@ -1,0 +1,164 @@
+{
+    "expected": [
+        {
+            "@timestamp": "2017-04-26T08:52:00.000Z",
+            "ecs": {
+                "version": "1.12.0"
+            },
+            "fireeye": {
+                "isight": {
+                    "report": {
+                        "link": "https://api.isightpartners.com/report/17-00006345",
+                        "id": "17-00006345"
+                    },
+                    "audience": "Executive",
+                    "threat_scape": "Cyber Physical",
+                    "intelligence_type": "malware"
+                }
+            },
+            "threat": {
+                "indicator": {
+                    "reference": "https://mysight.isightpartners.com/report/full/17-00006345",
+                    "first_seen": "2017-04-26T08:52:00.000Z",
+                    "provider": "fireeye",
+                    "ip": "10.10.10.10",
+                    "domain": "domain4.com",
+                    "description": "CMS-API-Microsoft-Malware-One-Indicator-Executive",
+                    "type": "domain-name"
+                }
+            },
+            "event": {
+                "ingested": "2021-09-26T05:12:41.665857952Z",
+                "original": "{\"reportId\":\"17-00006345\",\"title\":\"CMS-API-Microsoft-Malware-One-Indicator-Executive\",\"ThreatScape\":\"Cyber Physical\",\"audience\":\"Executive\",\"intelligenceType\":\"malware\",\"publishDate\":1493196720,\"reportLink\":\"https://api.isightpartners.com/report/17-00006345\",\"webLink\":\"https://mysight.isightpartners.com/report/full/17-00006345\",\"emailIdentifier\":null,\"senderAddress\":null,\"senderName\":null,\"sourceDomain\":null,\"sourceIp\":null,\"subject\":null,\"recipient\":null,\"emailLanguage\":null,\"fileName\":null,\"fileSize\":null,\"fuzzyHash\":null,\"fileIdentifier\":null,\"md5\":null,\"sha1\":null,\"sha256\":null,\"description\":null,\"fileType\":null,\"packer\":null,\"userAgent\":null,\"registry\":null,\"fileCompilationDateTime\":null,\"filePath\":null,\"asn\":null,\"cidr\":null,\"domain\":\"domain4.com\",\"domainTimeOfLookup\":null,\"networkIdentifier\":\"Victim\",\"ip\":\"10.10.10.10\",\"port\":null,\"protocol\":null,\"registrantEmail\":null,\"registrantName\":null,\"networkType\":\"network\",\"url\":null,\"malwareFamily\":null,\"malwareFamilyId\":null,\"actor\":null,\"actorId\":null,\"observationTime\":1493196720,\"version\":\"1\"}"
+            },
+            "tags": [
+                "preserve_original_event"
+            ]
+        },
+        {
+            "@timestamp": "2016-07-26T14:43:00.000Z",
+            "ecs": {
+                "version": "1.12.0"
+            },
+            "fireeye": {
+                "isight": {
+                    "report": {
+                        "link": "https://api.isightpartners.com/report/16-00011458",
+                        "id": "16-00011458"
+                    },
+                    "audience": "Operational",
+                    "file_type": "Rich Text Format data, version 1, ANSI",
+                    "threat_scape": "Cyber Espionage",
+                    "intelligence_type": "threat"
+                }
+            },
+            "threat": {
+                "indicator": {
+                    "reference": "https://mysight.isightpartners.com/report/full/16-00011458",
+                    "description": "Elirks Campaign Likely Associated with Japan Tourist Bureau Breach",
+                    "first_seen": "2016-07-26T14:43:00.000Z",
+                    "file": {
+                        "size": 14860,
+                        "name": "TW2BBFF500.doc",
+                        "hash": {
+                            "sha1": "4559ba637772b681dee07127c7c17c776455138e",
+                            "sha256": "e9c60a120db8a4366734dcecbc15ddd4510ef7929cc7a5d21529180494a35cdc",
+                            "ssdeep": "384:AmHWrWG6qqrx7F7ByIvjgS+S0SBS1n9dwnHJWNy/4yAOksmSfsF17BtX7K4:qrWG6qqV7F7ByIvjgS+S0SBSd9dwnHJw",
+                            "md5": "d27eb3f18ba7f3ae6fa793630882652f"
+                        }
+                    },
+                    "type": "file",
+                    "provider": "fireeye"
+                }
+            },
+            "event": {
+                "ingested": "2021-09-26T05:12:41.665863471Z",
+                "original": "{\"reportId\":\"16-00011458\",\"title\":\"Elirks Campaign Likely Associated with Japan Tourist Bureau Breach\",\"ThreatScape\":\"Cyber Espionage\",\"audience\":\"Operational\",\"intelligenceType\":\"threat\",\"publishDate\":1469544180,\"reportLink\":\"https://api.isightpartners.com/report/16-00011458\",\"webLink\":\"https://mysight.isightpartners.com/report/full/16-00011458\",\"emailIdentifier\":null,\"senderAddress\":null,\"senderName\":null,\"sourceDomain\":null,\"sourceIp\":null,\"subject\":null,\"recipient\":null,\"emailLanguage\":null,\"fileName\":\"TW2BBFF500.doc\",\"fileSize\":14860,\"fuzzyHash\":\"384:AmHWrWG6qqrx7F7ByIvjgS+S0SBS1n9dwnHJWNy/4yAOksmSfsF17BtX7K4:qrWG6qqV7F7ByIvjgS+S0SBSd9dwnHJw\",\"fileIdentifier\":\"Related\",\"md5\":\"d27eb3f18ba7f3ae6fa793630882652f\",\"sha1\":\"4559ba637772b681dee07127c7c17c776455138e\",\"sha256\":\"e9c60a120db8a4366734dcecbc15ddd4510ef7929cc7a5d21529180494a35cdc\",\"description\":null,\"fileType\":\"Rich Text Format data, version 1, ANSI\",\"packer\":null,\"userAgent\":null,\"registry\":null,\"fileCompilationDateTime\":null,\"filePath\":null,\"asn\":null,\"cidr\":null,\"domain\":null,\"domainTimeOfLookup\":null,\"networkIdentifier\":null,\"ip\":null,\"port\":null,\"protocol\":null,\"registrantEmail\":null,\"registrantName\":null,\"networkType\":null,\"url\":null,\"malwareFamily\":null,\"malwareFamilyId\":null,\"actor\":null,\"actorId\":null,\"observationTime\":1469544180}"
+            },
+            "tags": [
+                "preserve_original_event"
+            ]
+        },
+        {
+            "@timestamp": "2017-04-26T08:52:00.000Z",
+            "ecs": {
+                "version": "1.12.0"
+            },
+            "fireeye": {
+                "isight": {
+                    "report": {
+                        "link": "https://api.isightpartners.com/report/17-00006345",
+                        "id": "17-00006345"
+                    },
+                    "audience": "Executive",
+                    "threat_scape": "Cyber Physical",
+                    "intelligence_type": "malware"
+                }
+            },
+            "threat": {
+                "indicator": {
+                    "reference": "https://mysight.isightpartners.com/report/full/17-00006345",
+                    "registry": {
+                        "hive": "HKEY_LOCAL_MACHINE",
+                        "path": "HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\RunOnce",
+                        "value": "SilentApp",
+                        "key": "Software\\Microsoft\\Windows\\CurrentVersion\\RunOnce"
+                    },
+                    "first_seen": "2017-04-26T08:52:00.000Z",
+                    "provider": "fireeye",
+                    "ip": "10.10.10.10",
+                    "domain": "domain4.com",
+                    "description": "CMS-API-Microsoft-Malware-One-Indicator-Executive",
+                    "type": "domain-name"
+                }
+            },
+            "event": {
+                "ingested": "2021-09-26T05:12:41.665866183Z",
+                "original": "{\"reportId\":\"17-00006345\",\"title\":\"CMS-API-Microsoft-Malware-One-Indicator-Executive\",\"ThreatScape\":\"Cyber Physical\",\"audience\":\"Executive\",\"intelligenceType\":\"malware\",\"publishDate\":1493196720,\"reportLink\":\"https://api.isightpartners.com/report/17-00006345\",\"webLink\":\"https://mysight.isightpartners.com/report/full/17-00006345\",\"emailIdentifier\":null,\"senderAddress\":null,\"senderName\":null,\"sourceDomain\":null,\"sourceIp\":null,\"subject\":null,\"recipient\":null,\"emailLanguage\":null,\"fileName\":null,\"fileSize\":null,\"fuzzyHash\":null,\"fileIdentifier\":null,\"md5\":null,\"sha1\":null,\"sha256\":null,\"description\":null,\"fileType\":null,\"packer\":null,\"userAgent\":null,\"registry\":null,\"fileCompilationDateTime\":null,\"filePath\":null,\"asn\":null,\"cidr\":null,\"domain\":\"domain4.com\",\"domainTimeOfLookup\":null,\"networkIdentifier\":\"Victim\",\"ip\":\"10.10.10.10\",\"port\":null,\"protocol\":null,\"registrantEmail\":null,\"registrantName\":null,\"networkType\":\"network\",\"url\":null,\"malwareFamily\":null,\"malwareFamilyId\":null,\"actor\":null,\"actorId\":null,\"observationTime\":1493196720,\"version\":\"1\",\"registryHive\":\"HKEY_LOCAL_MACHINE\",\"registryKey\":\"Software\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\RunOnce\",\"registryValue\":\"SilentApp\"}"
+            },
+            "tags": [
+                "preserve_original_event"
+            ]
+        },
+        {
+            "@timestamp": "2017-04-26T08:52:00.000Z",
+            "ecs": {
+                "version": "1.12.0"
+            },
+            "fireeye": {
+                "isight": {
+                    "report": {
+                        "link": "https://api.isightpartners.com/report/17-00006345",
+                        "id": "17-00006345"
+                    },
+                    "audience": "Executive",
+                    "threat_scape": "Cyber Physical",
+                    "intelligence_type": "malware"
+                }
+            },
+            "threat": {
+                "indicator": {
+                    "reference": "https://mysight.isightpartners.com/report/full/17-00006345",
+                    "description": "CMS-API-Microsoft-Malware-One-Indicator-Executive",
+                    "first_seen": "2017-04-26T08:52:00.000Z",
+                    "type": "url",
+                    "provider": "fireeye",
+                    "url": {
+                        "path": "/bad/url",
+                        "original": "https://abc.xyz:5582/bad/url",
+                        "scheme": "https",
+                        "port": 5582,
+                        "domain": "abc.xyz"
+                    }
+                }
+            },
+            "event": {
+                "ingested": "2021-09-26T05:12:41.665868675Z",
+                "original": "{\"reportId\":\"17-00006345\",\"title\":\"CMS-API-Microsoft-Malware-One-Indicator-Executive\",\"ThreatScape\":\"Cyber Physical\",\"audience\":\"Executive\",\"intelligenceType\":\"malware\",\"publishDate\":1493196720,\"reportLink\":\"https://api.isightpartners.com/report/17-00006345\",\"webLink\":\"https://mysight.isightpartners.com/report/full/17-00006345\",\"emailIdentifier\":null,\"senderAddress\":null,\"senderName\":null,\"sourceDomain\":null,\"sourceIp\":null,\"subject\":null,\"recipient\":null,\"emailLanguage\":null,\"fileName\":null,\"fileSize\":null,\"fuzzyHash\":null,\"fileIdentifier\":null,\"md5\":null,\"sha1\":null,\"sha256\":null,\"description\":null,\"fileType\":null,\"packer\":null,\"userAgent\":null,\"registry\":null,\"fileCompilationDateTime\":null,\"filePath\":null,\"asn\":null,\"cidr\":null,\"domain\":null,\"domainTimeOfLookup\":null,\"networkIdentifier\":\"Victim\",\"ip\":null,\"port\":null,\"protocol\":null,\"registrantEmail\":null,\"registrantName\":null,\"networkType\":\"network\",\"url\":\"https://abc.xyz:5582/bad/url\",\"malwareFamily\":null,\"malwareFamilyId\":null,\"actor\":null,\"actorId\":null,\"observationTime\":1493196720,\"version\":\"1\"}"
+            },
+            "tags": [
+                "preserve_original_event"
+            ]
+        }
+    ]
+}

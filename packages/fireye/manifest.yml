@@ -1,0 +1,32 @@
+format_version: 1.0.0
+name: fireye
+title: "FireEye Threat Intelligence"
+version: 0.1.0
+license: basic
+description: "FireEye Threat Intelligence"
+type: integration
+categories:
+  - security
+release: experimental
+conditions:
+  kibana.version: "^7.15.0"
+screenshots:
+  - src: /img/sample-screenshot.png
+    title: Sample screenshot
+    size: 600x600
+    type: image/png
+icons:
+  - src: /img/fireeye.svg
+    title: Sample logo
+    size: 204×37
+    type: image/svg+xml
+policy_templates:
+  - name: isight
+    title: FireEye iSIGHT
+    description: iSIGHT API extends FireEye cyber threat intelligence products and associated technical indicators so that customers and partners can easily match indicators to rich intelligence context, ingest indicator data associated with intelligence reporting, and collect and consume intelligence reports.
+    inputs:
+      - type: httpjson
+        title: FireEye iSIGHT API
+        description: Collect threat intelligence via the FireEye iSIGHT API
+owner:
+  github: elastic/security-external-integrations

@@ -1,0 +1,222 @@
+---
+description: Pipeline for processing FireEye iSIGHT data
+processors:
+- set:
+    field: event.ingested
+    value: '{{_ingest.timestamp}}'
+- set:
+    field: ecs.version
+    value: '1.12.0'
+- rename:
+    field: message
+    target_field: event.original
+- json:
+    field: event.original
+    target_field: json
+- set:
+    field: threat.indicator.provider
+    value: fireeye
+- rename:
+    field: json.title
+    target_field: threat.indicator.description
+    ignore_missing: true
+- rename:
+    field: json.webLink
+    target_field: threat.indicator.reference
+    ignore_missing: true
+- date:
+    field: json.publishDate
+    target_field: "@timestamp"
+    formats:
+    - UNIX
+    timezone: UTC
+- date:
+    field: json.observationTime
+    target_field: threat.indicator.first_seen
+    formats:
+    - UNIX
+    timezone: UTC
+- rename:
+    field: json.riskRating
+    target_field: threat.indicator.confidence
+    ignore_missing: true
+- rename:
+    field: json.reportId
+    target_field: fireeye.isight.report.id
+    ignore_missing: true
+- rename:
+    field: json.reportLink
+    target_field: fireeye.isight.report.link
+    ignore_missing: true
+- rename:
+    field: json.audience
+    target_field: fireeye.isight.audience
+    ignore_missing: true
+- rename:
+    field: json.ThreatScape
+    target_field: fireeye.isight.threat_scape
+    ignore_missing: true
+- rename:
+    field: json.intelligenceType
+    target_field: fireeye.isight.intelligence_type
+    ignore_missing: true
+- script:
+    lang: painless
+    description: This script processor iterates over the whole document to remove fields with null values.
+    source: |
+      void handleMap(Map map) {
+        for (def x : map.values()) {
+          if (x instanceof Map) {
+              handleMap(x);
+          } else if (x instanceof List) {
+              handleList(x);
+          }
+        }
+        map.values().removeIf(v -> v == null || (v instanceof Map && v.size() == 0) || (v instanceof List && v.size() == 0));
+      }
+      void handleList(List list) {
+        for (def x : list) {
+            if (x instanceof Map) {
+                handleMap(x);
+            } else if (x instanceof List) {
+                handleList(x);
+            }
+        }
+        list.removeIf(v -> v == null || (v instanceof Map && v.size() == 0) || (v instanceof List && v.size() == 0));
+      }
+      handleMap(ctx);
+# File fields
+- rename:
+    field: json.fileName
+    target_field: threat.indicator.file.name
+    ignore_missing: true
+- rename:
+    field: json.fileSize
+    target_field: threat.indicator.file.size
+    ignore_missing: true
+- rename:
+    field: json.fuzzyHash
+    target_field: threat.indicator.file.hash.ssdeep
+    ignore_missing: true
+- rename:
+    field: json.md5
+    target_field: threat.indicator.file.hash.md5
+    ignore_missing: true
+- rename:
+    field: json.sha1
+    target_field: threat.indicator.file.hash.sha1
+    ignore_missing: true
+- rename:
+    field: json.sha256
+    target_field: threat.indicator.file.hash.sha256
+    ignore_missing: true
+- set:
+    field: threat.indicator.type
+    value: file
+    if: ctx?.threat?.indicator?.file != null
+- rename:
+    field: json.fileType
+    target_field: fireeye.isight.file_type
+    ignore_missing: true
+# Windows Registry
+- rename:
+    field: json.registryHive
+    target_field: threat.indicator.registry.hive
+    ignore_missing: true
+- rename:
+    field: json.registryKey
+    target_field: threat.indicator.registry.key
+    ignore_missing: true
+- script:
+    lang: painless
+    source: "ctx.threat.indicator.registry.path = ctx.threat.indicator.registry.hive + '\\\\' + ctx.threat.indicator.registry.key"
+    if: "ctx?.threat?.indicator?.registry?.hive != null && ctx?.threat?.indicator?.registry?.key != null"
+    ignore_failure: true
+- rename:
+    field: json.registryValue
+    target_field: threat.indicator.registry.value
+    ignore_missing: true
+- set:
+    field: threat.indicator.type
+    value: windows-registry-key
+    if: ctx?.threat?.indicator?.registry != null
+# ASN
+- rename:
+    field: json.asn
+    target_field: threat.indicator.as.number
+    ignore_missing: true
+- set:
+    field: threat.indicator.type
+    value: autonomous-system
+    if: ctx?.threat?.indicator?.as != null
+# CIDR
+# - rename:
+#     field: json.cidr
+#     target_field: threat.indicator.ip
+#     ignore_missing: true
+- rename:
+    field: json.ip
+    target_field: threat.indicator.ip
+    ignore_missing: true
+- set:
+    field: threat.indicator.type
+    value: ipv4-addr
+    if: 'ctx?.threat?.indicator?.ip != null && ctx?.threat?.indicator?.ip.contains(".")'
+- set:
+    field: threat.indicator.type
+    value: ipv6-addr
+    if: 'ctx?.threat?.indicator?.ip != null && ctx?.threat?.indicator?.ip.contains(":")'
+# Port
+- convert:
+    field: json.ports
+    target_field: threat.indicator.port
+    type: long
+    ignore_missing: true
+- set:
+    field: threat.indicator.type
+    value: aport
+    if: ctx?.threat?.indicator?.port != null
+# URL
+- uri_parts:
+    field: json.url
+    target_field: threat.indicator.url
+    if: ctx?.json?.url != null
+- set:
+    field: threat.indicator.type
+    value: url
+    if: ctx?.threat?.indicator?.url != null
+# Email
+- rename:
+    field: json.senderAddress
+    target_field: threat.indicator.email.address
+    ignore_missing: true
+- set:
+    field: threat.indicator.email.address
+    copy_from: json.recipient
+    ignore_empty_value: true
+- set:
+    field: threat.indicator.type
+    value: email-addr
+    if: ctx?.threat?.indicator?.email != null
+# Email
+- rename:
+    field: json.domain
+    target_field: threat.indicator.domain
+    ignore_missing: true
+- set:
+    field: threat.indicator.type
+    value: domain-name
+    if: ctx?.threat?.indicator?.domain != null
+- remove:
+    field:
+      - json
+    ignore_missing: true
+- remove:
+    field: event.original
+    if: "ctx?.tags == null || !(ctx.tags.contains('preserve_original_event'))"
+    ignore_failure: true
+    ignore_missing: true
+on_failure:
+- set:
+    field: error.message
+    value: '{{ _ingest.on_failure_message }}'

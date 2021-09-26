@@ -1,0 +1,36 @@
+- name: fireeye.isight
+  type: group
+  release: beta
+  default_field: false
+  description: >
+    Fields for FireEye iSIGHT
+
+  fields:
+    - name: report.id
+      type: keyword
+      description: >
+        Intelligence report ID
+
+    - name: report.link
+      type: keyword
+      description: >
+        Intelligence report link
+
+    - name: audience
+      type: keyword
+      description: >
+        Intended audience for intelligence report
+
+    - name: threat_scape
+      type: keyword
+      description: >
+        Threat scape of intelligence report
+
+    - name: file_type
+      type: keyword
+      description: >-
+        File format
+    - name: intelligence_type
+      type: keyword
+      description: >-
+        Intelligence type

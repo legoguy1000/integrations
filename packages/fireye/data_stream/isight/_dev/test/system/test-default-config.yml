@@ -1,0 +1,10 @@
+input: httpjson
+service: fireeye-isight
+vars: ~
+data_stream:
+  vars:
+    preserve_original_event: true
+    api_url: http://{{Hostname}}:{{Port}}
+    api_key: asdf
+    secret_key: xxxxxxxxxx
+    ssl.verification_mode: none

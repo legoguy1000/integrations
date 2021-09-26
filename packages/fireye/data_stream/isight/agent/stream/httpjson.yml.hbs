@@ -1,0 +1,66 @@
+config_version: "2"
+interval: {{interval}}
+request.method: "GET"
+request.url: "{{api_host}}/view/indicators"
+{{#if ssl}}
+request.ssl: {{ssl}}
+{{/if}}
+{{#if http_client_timeout}}
+request.timeout: {{http_client_timeout}}
+{{/if}}
+{{#if proxy_url }}
+request.proxy_url: {{proxy_url}}
+{{/if}}
+request.transforms:
+  - set:
+      target: url.params.startDate
+      value: '[[.cursor.last_execution_datetime]]'
+      default: '[[ (now (parseDuration "-24h")).Unix ]]'
+  - set:
+      target: url.params.endDate
+      value: '[[ ((parseDate .cursor.last_execution_datetime).Add (parseDuration "1m")).Unix ]]'
+      default: '[[ (now (parseDuration "-1m")).Unix ]]'
+  - set:
+      target: header.Date
+      value: '[[ formatDate (now) "RFC1123Z" ]]'
+  - set:
+      target: "header.Accept"
+      value: "application/json"
+  - set:
+      target: "header.Accept-Version"
+      value: "2.6"
+  - set:
+      target: "header.X-Auth"
+      value: "{{api_key}}"
+  - set:
+      target: "header.X-Auth-Hash"
+      value: '[[ hmac "sha256" "{{secret_key}}" .url.Path "?" .url.RawQuery (.header.Get "Accept-Version") (.header.Get "Accept") (.header.Get "Date") ]]'
+response.split:
+  target: body.message
+  keep_parent: false
+
+response.decode_as: application/json
+
+cursor:
+  last_execution_datetime:
+    value: '[[ (now (parseDuration "-1m")).Unix ]]'
+
+{{#if tags.length}}
+tags:
+{{else if preserve_original_event}}
+tags:
+{{/if}}
+{{#each tags as |tag i|}}
+  - {{tag}}
+{{/each}}
+{{#if preserve_original_event}}
+  - preserve_original_event
+{{/if}}
+{{#contains tags "forwarded"}}
+publisher_pipeline.disable_host: true
+{{/contains}}
+
+{{#if processors}}
+processors:
+{{processors}}
+{{/if}} 
