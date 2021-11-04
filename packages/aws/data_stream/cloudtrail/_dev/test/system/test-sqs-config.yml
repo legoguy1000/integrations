@@ -1,0 +1,9 @@
+service: aws-emulator
+input: aws-s3
+vars:
+  endpoint: "http://{{Hostname}}:{{Port}}"
+  access_key_id: test
+  secret_access_key: test
+data_stream:
+  vars:
+    queue_url: "http://{{Hostname}}:{{Port}}/000000000000/cloudtrail"

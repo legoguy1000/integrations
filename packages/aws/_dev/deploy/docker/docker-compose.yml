@@ -1,0 +1,48 @@
+version: '2.3'
+services:
+  aws-emulator:
+    image: localstack/localstack
+    ports:
+      - "4566:4566"
+    environment:
+      - SERVICES=s3,sqs
+  aws-cloudtrail:
+    image: amazon/aws-cli
+    volumes:
+      - ./sample_logs:/sample_logs:ro
+      - ./configs:/aws/configs:ro
+    environment:
+      AWS_ACCESS_KEY_ID: test
+      AWS_SECRET_ACCESS_KEY: test
+      AWS_DEFAULT_REGION: us-east-1
+    entrypoint:
+      - /bin/bash
+      - -c
+      - |
+        sleep 5s
+        aws --endpoint-url http://aws-emulator:4566 s3 mb s3://cloudtrail
+        aws --endpoint-url http://aws-emulator:4566 sqs create-queue --queue-name cloudtrail
+        aws --endpoint-url http://aws-emulator:4566 s3api put-bucket-notification-configuration --bucket cloudtrail --notification-configuration file://configs/sqs-cloudtrail.json
+        aws --endpoint-url http://aws-emulator:4566 s3 cp /sample_logs/111122223333_CloudTrail_us-east-1_logs.json s3://cloudtrail
+    depends_on:
+      - aws-emulator
+  aws-cloudwatch:
+    image: amazon/aws-cli
+    volumes:
+      - ./sample_logs:/sample_logs:ro
+      - ./configs:/aws/configs:ro
+    environment:
+      AWS_ACCESS_KEY_ID: test
+      AWS_SECRET_ACCESS_KEY: test
+      AWS_DEFAULT_REGION: us-east-1
+    entrypoint:
+      - /bin/bash
+      - -c
+      - |
+        sleep 5s
+        aws --endpoint-url http://aws-emulator:4566 s3 mb s3://cloudwatch
+        aws --endpoint-url http://aws-emulator:4566 sqs create-queue --queue-name cloudwatch
+        aws --endpoint-url http://aws-emulator:4566 s3api put-bucket-notification-configuration --bucket cloudwatch --notification-configuration file://configs/sqs-cloudwatch.json
+        aws --endpoint-url http://aws-emulator:4566 s3 cp /sample_logs/cloudwatch.log s3://cloudwatch
+    depends_on:
+      - aws-emulator
