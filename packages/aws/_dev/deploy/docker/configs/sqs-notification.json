@@ -1,7 +1,7 @@
 {
     "QueueConfigurations": [
       {
-        "QueueArn": "arn:aws:sqs:us-east-1:000000000000:cloudwatch",
+        "QueueArn": "arn:aws:sqs:##REGION##:000000000000:##QUEUE##",
           "Events": [
             "s3:ObjectCreated:*"
           ]
