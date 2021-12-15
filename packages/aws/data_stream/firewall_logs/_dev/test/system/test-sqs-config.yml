@@ -6,4 +6,4 @@ vars:
   secret_access_key: test
 data_stream:
   vars:
-    queue_url: "http://{{Hostname}}:{{Port}}/000000000000/firewall"
+    queue_url: "http://{{Hostname}}:{{Port}}/000000000000/cloudwatch"

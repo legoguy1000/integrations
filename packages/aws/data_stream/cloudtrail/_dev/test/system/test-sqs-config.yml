@@ -4,6 +4,7 @@ vars:
   endpoint: "test.com"
   access_key_id: test
   secret_access_key: test
+  ssl.verification_mode: none
 data_stream:
   vars:
     queue_url: "https://cloud.us-east-1.test.com/000000000000/cloudtrail"
