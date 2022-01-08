@@ -1,10 +1,11 @@
 service: aws-emulator
 input: aws-s3
 vars:
-  endpoint: "test.com"
+  endpoint: amazonaws.com
   access_key_id: test
   secret_access_key: test
+  default_region: ab-test-0
   ssl.verification_mode: none
 data_stream:
   vars:
-    queue_url: "https://cloud.us-east-1.test.com/000000000000/cloudtrail"
+    queue_url: "https://sqs.ab-test-0.amazonaws.com/000000000000/cloudtrail"

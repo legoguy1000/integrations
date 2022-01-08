@@ -5,134 +5,16 @@ services:
     ports:
       - "443:443"
     environment:
-      - SERVICES=s3,sqs,cloudwatch,monitoring
+      - SERVICES=s3,sqs
       - EDGE_PORT=443
-  aws-cloudtrail-logs:
-    image: amazon/aws-cli
-    volumes:
-      - ./sample_logs:/sample_logs:ro
-      - ./configs:/aws/configs:ro
-    environment:
-      AWS_ACCESS_KEY_ID: test
-      AWS_SECRET_ACCESS_KEY: test
-      AWS_DEFAULT_REGION: us-east-1
-    entrypoint:
-      - /bin/bash
-      - -c
-      - |
-        sleep 5s
-        aws --no-verify-ssl --endpoint-url https://aws-emulator s3api create-bucket --bucket cloudtrail --create-bucket-configuration LocationConstraint=us-west-1
-        aws --no-verify-ssl --endpoint-url https://aws-emulator sqs create-queue --queue-name cloudtrail --region us-west-1
-        sed 's/##REGION##/us-west-1/g; s/##QUEUE##/cloudtrail/g' configs/sqs-notification.json > sqs-notification.json
-        aws --no-verify-ssl --endpoint-url https://aws-emulator s3api put-bucket-notification-configuration --bucket cloudtrail --notification-configuration file://sqs-notification.json
-        aws --no-verify-ssl --endpoint-url https://aws-emulator s3 cp /sample_logs/000000000000_CloudTrail_us-east-1_logs.json s3://cloudtrail
-    depends_on:
-      - aws-emulator
-  aws-cloudwatch-logs:
-    image: amazon/aws-cli
-    volumes:
-      - ./sample_logs:/sample_logs:ro
-      - ./configs:/aws/configs:ro
-    environment:
-      AWS_ACCESS_KEY_ID: test
-      AWS_SECRET_ACCESS_KEY: test
-      AWS_DEFAULT_REGION: us-east-1
-    entrypoint:
-      - /bin/bash
-      - -c
-      - |
-        sleep 5s
-        aws --no-verify-ssl --endpoint-url https://aws-emulator s3api create-bucket --bucket cloudwatch --create-bucket-configuration LocationConstraint=us-east-1
-        aws --no-verify-ssl --endpoint-url https://aws-emulator sqs create-queue --queue-name cloudwatch --region us-east-1
-        sed 's/##REGION##/us-east-1/g; s/##QUEUE##/cloudwatch/g' configs/sqs-notification.json > sqs-notification.json
-        aws --no-verify-ssl --endpoint-url https://aws-emulator s3api put-bucket-notification-configuration --bucket cloudwatch --notification-configuration file://sqs-notification.json
-        aws --no-verify-ssl --endpoint-url https://aws-emulator s3 cp /sample_logs/cloudwatch.log s3://cloudwatch
-    depends_on:
-      - aws-emulator
-  aws-ec2-logs:
-    image: amazon/aws-cli
-    volumes:
-      - ./sample_logs:/sample_logs:ro
-      - ./configs:/aws/configs:ro
-    environment:
-      AWS_ACCESS_KEY_ID: test
-      AWS_SECRET_ACCESS_KEY: test
-      AWS_DEFAULT_REGION: us-east-1
-    entrypoint:
-      - /bin/bash
-      - -c
-      - |
-        sleep 5s
-        aws --no-verify-ssl --endpoint-url https://aws-emulator s3api create-bucket --bucket ec2 --create-bucket-configuration LocationConstraint=us-east-1
-        aws --no-verify-ssl --endpoint-url https://aws-emulator sqs create-queue --queue-name ec2 --region us-east-1
-        sed 's/##REGION##/us-east-1/g; s/##QUEUE##/ec2/g' configs/sqs-notification.json > sqs-notification.json
-        aws --no-verify-ssl --endpoint-url https://aws-emulator s3api put-bucket-notification-configuration --bucket ec2 --notification-configuration file://sqs-notification.json
-        aws --no-verify-ssl --endpoint-url https://aws-emulator s3 cp /sample_logs/ec2.log s3://ec2
-    depends_on:
-      - aws-emulator
-  aws-elb-logs:
-    image: amazon/aws-cli
-    volumes:
-      - ./sample_logs:/sample_logs:ro
-      - ./configs:/aws/configs:ro
-    environment:
-      AWS_ACCESS_KEY_ID: test
-      AWS_SECRET_ACCESS_KEY: test
-      AWS_DEFAULT_REGION: us-east-1
-    entrypoint:
-      - /bin/bash
-      - -c
-      - |
-        sleep 5s
-        aws --no-verify-ssl --endpoint-url https://aws-emulator s3api create-bucket --bucket elb --create-bucket-configuration LocationConstraint=us-east-1
-        aws --no-verify-ssl --endpoint-url https://aws-emulator sqs create-queue --queue-name elb --region us-east-1
-        sed 's/##REGION##/us-east-1/g; s/##QUEUE##/elb/g' configs/sqs-notification.json > sqs-notification.json
-        aws --no-verify-ssl --endpoint-url https://aws-emulator s3api put-bucket-notification-configuration --bucket elb --notification-configuration file://sqs-notification.json
-        aws --no-verify-ssl --endpoint-url https://aws-emulator s3 cp /sample_logs/elb.log s3://elb
-    depends_on:
-      - aws-emulator
-  aws-s3access-logs:
-    image: amazon/aws-cli
-    volumes:
-      - ./sample_logs:/sample_logs:ro
-      - ./configs:/aws/configs:ro
-    environment:
-      AWS_ACCESS_KEY_ID: test
-      AWS_SECRET_ACCESS_KEY: test
-      AWS_DEFAULT_REGION: us-east-1
-    entrypoint:
-      - /bin/bash
-      - -c
-      - |
-        sleep 5s
-        aws --no-verify-ssl --endpoint-url https://aws-emulator s3api create-bucket --bucket s3access --create-bucket-configuration LocationConstraint=us-east-1
-        aws --no-verify-ssl --endpoint-url https://aws-emulator sqs create-queue --queue-name s3access --region us-east-1
-        sed 's/##REGION##/us-east-1/g; s/##QUEUE##/s3access/g' configs/sqs-notification.json > sqs-notification.json
-        aws --no-verify-ssl --endpoint-url https://aws-emulator s3api put-bucket-notification-configuration --bucket s3access --notification-configuration file://sqs-notification.json
-        aws --no-verify-ssl --endpoint-url https://aws-emulator s3 cp /sample_logs/s3access.log s3://s3access
-    depends_on:
-      - aws-emulator
-  aws-z-logs:
-    image: amazon/aws-cli
-    volumes:
-      - ./sample_logs:/sample_logs:ro
-      - ./configs:/aws/configs:ro
-    environment:
-      AWS_ACCESS_KEY_ID: test
-      AWS_SECRET_ACCESS_KEY: test
-      AWS_DEFAULT_REGION: us-east-1
-    entrypoint:
-      - /bin/bash
-      - -c
-      - |
-        sleep 5s
-        aws --no-verify-ssl --endpoint-url https://aws-emulator s3api create-bucket --bucket vpcflow --create-bucket-configuration LocationConstraint=us-east-1
-        aws --no-verify-ssl --endpoint-url https://aws-emulator sqs create-queue --queue-name vpcflow --region us-east-1
-        sed 's/##REGION##/us-east-1/g; s/##QUEUE##/vpcflow/g' configs/sqs-notification.json > sqs-notification.json
-        aws --no-verify-ssl --endpoint-url https://aws-emulator s3api put-bucket-notification-configuration --bucket vpcflow --notification-configuration file://sqs-notification.json
-        aws --no-verify-ssl --endpoint-url https://aws-emulator s3 cp /sample_logs/vpcflow.log s3://vpcflow
-    depends_on:
-      - aws-emulator
+      - SQS_PROVIDER=elasticmq
+    networks:
+      elastic-package-stack_default:
+        aliases:
+          - sqs.ab-test-0.amazonaws.com
+          - s3.ab-test-0.amazonaws.com
+          - cloudtrail.s3.ab-test-0.amazonaws.com
+          - firewall.s3.ab-test-0.amazonaws.com
   aws-firewall-logs:
     image: amazon/aws-cli
     volumes:
@@ -141,16 +23,21 @@ services:
     environment:
       AWS_ACCESS_KEY_ID: test
       AWS_SECRET_ACCESS_KEY: test
-      AWS_DEFAULT_REGION: us-east-1
+      AWS_DEFAULT_REGION: ab-test-0
     entrypoint:
       - /bin/bash
       - -c
       - |
-        sleep 5s
-        aws --no-verify-ssl --endpoint-url https://aws-emulator s3api create-bucket --bucket firewall --create-bucket-configuration LocationConstraint=us-east-1
-        aws --no-verify-ssl --endpoint-url https://aws-emulator sqs create-queue --queue-name firewall --region us-east-1
-        sed 's/##REGION##/us-east-1/g; s/##QUEUE##/firewall/g' configs/sqs-notification.json > sqs-notification.json
+        sleep 10h
+        aws --no-verify-ssl --endpoint-url https://aws-emulator s3api create-bucket --bucket firewall --create-bucket-configuration LocationConstraint=ab-test-0
+        aws --no-verify-ssl --endpoint-url https://aws-emulator sqs create-queue --queue-name firewall --region ab-test-0
+        sed 's/##REGION##/ab-test-0/g; s/##QUEUE##/firewall/g' configs/sqs-notification.json > sqs-notification.json
         aws --no-verify-ssl --endpoint-url https://aws-emulator s3api put-bucket-notification-configuration --bucket firewall --notification-configuration file://sqs-notification.json
         aws --no-verify-ssl --endpoint-url https://aws-emulator s3 cp /sample_logs/firewall.log s3://firewall
     depends_on:
       - aws-emulator
+    networks:
+      - elastic-package-stack_default
+networks:
+  elastic-package-stack_default:
+    external: true
