@@ -1,0 +1,1594 @@
+{
+    "attributes": {
+        "description": "",
+        "hits": 0,
+        "kibanaSavedObjectMeta": {
+            "searchSourceJSON": {
+                "filter": [],
+                "query": {
+                    "language": "kuery",
+                    "query": "event.dataset : \"gcp.firewall\" "
+                }
+            }
+        },
+        "optionsJSON": {
+            "hidePanelTitles": false,
+            "syncColors": false,
+            "useMargins": true
+        },
+        "panelsJSON": [
+            {
+                "embeddableConfig": {
+                    "enhancements": {},
+                    "hidePanelTitles": true,
+                    "savedVis": {
+                        "data": {
+                            "aggs": [],
+                            "searchSource": {
+                                "filter": [],
+                                "query": {
+                                    "language": "kuery",
+                                    "query": ""
+                                }
+                            }
+                        },
+                        "description": "",
+                        "id": "",
+                        "params": {
+                            "fontSize": 12,
+                            "markdown": "# GCP Firewall overview dashboard",
+                            "openLinksInNewTab": false
+                        },
+                        "title": "",
+                        "type": "markdown",
+                        "uiState": {}
+                    },
+                    "type": "visualization"
+                },
+                "gridData": {
+                    "h": 5,
+                    "i": "11594540-5527-4301-aa08-24093d75d4b4",
+                    "w": 40,
+                    "x": 0,
+                    "y": 0
+                },
+                "panelIndex": "11594540-5527-4301-aa08-24093d75d4b4",
+                "type": "visualization",
+                "version": "8.1.0"
+            },
+            {
+                "embeddableConfig": {
+                    "enhancements": {},
+                    "hidePanelTitles": true
+                },
+                "gridData": {
+                    "h": 5,
+                    "i": "c366088f-c045-4d28-b7e1-67cf212f0a24",
+                    "w": 8,
+                    "x": 40,
+                    "y": 0
+                },
+                "panelIndex": "c366088f-c045-4d28-b7e1-67cf212f0a24",
+                "panelRefName": "panel_c366088f-c045-4d28-b7e1-67cf212f0a24",
+                "type": "visualization",
+                "version": "7.17.0"
+            },
+            {
+                "embeddableConfig": {
+                    "attributes": {
+                        "references": [
+                            {
+                                "id": "logs-*",
+                                "name": "indexpattern-datasource-current-indexpattern",
+                                "type": "index-pattern"
+                            },
+                            {
+                                "id": "logs-*",
+                                "name": "indexpattern-datasource-layer-3a32ec4e-e826-4732-a33c-af6e11d7218e",
+                                "type": "index-pattern"
+                            }
+                        ],
+                        "state": {
+                            "datasourceStates": {
+                                "indexpattern": {
+                                    "layers": {
+                                        "3a32ec4e-e826-4732-a33c-af6e11d7218e": {
+                                            "columnOrder": [
+                                                "3938f412-fdf3-4714-a1d5-a06e36a8128b",
+                                                "fc59d35f-50a2-491b-b243-d55c3a2c936b"
+                                            ],
+                                            "columns": {
+                                                "3938f412-fdf3-4714-a1d5-a06e36a8128b": {
+                                                    "dataType": "string",
+                                                    "isBucketed": true,
+                                                    "label": "Top values of cloud.project.id",
+                                                    "operationType": "terms",
+                                                    "params": {
+                                                        "missingBucket": false,
+                                                        "orderBy": {
+                                                            "columnId": "fc59d35f-50a2-491b-b243-d55c3a2c936b",
+                                                            "type": "column"
+                                                        },
+                                                        "orderDirection": "desc",
+                                                        "otherBucket": true,
+                                                        "size": 5
+                                                    },
+                                                    "scale": "ordinal",
+                                                    "sourceField": "cloud.project.id"
+                                                },
+                                                "fc59d35f-50a2-491b-b243-d55c3a2c936b": {
+                                                    "dataType": "number",
+                                                    "isBucketed": false,
+                                                    "label": "Count of records",
+                                                    "operationType": "count",
+                                                    "scale": "ratio",
+                                                    "sourceField": "___records___"
+                                                }
+                                            },
+                                            "incompleteColumns": {}
+                                        }
+                                    }
+                                }
+                            },
+                            "filters": [],
+                            "query": {
+                                "language": "kuery",
+                                "query": ""
+                            },
+                            "visualization": {
+                                "layers": [
+                                    {
+                                        "categoryDisplay": "default",
+                                        "groups": [
+                                            "3938f412-fdf3-4714-a1d5-a06e36a8128b"
+                                        ],
+                                        "layerId": "3a32ec4e-e826-4732-a33c-af6e11d7218e",
+                                        "layerType": "data",
+                                        "legendDisplay": "default",
+                                        "metric": "fc59d35f-50a2-491b-b243-d55c3a2c936b",
+                                        "nestedLegend": false,
+                                        "numberDisplay": "percent"
+                                    }
+                                ],
+                                "shape": "donut"
+                            }
+                        },
+                        "title": "",
+                        "type": "lens",
+                        "visualizationType": "lnsPie"
+                    },
+                    "enhancements": {},
+                    "hidePanelTitles": false,
+                    "type": "lens"
+                },
+                "gridData": {
+                    "h": 11,
+                    "i": "77c85299-e3b8-4338-9113-a3b56ba741c7",
+                    "w": 7,
+                    "x": 0,
+                    "y": 5
+                },
+                "panelIndex": "77c85299-e3b8-4338-9113-a3b56ba741c7",
+                "title": "GCP Project",
+                "type": "lens",
+                "version": "8.1.0"
+            },
+            {
+                "embeddableConfig": {
+                    "attributes": {
+                        "references": [
+                            {
+                                "id": "logs-*",
+                                "name": "indexpattern-datasource-current-indexpattern",
+                                "type": "index-pattern"
+                            },
+                            {
+                                "id": "logs-*",
+                                "name": "indexpattern-datasource-layer-2f350b92-4c75-4171-887e-1787cc418027",
+                                "type": "index-pattern"
+                            }
+                        ],
+                        "state": {
+                            "datasourceStates": {
+                                "indexpattern": {
+                                    "layers": {
+                                        "2f350b92-4c75-4171-887e-1787cc418027": {
+                                            "columnOrder": [
+                                                "772e05df-b7e8-4757-bcbf-35d17f2faec7",
+                                                "e93ea5b6-65da-4993-a462-fb610a41824b"
+                                            ],
+                                            "columns": {
+                                                "772e05df-b7e8-4757-bcbf-35d17f2faec7": {
+                                                    "dataType": "string",
+                                                    "isBucketed": true,
+                                                    "label": "Top values of cloud.region",
+                                                    "operationType": "terms",
+                                                    "params": {
+                                                        "missingBucket": false,
+                                                        "orderBy": {
+                                                            "columnId": "e93ea5b6-65da-4993-a462-fb610a41824b",
+                                                            "type": "column"
+                                                        },
+                                                        "orderDirection": "desc",
+                                                        "otherBucket": true,
+                                                        "size": 5
+                                                    },
+                                                    "scale": "ordinal",
+                                                    "sourceField": "cloud.region"
+                                                },
+                                                "e93ea5b6-65da-4993-a462-fb610a41824b": {
+                                                    "dataType": "number",
+                                                    "isBucketed": false,
+                                                    "label": "Count of records",
+                                                    "operationType": "count",
+                                                    "scale": "ratio",
+                                                    "sourceField": "___records___"
+                                                }
+                                            },
+                                            "incompleteColumns": {}
+                                        }
+                                    }
+                                }
+                            },
+                            "filters": [],
+                            "query": {
+                                "language": "kuery",
+                                "query": ""
+                            },
+                            "visualization": {
+                                "layers": [
+                                    {
+                                        "categoryDisplay": "default",
+                                        "groups": [
+                                            "772e05df-b7e8-4757-bcbf-35d17f2faec7"
+                                        ],
+                                        "layerId": "2f350b92-4c75-4171-887e-1787cc418027",
+                                        "layerType": "data",
+                                        "legendDisplay": "default",
+                                        "metric": "e93ea5b6-65da-4993-a462-fb610a41824b",
+                                        "nestedLegend": false,
+                                        "numberDisplay": "percent"
+                                    }
+                                ],
+                                "shape": "donut"
+                            }
+                        },
+                        "title": "",
+                        "type": "lens",
+                        "visualizationType": "lnsPie"
+                    },
+                    "enhancements": {},
+                    "hidePanelTitles": false,
+                    "type": "lens"
+                },
+                "gridData": {
+                    "h": 11,
+                    "i": "0fc7a288-d3c6-4f18-8d0e-ca3c0f66aeb6",
+                    "w": 7,
+                    "x": 7,
+                    "y": 5
+                },
+                "panelIndex": "0fc7a288-d3c6-4f18-8d0e-ca3c0f66aeb6",
+                "title": "GCP region",
+                "type": "lens",
+                "version": "8.1.0"
+            },
+            {
+                "embeddableConfig": {
+                    "attributes": {
+                        "references": [
+                            {
+                                "id": "logs-*",
+                                "name": "indexpattern-datasource-current-indexpattern",
+                                "type": "index-pattern"
+                            },
+                            {
+                                "id": "logs-*",
+                                "name": "indexpattern-datasource-layer-654ef7b2-0b28-4fc9-82a4-95e925db36a6",
+                                "type": "index-pattern"
+                            }
+                        ],
+                        "state": {
+                            "datasourceStates": {
+                                "indexpattern": {
+                                    "layers": {
+                                        "654ef7b2-0b28-4fc9-82a4-95e925db36a6": {
+                                            "columnOrder": [
+                                                "1ffd51e6-7ef8-4109-ad72-3d5e90bbdb31",
+                                                "95c9e43b-8993-46f0-b21f-09a26f940dbb"
+                                            ],
+                                            "columns": {
+                                                "1ffd51e6-7ef8-4109-ad72-3d5e90bbdb31": {
+                                                    "dataType": "string",
+                                                    "isBucketed": true,
+                                                    "label": "Top values of gcp.firewall.rule_details.direction",
+                                                    "operationType": "terms",
+                                                    "params": {
+                                                        "missingBucket": false,
+                                                        "orderBy": {
+                                                            "columnId": "95c9e43b-8993-46f0-b21f-09a26f940dbb",
+                                                            "type": "column"
+                                                        },
+                                                        "orderDirection": "desc",
+                                                        "otherBucket": true,
+                                                        "size": 5
+                                                    },
+                                                    "scale": "ordinal",
+                                                    "sourceField": "gcp.firewall.rule_details.direction"
+                                                },
+                                                "95c9e43b-8993-46f0-b21f-09a26f940dbb": {
+                                                    "dataType": "number",
+                                                    "isBucketed": false,
+                                                    "label": "Count of records",
+                                                    "operationType": "count",
+                                                    "scale": "ratio",
+                                                    "sourceField": "___records___"
+                                                }
+                                            },
+                                            "incompleteColumns": {}
+                                        }
+                                    }
+                                }
+                            },
+                            "filters": [],
+                            "query": {
+                                "language": "kuery",
+                                "query": ""
+                            },
+                            "visualization": {
+                                "layers": [
+                                    {
+                                        "categoryDisplay": "default",
+                                        "groups": [
+                                            "1ffd51e6-7ef8-4109-ad72-3d5e90bbdb31"
+                                        ],
+                                        "layerId": "654ef7b2-0b28-4fc9-82a4-95e925db36a6",
+                                        "layerType": "data",
+                                        "legendDisplay": "default",
+                                        "metric": "95c9e43b-8993-46f0-b21f-09a26f940dbb",
+                                        "nestedLegend": false,
+                                        "numberDisplay": "percent"
+                                    }
+                                ],
+                                "shape": "pie"
+                            }
+                        },
+                        "title": "",
+                        "type": "lens",
+                        "visualizationType": "lnsPie"
+                    },
+                    "enhancements": {},
+                    "hidePanelTitles": false,
+                    "type": "lens"
+                },
+                "gridData": {
+                    "h": 11,
+                    "i": "fe15fb67-185b-426d-a575-86a6570e9b39",
+                    "w": 7,
+                    "x": 14,
+                    "y": 5
+                },
+                "panelIndex": "fe15fb67-185b-426d-a575-86a6570e9b39",
+                "title": "Rule direction",
+                "type": "lens",
+                "version": "8.1.0"
+            },
+            {
+                "embeddableConfig": {
+                    "attributes": {
+                        "references": [
+                            {
+                                "id": "logs-*",
+                                "name": "indexpattern-datasource-current-indexpattern",
+                                "type": "index-pattern"
+                            },
+                            {
+                                "id": "logs-*",
+                                "name": "indexpattern-datasource-layer-1f9dacfe-adbe-4312-8752-e6ef33190614",
+                                "type": "index-pattern"
+                            }
+                        ],
+                        "state": {
+                            "datasourceStates": {
+                                "indexpattern": {
+                                    "layers": {
+                                        "1f9dacfe-adbe-4312-8752-e6ef33190614": {
+                                            "columnOrder": [
+                                                "428cb2ae-d9d0-4f84-8771-9045dc7ad6b2",
+                                                "513d8907-d730-452a-8949-a1253e54092f"
+                                            ],
+                                            "columns": {
+                                                "428cb2ae-d9d0-4f84-8771-9045dc7ad6b2": {
+                                                    "dataType": "string",
+                                                    "isBucketed": true,
+                                                    "label": "Top values of jsonPayload.rule_details.action",
+                                                    "operationType": "terms",
+                                                    "params": {
+                                                        "missingBucket": false,
+                                                        "orderBy": {
+                                                            "columnId": "513d8907-d730-452a-8949-a1253e54092f",
+                                                            "type": "column"
+                                                        },
+                                                        "orderDirection": "desc",
+                                                        "otherBucket": true,
+                                                        "size": 5
+                                                    },
+                                                    "scale": "ordinal",
+                                                    "sourceField": "jsonPayload.rule_details.action"
+                                                },
+                                                "513d8907-d730-452a-8949-a1253e54092f": {
+                                                    "dataType": "number",
+                                                    "isBucketed": false,
+                                                    "label": "Count of records",
+                                                    "operationType": "count",
+                                                    "scale": "ratio",
+                                                    "sourceField": "___records___"
+                                                }
+                                            },
+                                            "incompleteColumns": {}
+                                        }
+                                    }
+                                }
+                            },
+                            "filters": [],
+                            "query": {
+                                "language": "kuery",
+                                "query": "event.dataset : \"gcp.firewall\" "
+                            },
+                            "visualization": {
+                                "layers": [
+                                    {
+                                        "categoryDisplay": "default",
+                                        "groups": [
+                                            "428cb2ae-d9d0-4f84-8771-9045dc7ad6b2"
+                                        ],
+                                        "layerId": "1f9dacfe-adbe-4312-8752-e6ef33190614",
+                                        "layerType": "data",
+                                        "legendDisplay": "default",
+                                        "metric": "513d8907-d730-452a-8949-a1253e54092f",
+                                        "nestedLegend": false,
+                                        "numberDisplay": "percent"
+                                    }
+                                ],
+                                "shape": "pie"
+                            }
+                        },
+                        "title": "",
+                        "type": "lens",
+                        "visualizationType": "lnsPie"
+                    },
+                    "enhancements": {},
+                    "hidePanelTitles": false,
+                    "type": "lens"
+                },
+                "gridData": {
+                    "h": 11,
+                    "i": "5e11178e-7303-48dc-8549-73e80f5c9b2c",
+                    "w": 7,
+                    "x": 21,
+                    "y": 5
+                },
+                "panelIndex": "5e11178e-7303-48dc-8549-73e80f5c9b2c",
+                "title": "Rule action",
+                "type": "lens",
+                "version": "8.1.0"
+            },
+            {
+                "embeddableConfig": {
+                    "attributes": {
+                        "references": [
+                            {
+                                "id": "logs-*",
+                                "name": "indexpattern-datasource-current-indexpattern",
+                                "type": "index-pattern"
+                            },
+                            {
+                                "id": "logs-*",
+                                "name": "indexpattern-datasource-layer-9c02e90f-5fb4-4c58-9c74-bf76f2b246fc",
+                                "type": "index-pattern"
+                            }
+                        ],
+                        "state": {
+                            "datasourceStates": {
+                                "indexpattern": {
+                                    "layers": {
+                                        "9c02e90f-5fb4-4c58-9c74-bf76f2b246fc": {
+                                            "columnOrder": [
+                                                "b24ed9f4-2bd9-42fd-8924-f63ad2780146",
+                                                "6ce82469-1771-4f1a-96af-1387e676492f"
+                                            ],
+                                            "columns": {
+                                                "6ce82469-1771-4f1a-96af-1387e676492f": {
+                                                    "dataType": "number",
+                                                    "isBucketed": false,
+                                                    "label": "Count of records",
+                                                    "operationType": "count",
+                                                    "scale": "ratio",
+                                                    "sourceField": "___records___"
+                                                },
+                                                "b24ed9f4-2bd9-42fd-8924-f63ad2780146": {
+                                                    "dataType": "string",
+                                                    "isBucketed": true,
+                                                    "label": "Top values of gcp.firewall.rule_details.ip_port_info.ip_protocol",
+                                                    "operationType": "terms",
+                                                    "params": {
+                                                        "missingBucket": false,
+                                                        "orderBy": {
+                                                            "columnId": "6ce82469-1771-4f1a-96af-1387e676492f",
+                                                            "type": "column"
+                                                        },
+                                                        "orderDirection": "desc",
+                                                        "otherBucket": false,
+                                                        "size": 7
+                                                    },
+                                                    "scale": "ordinal",
+                                                    "sourceField": "gcp.firewall.rule_details.ip_port_info.ip_protocol"
+                                                }
+                                            },
+                                            "incompleteColumns": {}
+                                        }
+                                    }
+                                }
+                            },
+                            "filters": [],
+                            "query": {
+                                "language": "kuery",
+                                "query": ""
+                            },
+                            "visualization": {
+                                "layers": [
+                                    {
+                                        "categoryDisplay": "default",
+                                        "groups": [
+                                            "b24ed9f4-2bd9-42fd-8924-f63ad2780146"
+                                        ],
+                                        "layerId": "9c02e90f-5fb4-4c58-9c74-bf76f2b246fc",
+                                        "layerType": "data",
+                                        "legendDisplay": "default",
+                                        "metric": "6ce82469-1771-4f1a-96af-1387e676492f",
+                                        "nestedLegend": false,
+                                        "numberDisplay": "percent"
+                                    }
+                                ],
+                                "shape": "donut"
+                            }
+                        },
+                        "title": "",
+                        "type": "lens",
+                        "visualizationType": "lnsPie"
+                    },
+                    "enhancements": {},
+                    "hidePanelTitles": false,
+                    "type": "lens"
+                },
+                "gridData": {
+                    "h": 11,
+                    "i": "735c4030-d5b3-459c-9000-427ca5cb9d70",
+                    "w": 9,
+                    "x": 28,
+                    "y": 5
+                },
+                "panelIndex": "735c4030-d5b3-459c-9000-427ca5cb9d70",
+                "title": "Protocols",
+                "type": "lens",
+                "version": "8.1.0"
+            },
+            {
+                "embeddableConfig": {
+                    "attributes": {
+                        "references": [
+                            {
+                                "id": "logs-*",
+                                "name": "indexpattern-datasource-current-indexpattern",
+                                "type": "index-pattern"
+                            },
+                            {
+                                "id": "logs-*",
+                                "name": "indexpattern-datasource-layer-49f72f3e-4ec2-418f-8183-30f7ca58c8e7",
+                                "type": "index-pattern"
+                            }
+                        ],
+                        "state": {
+                            "datasourceStates": {
+                                "indexpattern": {
+                                    "layers": {
+                                        "49f72f3e-4ec2-418f-8183-30f7ca58c8e7": {
+                                            "columnOrder": [
+                                                "9162c285-d838-46ea-99c3-54cf59ec1a1d",
+                                                "5783f5fa-33c4-407f-8ee6-b0e7d693e993"
+                                            ],
+                                            "columns": {
+                                                "5783f5fa-33c4-407f-8ee6-b0e7d693e993": {
+                                                    "customLabel": true,
+                                                    "dataType": "number",
+                                                    "isBucketed": false,
+                                                    "label": "Events",
+                                                    "operationType": "count",
+                                                    "scale": "ratio",
+                                                    "sourceField": "___records___"
+                                                },
+                                                "9162c285-d838-46ea-99c3-54cf59ec1a1d": {
+                                                    "customLabel": true,
+                                                    "dataType": "string",
+                                                    "isBucketed": true,
+                                                    "label": "Target Tag",
+                                                    "operationType": "terms",
+                                                    "params": {
+                                                        "missingBucket": false,
+                                                        "orderBy": {
+                                                            "columnId": "5783f5fa-33c4-407f-8ee6-b0e7d693e993",
+                                                            "type": "column"
+                                                        },
+                                                        "orderDirection": "desc",
+                                                        "otherBucket": true,
+                                                        "size": 5
+                                                    },
+                                                    "scale": "ordinal",
+                                                    "sourceField": "jsonPayload.rule_details.target_tag"
+                                                }
+                                            },
+                                            "incompleteColumns": {}
+                                        }
+                                    }
+                                }
+                            },
+                            "filters": [],
+                            "query": {
+                                "language": "kuery",
+                                "query": "event.dataset : \"gcp.firewall\" "
+                            },
+                            "visualization": {
+                                "layers": [
+                                    {
+                                        "categoryDisplay": "default",
+                                        "groups": [
+                                            "9162c285-d838-46ea-99c3-54cf59ec1a1d"
+                                        ],
+                                        "layerId": "49f72f3e-4ec2-418f-8183-30f7ca58c8e7",
+                                        "layerType": "data",
+                                        "legendDisplay": "default",
+                                        "metric": "5783f5fa-33c4-407f-8ee6-b0e7d693e993",
+                                        "nestedLegend": false,
+                                        "numberDisplay": "percent"
+                                    }
+                                ],
+                                "shape": "donut"
+                            }
+                        },
+                        "title": "",
+                        "type": "lens",
+                        "visualizationType": "lnsPie"
+                    },
+                    "enhancements": {},
+                    "hidePanelTitles": false,
+                    "type": "lens"
+                },
+                "gridData": {
+                    "h": 11,
+                    "i": "b8028d6f-bf4e-43a0-b19a-65047c757821",
+                    "w": 11,
+                    "x": 37,
+                    "y": 5
+                },
+                "panelIndex": "b8028d6f-bf4e-43a0-b19a-65047c757821",
+                "title": "Target Tag",
+                "type": "lens",
+                "version": "8.1.0"
+            },
+            {
+                "embeddableConfig": {
+                    "attributes": {
+                        "references": [
+                            {
+                                "id": "logs-*",
+                                "name": "indexpattern-datasource-current-indexpattern",
+                                "type": "index-pattern"
+                            },
+                            {
+                                "id": "logs-*",
+                                "name": "indexpattern-datasource-layer-942bb851-a16a-4422-afaf-8521bb72644f",
+                                "type": "index-pattern"
+                            }
+                        ],
+                        "state": {
+                            "datasourceStates": {
+                                "indexpattern": {
+                                    "layers": {
+                                        "942bb851-a16a-4422-afaf-8521bb72644f": {
+                                            "columnOrder": [
+                                                "ad5cb314-cb12-40c6-a623-d6ffdf0ee027",
+                                                "a2c30dbc-5784-423d-a343-177a03140465",
+                                                "da23fc0e-33d4-4361-8ddb-67862b6e0951"
+                                            ],
+                                            "columns": {
+                                                "a2c30dbc-5784-423d-a343-177a03140465": {
+                                                    "dataType": "date",
+                                                    "isBucketed": true,
+                                                    "label": "@timestamp",
+                                                    "operationType": "date_histogram",
+                                                    "params": {
+                                                        "interval": "auto"
+                                                    },
+                                                    "scale": "interval",
+                                                    "sourceField": "@timestamp"
+                                                },
+                                                "ad5cb314-cb12-40c6-a623-d6ffdf0ee027": {
+                                                    "dataType": "string",
+                                                    "isBucketed": true,
+                                                    "label": "Top values of gcp.firewall.rule_details.action",
+                                                    "operationType": "terms",
+                                                    "params": {
+                                                        "missingBucket": false,
+                                                        "orderBy": {
+                                                            "columnId": "da23fc0e-33d4-4361-8ddb-67862b6e0951",
+                                                            "type": "column"
+                                                        },
+                                                        "orderDirection": "desc",
+                                                        "otherBucket": true,
+                                                        "size": 3
+                                                    },
+                                                    "scale": "ordinal",
+                                                    "sourceField": "gcp.firewall.rule_details.action"
+                                                },
+                                                "da23fc0e-33d4-4361-8ddb-67862b6e0951": {
+                                                    "customLabel": true,
+                                                    "dataType": "number",
+                                                    "isBucketed": false,
+                                                    "label": "Events",
+                                                    "operationType": "count",
+                                                    "scale": "ratio",
+                                                    "sourceField": "___records___"
+                                                }
+                                            },
+                                            "incompleteColumns": {}
+                                        }
+                                    }
+                                }
+                            },
+                            "filters": [],
+                            "query": {
+                                "language": "kuery",
+                                "query": "event.dataset : \"gcp.firewall\" "
+                            },
+                            "visualization": {
+                                "axisTitlesVisibilitySettings": {
+                                    "x": true,
+                                    "yLeft": true,
+                                    "yRight": true
+                                },
+                                "fittingFunction": "None",
+                                "gridlinesVisibilitySettings": {
+                                    "x": true,
+                                    "yLeft": true,
+                                    "yRight": true
+                                },
+                                "labelsOrientation": {
+                                    "x": 0,
+                                    "yLeft": 0,
+                                    "yRight": 0
+                                },
+                                "layers": [
+                                    {
+                                        "accessors": [
+                                            "da23fc0e-33d4-4361-8ddb-67862b6e0951"
+                                        ],
+                                        "layerId": "942bb851-a16a-4422-afaf-8521bb72644f",
+                                        "layerType": "data",
+                                        "position": "top",
+                                        "seriesType": "bar_stacked",
+                                        "showGridlines": false,
+                                        "splitAccessor": "ad5cb314-cb12-40c6-a623-d6ffdf0ee027",
+                                        "xAccessor": "a2c30dbc-5784-423d-a343-177a03140465"
+                                    }
+                                ],
+                                "legend": {
+                                    "isVisible": true,
+                                    "position": "right"
+                                },
+                                "preferredSeriesType": "bar_stacked",
+                                "tickLabelsVisibilitySettings": {
+                                    "x": true,
+                                    "yLeft": true,
+                                    "yRight": true
+                                },
+                                "valueLabels": "hide",
+                                "yLeftExtent": {
+                                    "mode": "full"
+                                },
+                                "yRightExtent": {
+                                    "mode": "full"
+                                }
+                            }
+                        },
+                        "title": "",
+                        "type": "lens",
+                        "visualizationType": "lnsXY"
+                    },
+                    "enhancements": {},
+                    "hidePanelTitles": false,
+                    "type": "lens"
+                },
+                "gridData": {
+                    "h": 10,
+                    "i": "63b2dd96-9ce1-43cc-add3-7bc34ff4b296",
+                    "w": 48,
+                    "x": 0,
+                    "y": 16
+                },
+                "panelIndex": "63b2dd96-9ce1-43cc-add3-7bc34ff4b296",
+                "title": "Firewall events over time",
+                "type": "lens",
+                "version": "8.1.0"
+            },
+            {
+                "embeddableConfig": {
+                    "attributes": {
+                        "references": [
+                            {
+                                "id": "logs-*",
+                                "name": "indexpattern-datasource-current-indexpattern",
+                                "type": "index-pattern"
+                            },
+                            {
+                                "id": "logs-*",
+                                "name": "indexpattern-datasource-layer-609d8521-e339-49d2-8564-713fd932c285",
+                                "type": "index-pattern"
+                            }
+                        ],
+                        "state": {
+                            "datasourceStates": {
+                                "indexpattern": {
+                                    "layers": {
+                                        "609d8521-e339-49d2-8564-713fd932c285": {
+                                            "columnOrder": [
+                                                "f9145218-da9e-43c9-9e22-c707834256cc",
+                                                "426e0fb0-db17-4e02-8fc8-60d472e450f2",
+                                                "d2e14e21-2c9b-46b9-8508-288c81cbc712"
+                                            ],
+                                            "columns": {
+                                                "426e0fb0-db17-4e02-8fc8-60d472e450f2": {
+                                                    "customLabel": true,
+                                                    "dataType": "number",
+                                                    "isBucketed": true,
+                                                    "label": "Priority",
+                                                    "operationType": "range",
+                                                    "params": {
+                                                        "maxBars": "auto",
+                                                        "ranges": [
+                                                            {
+                                                                "from": 0,
+                                                                "label": "",
+                                                                "to": 1000
+                                                            }
+                                                        ],
+                                                        "type": "histogram"
+                                                    },
+                                                    "scale": "interval",
+                                                    "sourceField": "jsonPayload.rule_details.priority"
+                                                },
+                                                "d2e14e21-2c9b-46b9-8508-288c81cbc712": {
+                                                    "customLabel": true,
+                                                    "dataType": "number",
+                                                    "isBucketed": false,
+                                                    "label": "Events",
+                                                    "operationType": "count",
+                                                    "scale": "ratio",
+                                                    "sourceField": "___records___"
+                                                },
+                                                "f9145218-da9e-43c9-9e22-c707834256cc": {
+                                                    "customLabel": true,
+                                                    "dataType": "string",
+                                                    "isBucketed": true,
+                                                    "label": "VM",
+                                                    "operationType": "terms",
+                                                    "params": {
+                                                        "missingBucket": false,
+                                                        "orderBy": {
+                                                            "columnId": "d2e14e21-2c9b-46b9-8508-288c81cbc712",
+                                                            "type": "column"
+                                                        },
+                                                        "orderDirection": "desc",
+                                                        "otherBucket": true,
+                                                        "size": 5
+                                                    },
+                                                    "scale": "ordinal",
+                                                    "sourceField": "jsonPayload.instance.vm_name"
+                                                }
+                                            },
+                                            "incompleteColumns": {}
+                                        }
+                                    }
+                                }
+                            },
+                            "filters": [],
+                            "query": {
+                                "language": "kuery",
+                                "query": "event.dataset : \"gcp.firewall\" "
+                            },
+                            "visualization": {
+                                "axisTitlesVisibilitySettings": {
+                                    "x": true,
+                                    "yLeft": true,
+                                    "yRight": true
+                                },
+                                "fittingFunction": "None",
+                                "gridlinesVisibilitySettings": {
+                                    "x": true,
+                                    "yLeft": true,
+                                    "yRight": true
+                                },
+                                "labelsOrientation": {
+                                    "x": 0,
+                                    "yLeft": 0,
+                                    "yRight": 0
+                                },
+                                "layers": [
+                                    {
+                                        "accessors": [
+                                            "d2e14e21-2c9b-46b9-8508-288c81cbc712"
+                                        ],
+                                        "layerId": "609d8521-e339-49d2-8564-713fd932c285",
+                                        "layerType": "data",
+                                        "position": "top",
+                                        "seriesType": "bar_horizontal",
+                                        "showGridlines": false,
+                                        "splitAccessor": "426e0fb0-db17-4e02-8fc8-60d472e450f2",
+                                        "xAccessor": "f9145218-da9e-43c9-9e22-c707834256cc"
+                                    }
+                                ],
+                                "legend": {
+                                    "isVisible": true,
+                                    "position": "right"
+                                },
+                                "preferredSeriesType": "bar_horizontal",
+                                "tickLabelsVisibilitySettings": {
+                                    "x": true,
+                                    "yLeft": true,
+                                    "yRight": true
+                                },
+                                "valueLabels": "hide",
+                                "yLeftExtent": {
+                                    "mode": "full"
+                                },
+                                "yRightExtent": {
+                                    "mode": "full"
+                                }
+                            }
+                        },
+                        "title": "",
+                        "type": "lens",
+                        "visualizationType": "lnsXY"
+                    },
+                    "enhancements": {},
+                    "hidePanelTitles": false,
+                    "type": "lens"
+                },
+                "gridData": {
+                    "h": 13,
+                    "i": "e9a02bc3-c20c-4a38-8c75-2db4923c60a3",
+                    "w": 24,
+                    "x": 0,
+                    "y": 26
+                },
+                "panelIndex": "e9a02bc3-c20c-4a38-8c75-2db4923c60a3",
+                "title": "Top VMs",
+                "type": "lens",
+                "version": "8.1.0"
+            },
+            {
+                "embeddableConfig": {
+                    "attributes": {
+                        "references": [
+                            {
+                                "id": "logs-*",
+                                "name": "indexpattern-datasource-current-indexpattern",
+                                "type": "index-pattern"
+                            },
+                            {
+                                "id": "logs-*",
+                                "name": "indexpattern-datasource-layer-1559a734-d79f-47af-95f1-0278d058a38c",
+                                "type": "index-pattern"
+                            }
+                        ],
+                        "state": {
+                            "datasourceStates": {
+                                "indexpattern": {
+                                    "layers": {
+                                        "1559a734-d79f-47af-95f1-0278d058a38c": {
+                                            "columnOrder": [
+                                                "45e4569d-d389-4118-8079-431dd014760b",
+                                                "d7154085-306d-4cf4-89bf-522a2a4dc723"
+                                            ],
+                                            "columns": {
+                                                "45e4569d-d389-4118-8079-431dd014760b": {
+                                                    "dataType": "string",
+                                                    "isBucketed": true,
+                                                    "label": "Top values of rule.name",
+                                                    "operationType": "terms",
+                                                    "params": {
+                                                        "missingBucket": false,
+                                                        "orderBy": {
+                                                            "columnId": "d7154085-306d-4cf4-89bf-522a2a4dc723",
+                                                            "type": "column"
+                                                        },
+                                                        "orderDirection": "desc",
+                                                        "otherBucket": true,
+                                                        "size": 10
+                                                    },
+                                                    "scale": "ordinal",
+                                                    "sourceField": "rule.name"
+                                                },
+                                                "d7154085-306d-4cf4-89bf-522a2a4dc723": {
+                                                    "dataType": "number",
+                                                    "isBucketed": false,
+                                                    "label": "Count of records",
+                                                    "operationType": "count",
+                                                    "scale": "ratio",
+                                                    "sourceField": "___records___"
+                                                }
+                                            },
+                                            "incompleteColumns": {}
+                                        }
+                                    }
+                                }
+                            },
+                            "filters": [],
+                            "query": {
+                                "language": "kuery",
+                                "query": ""
+                            },
+                            "visualization": {
+                                "layers": [
+                                    {
+                                        "categoryDisplay": "default",
+                                        "groups": [
+                                            "45e4569d-d389-4118-8079-431dd014760b"
+                                        ],
+                                        "layerId": "1559a734-d79f-47af-95f1-0278d058a38c",
+                                        "layerType": "data",
+                                        "legendDisplay": "default",
+                                        "metric": "d7154085-306d-4cf4-89bf-522a2a4dc723",
+                                        "nestedLegend": false,
+                                        "numberDisplay": "percent",
+                                        "percentDecimals": 2
+                                    }
+                                ],
+                                "shape": "treemap"
+                            }
+                        },
+                        "title": "",
+                        "type": "lens",
+                        "visualizationType": "lnsPie"
+                    },
+                    "enhancements": {},
+                    "hidePanelTitles": false,
+                    "type": "lens"
+                },
+                "gridData": {
+                    "h": 13,
+                    "i": "c704818b-a568-4142-92f0-3ff09f0fb8e6",
+                    "w": 24,
+                    "x": 24,
+                    "y": 26
+                },
+                "panelIndex": "c704818b-a568-4142-92f0-3ff09f0fb8e6",
+                "title": "Firewall rules",
+                "type": "lens",
+                "version": "8.1.0"
+            },
+            {
+                "embeddableConfig": {
+                    "attributes": {
+                        "references": [
+                            {
+                                "id": "logs-*",
+                                "name": "indexpattern-datasource-current-indexpattern",
+                                "type": "index-pattern"
+                            },
+                            {
+                                "id": "logs-*",
+                                "name": "indexpattern-datasource-layer-ced29d00-2d8b-43b9-bcc5-361f940b534c",
+                                "type": "index-pattern"
+                            }
+                        ],
+                        "state": {
+                            "datasourceStates": {
+                                "indexpattern": {
+                                    "layers": {
+                                        "ced29d00-2d8b-43b9-bcc5-361f940b534c": {
+                                            "columnOrder": [
+                                                "3d150b77-0069-4770-8e55-38e152a4e97c",
+                                                "8aa7938e-eccd-4b41-8147-ac09a0ba4b1c",
+                                                "4ed872b0-f56b-4d53-b5a6-82d6f177fadc"
+                                            ],
+                                            "columns": {
+                                                "3d150b77-0069-4770-8e55-38e152a4e97c": {
+                                                    "customLabel": true,
+                                                    "dataType": "number",
+                                                    "isBucketed": true,
+                                                    "label": "Destination Port",
+                                                    "operationType": "terms",
+                                                    "params": {
+                                                        "missingBucket": false,
+                                                        "orderBy": {
+                                                            "columnId": "4ed872b0-f56b-4d53-b5a6-82d6f177fadc",
+                                                            "type": "column"
+                                                        },
+                                                        "orderDirection": "desc",
+                                                        "otherBucket": true,
+                                                        "size": 5
+                                                    },
+                                                    "scale": "ordinal",
+                                                    "sourceField": "jsonPayload.connection.dest_port"
+                                                },
+                                                "4ed872b0-f56b-4d53-b5a6-82d6f177fadc": {
+                                                    "customLabel": true,
+                                                    "dataType": "number",
+                                                    "isBucketed": false,
+                                                    "label": "Events",
+                                                    "operationType": "count",
+                                                    "params": {
+                                                        "format": {
+                                                            "id": "number",
+                                                            "params": {
+                                                                "decimals": 2
+                                                            }
+                                                        }
+                                                    },
+                                                    "scale": "ratio",
+                                                    "sourceField": "___records___"
+                                                },
+                                                "8aa7938e-eccd-4b41-8147-ac09a0ba4b1c": {
+                                                    "customLabel": true,
+                                                    "dataType": "number",
+                                                    "isBucketed": true,
+                                                    "label": "Source IP",
+                                                    "operationType": "terms",
+                                                    "params": {
+                                                        "missingBucket": false,
+                                                        "orderBy": {
+                                                            "columnId": "4ed872b0-f56b-4d53-b5a6-82d6f177fadc",
+                                                            "type": "column"
+                                                        },
+                                                        "orderDirection": "desc",
+                                                        "otherBucket": true,
+                                                        "size": 5
+                                                    },
+                                                    "scale": "ordinal",
+                                                    "sourceField": "source.port"
+                                                }
+                                            },
+                                            "incompleteColumns": {}
+                                        }
+                                    }
+                                }
+                            },
+                            "filters": [],
+                            "query": {
+                                "language": "kuery",
+                                "query": "event.dataset : \"gcp.firewall\" "
+                            },
+                            "visualization": {
+                                "gridConfig": {
+                                    "isCellLabelVisible": false,
+                                    "isXAxisLabelVisible": true,
+                                    "isYAxisLabelVisible": true,
+                                    "type": "lens_heatmap_grid"
+                                },
+                                "layerId": "ced29d00-2d8b-43b9-bcc5-361f940b534c",
+                                "layerType": "data",
+                                "legend": {
+                                    "isVisible": true,
+                                    "maxLines": 1,
+                                    "position": "right",
+                                    "shouldTruncate": true,
+                                    "type": "lens_heatmap_legendConfig"
+                                },
+                                "palette": {
+                                    "accessor": "4ed872b0-f56b-4d53-b5a6-82d6f177fadc",
+                                    "name": "negative",
+                                    "params": {
+                                        "name": "negative",
+                                        "rangeMax": 80,
+                                        "rangeMin": 0,
+                                        "reverse": false,
+                                        "stops": [
+                                            {
+                                                "color": "#fbddd6",
+                                                "stop": 0
+                                            },
+                                            {
+                                                "color": "#f3bbaf",
+                                                "stop": 20
+                                            },
+                                            {
+                                                "color": "#e99a89",
+                                                "stop": 40
+                                            },
+                                            {
+                                                "color": "#db7965",
+                                                "stop": 60
+                                            },
+                                            {
+                                                "color": "#cc5642",
+                                                "stop": 80
+                                            }
+                                        ]
+                                    },
+                                    "type": "palette"
+                                },
+                                "shape": "heatmap",
+                                "title": "Empty Heatmap chart",
+                                "valueAccessor": "4ed872b0-f56b-4d53-b5a6-82d6f177fadc",
+                                "xAccessor": "3d150b77-0069-4770-8e55-38e152a4e97c",
+                                "yAccessor": "8aa7938e-eccd-4b41-8147-ac09a0ba4b1c"
+                            }
+                        },
+                        "title": "",
+                        "type": "lens",
+                        "visualizationType": "lnsHeatmap"
+                    },
+                    "enhancements": {},
+                    "hidePanelTitles": false,
+                    "type": "lens"
+                },
+                "gridData": {
+                    "h": 15,
+                    "i": "f5d8c4eb-716d-4286-9f82-4cff620b3b11",
+                    "w": 24,
+                    "x": 0,
+                    "y": 39
+                },
+                "panelIndex": "f5d8c4eb-716d-4286-9f82-4cff620b3b11",
+                "title": "Events between Ports",
+                "type": "lens",
+                "version": "8.1.0"
+            },
+            {
+                "embeddableConfig": {
+                    "attributes": {
+                        "references": [
+                            {
+                                "id": "logs-*",
+                                "name": "indexpattern-datasource-current-indexpattern",
+                                "type": "index-pattern"
+                            },
+                            {
+                                "id": "logs-*",
+                                "name": "indexpattern-datasource-layer-ced29d00-2d8b-43b9-bcc5-361f940b534c",
+                                "type": "index-pattern"
+                            }
+                        ],
+                        "state": {
+                            "datasourceStates": {
+                                "indexpattern": {
+                                    "layers": {
+                                        "ced29d00-2d8b-43b9-bcc5-361f940b534c": {
+                                            "columnOrder": [
+                                                "3d150b77-0069-4770-8e55-38e152a4e97c",
+                                                "8aa7938e-eccd-4b41-8147-ac09a0ba4b1c",
+                                                "4ed872b0-f56b-4d53-b5a6-82d6f177fadc"
+                                            ],
+                                            "columns": {
+                                                "3d150b77-0069-4770-8e55-38e152a4e97c": {
+                                                    "customLabel": true,
+                                                    "dataType": "string",
+                                                    "isBucketed": true,
+                                                    "label": "Destination IP",
+                                                    "operationType": "terms",
+                                                    "params": {
+                                                        "missingBucket": false,
+                                                        "orderBy": {
+                                                            "columnId": "4ed872b0-f56b-4d53-b5a6-82d6f177fadc",
+                                                            "type": "column"
+                                                        },
+                                                        "orderDirection": "desc",
+                                                        "otherBucket": true,
+                                                        "size": 5
+                                                    },
+                                                    "scale": "ordinal",
+                                                    "sourceField": "jsonPayload.connection.dest_ip"
+                                                },
+                                                "4ed872b0-f56b-4d53-b5a6-82d6f177fadc": {
+                                                    "customLabel": true,
+                                                    "dataType": "number",
+                                                    "isBucketed": false,
+                                                    "label": "Events",
+                                                    "operationType": "count",
+                                                    "params": {
+                                                        "format": {
+                                                            "id": "number",
+                                                            "params": {
+                                                                "decimals": 2
+                                                            }
+                                                        }
+                                                    },
+                                                    "scale": "ratio",
+                                                    "sourceField": "___records___"
+                                                },
+                                                "8aa7938e-eccd-4b41-8147-ac09a0ba4b1c": {
+                                                    "customLabel": true,
+                                                    "dataType": "string",
+                                                    "isBucketed": true,
+                                                    "label": "Source IP",
+                                                    "operationType": "terms",
+                                                    "params": {
+                                                        "missingBucket": false,
+                                                        "orderBy": {
+                                                            "columnId": "4ed872b0-f56b-4d53-b5a6-82d6f177fadc",
+                                                            "type": "column"
+                                                        },
+                                                        "orderDirection": "desc",
+                                                        "otherBucket": true,
+                                                        "size": 5
+                                                    },
+                                                    "scale": "ordinal",
+                                                    "sourceField": "jsonPayload.connection.src_ip"
+                                                }
+                                            },
+                                            "incompleteColumns": {}
+                                        }
+                                    }
+                                }
+                            },
+                            "filters": [],
+                            "query": {
+                                "language": "kuery",
+                                "query": "event.dataset : \"gcp.firewall\" "
+                            },
+                            "visualization": {
+                                "gridConfig": {
+                                    "isCellLabelVisible": false,
+                                    "isXAxisLabelVisible": true,
+                                    "isYAxisLabelVisible": true,
+                                    "type": "lens_heatmap_grid"
+                                },
+                                "layerId": "ced29d00-2d8b-43b9-bcc5-361f940b534c",
+                                "layerType": "data",
+                                "legend": {
+                                    "isVisible": true,
+                                    "maxLines": 1,
+                                    "position": "right",
+                                    "shouldTruncate": true,
+                                    "type": "lens_heatmap_legendConfig"
+                                },
+                                "palette": {
+                                    "accessor": "4ed872b0-f56b-4d53-b5a6-82d6f177fadc",
+                                    "name": "negative",
+                                    "params": {
+                                        "name": "negative",
+                                        "rangeMax": 80,
+                                        "rangeMin": 0,
+                                        "reverse": false,
+                                        "stops": [
+                                            {
+                                                "color": "#fbddd6",
+                                                "stop": 0
+                                            },
+                                            {
+                                                "color": "#f3bbaf",
+                                                "stop": 20
+                                            },
+                                            {
+                                                "color": "#e99a89",
+                                                "stop": 40
+                                            },
+                                            {
+                                                "color": "#db7965",
+                                                "stop": 60
+                                            },
+                                            {
+                                                "color": "#cc5642",
+                                                "stop": 80
+                                            }
+                                        ]
+                                    },
+                                    "type": "palette"
+                                },
+                                "shape": "heatmap",
+                                "title": "Empty Heatmap chart",
+                                "valueAccessor": "4ed872b0-f56b-4d53-b5a6-82d6f177fadc",
+                                "xAccessor": "3d150b77-0069-4770-8e55-38e152a4e97c",
+                                "yAccessor": "8aa7938e-eccd-4b41-8147-ac09a0ba4b1c"
+                            }
+                        },
+                        "title": "",
+                        "type": "lens",
+                        "visualizationType": "lnsHeatmap"
+                    },
+                    "enhancements": {},
+                    "hidePanelTitles": false,
+                    "type": "lens"
+                },
+                "gridData": {
+                    "h": 15,
+                    "i": "bfc4e50a-001c-4d8a-9074-8b1c969eabd5",
+                    "w": 24,
+                    "x": 24,
+                    "y": 39
+                },
+                "panelIndex": "bfc4e50a-001c-4d8a-9074-8b1c969eabd5",
+                "title": "Events between IPs",
+                "type": "lens",
+                "version": "8.1.0"
+            },
+            {
+                "embeddableConfig": {
+                    "enhancements": {},
+                    "hidePanelTitles": false
+                },
+                "gridData": {
+                    "h": 15,
+                    "i": "22766d2d-a930-4828-9db1-42f2b01c68f4",
+                    "w": 24,
+                    "x": 0,
+                    "y": 54
+                },
+                "panelIndex": "22766d2d-a930-4828-9db1-42f2b01c68f4",
+                "panelRefName": "panel_22766d2d-a930-4828-9db1-42f2b01c68f4",
+                "title": "[GCP] Sankey Source to Destination domain",
+                "type": "visualization",
+                "version": "7.17.0"
+            },
+            {
+                "embeddableConfig": {
+                    "enhancements": {},
+                    "hidePanelTitles": false
+                },
+                "gridData": {
+                    "h": 15,
+                    "i": "1579c9dd-5975-414f-aa31-20e2c1d153f1",
+                    "w": 24,
+                    "x": 24,
+                    "y": 54
+                },
+                "panelIndex": "1579c9dd-5975-414f-aa31-20e2c1d153f1",
+                "panelRefName": "panel_1579c9dd-5975-414f-aa31-20e2c1d153f1",
+                "title": "[GCP] Sankey Source to Destination VPC",
+                "type": "visualization",
+                "version": "7.17.0"
+            }
+        ],
+        "timeRestore": false,
+        "title": "[GCP] Firewall logs dashboard",
+        "version": 1
+    },
+    "coreMigrationVersion": "8.1.0",
+    "id": "gcp-d9469460-7569-11ec-adfa-5dd9fdfc6ea6",
+    "migrationVersion": {
+        "dashboard": "8.1.0"
+    },
+    "references": [
+        {
+            "id": "gcp-cb815d90-cb83-11ec-a68b-dd96b1de2ab2",
+            "name": "c366088f-c045-4d28-b7e1-67cf212f0a24:panel_c366088f-c045-4d28-b7e1-67cf212f0a24",
+            "type": "visualization"
+        },
+        {
+            "id": "logs-*",
+            "name": "77c85299-e3b8-4338-9113-a3b56ba741c7:indexpattern-datasource-current-indexpattern",
+            "type": "index-pattern"
+        },
+        {
+            "id": "logs-*",
+            "name": "77c85299-e3b8-4338-9113-a3b56ba741c7:indexpattern-datasource-layer-3a32ec4e-e826-4732-a33c-af6e11d7218e",
+            "type": "index-pattern"
+        },
+        {
+            "id": "logs-*",
+            "name": "0fc7a288-d3c6-4f18-8d0e-ca3c0f66aeb6:indexpattern-datasource-current-indexpattern",
+            "type": "index-pattern"
+        },
+        {
+            "id": "logs-*",
+            "name": "0fc7a288-d3c6-4f18-8d0e-ca3c0f66aeb6:indexpattern-datasource-layer-2f350b92-4c75-4171-887e-1787cc418027",
+            "type": "index-pattern"
+        },
+        {
+            "id": "logs-*",
+            "name": "fe15fb67-185b-426d-a575-86a6570e9b39:indexpattern-datasource-current-indexpattern",
+            "type": "index-pattern"
+        },
+        {
+            "id": "logs-*",
+            "name": "fe15fb67-185b-426d-a575-86a6570e9b39:indexpattern-datasource-layer-654ef7b2-0b28-4fc9-82a4-95e925db36a6",
+            "type": "index-pattern"
+        },
+        {
+            "id": "logs-*",
+            "name": "5e11178e-7303-48dc-8549-73e80f5c9b2c:indexpattern-datasource-current-indexpattern",
+            "type": "index-pattern"
+        },
+        {
+            "id": "logs-*",
+            "name": "5e11178e-7303-48dc-8549-73e80f5c9b2c:indexpattern-datasource-layer-1f9dacfe-adbe-4312-8752-e6ef33190614",
+            "type": "index-pattern"
+        },
+        {
+            "id": "logs-*",
+            "name": "735c4030-d5b3-459c-9000-427ca5cb9d70:indexpattern-datasource-current-indexpattern",
+            "type": "index-pattern"
+        },
+        {
+            "id": "logs-*",
+            "name": "735c4030-d5b3-459c-9000-427ca5cb9d70:indexpattern-datasource-layer-9c02e90f-5fb4-4c58-9c74-bf76f2b246fc",
+            "type": "index-pattern"
+        },
+        {
+            "id": "logs-*",
+            "name": "b8028d6f-bf4e-43a0-b19a-65047c757821:indexpattern-datasource-current-indexpattern",
+            "type": "index-pattern"
+        },
+        {
+            "id": "logs-*",
+            "name": "b8028d6f-bf4e-43a0-b19a-65047c757821:indexpattern-datasource-layer-49f72f3e-4ec2-418f-8183-30f7ca58c8e7",
+            "type": "index-pattern"
+        },
+        {
+            "id": "logs-*",
+            "name": "63b2dd96-9ce1-43cc-add3-7bc34ff4b296:indexpattern-datasource-current-indexpattern",
+            "type": "index-pattern"
+        },
+        {
+            "id": "logs-*",
+            "name": "63b2dd96-9ce1-43cc-add3-7bc34ff4b296:indexpattern-datasource-layer-942bb851-a16a-4422-afaf-8521bb72644f",
+            "type": "index-pattern"
+        },
+        {
+            "id": "logs-*",
+            "name": "e9a02bc3-c20c-4a38-8c75-2db4923c60a3:indexpattern-datasource-current-indexpattern",
+            "type": "index-pattern"
+        },
+        {
+            "id": "logs-*",
+            "name": "e9a02bc3-c20c-4a38-8c75-2db4923c60a3:indexpattern-datasource-layer-609d8521-e339-49d2-8564-713fd932c285",
+            "type": "index-pattern"
+        },
+        {
+            "id": "logs-*",
+            "name": "c704818b-a568-4142-92f0-3ff09f0fb8e6:indexpattern-datasource-current-indexpattern",
+            "type": "index-pattern"
+        },
+        {
+            "id": "logs-*",
+            "name": "c704818b-a568-4142-92f0-3ff09f0fb8e6:indexpattern-datasource-layer-1559a734-d79f-47af-95f1-0278d058a38c",
+            "type": "index-pattern"
+        },
+        {
+            "id": "logs-*",
+            "name": "f5d8c4eb-716d-4286-9f82-4cff620b3b11:indexpattern-datasource-current-indexpattern",
+            "type": "index-pattern"
+        },
+        {
+            "id": "logs-*",
+            "name": "f5d8c4eb-716d-4286-9f82-4cff620b3b11:indexpattern-datasource-layer-ced29d00-2d8b-43b9-bcc5-361f940b534c",
+            "type": "index-pattern"
+        },
+        {
+            "id": "logs-*",
+            "name": "bfc4e50a-001c-4d8a-9074-8b1c969eabd5:indexpattern-datasource-current-indexpattern",
+            "type": "index-pattern"
+        },
+        {
+            "id": "logs-*",
+            "name": "bfc4e50a-001c-4d8a-9074-8b1c969eabd5:indexpattern-datasource-layer-ced29d00-2d8b-43b9-bcc5-361f940b534c",
+            "type": "index-pattern"
+        },
+        {
+            "id": "gcp-4727d5b0-cb83-11ec-a68b-dd96b1de2ab2",
+            "name": "22766d2d-a930-4828-9db1-42f2b01c68f4:panel_22766d2d-a930-4828-9db1-42f2b01c68f4",
+            "type": "visualization"
+        },
+        {
+            "id": "gcp-a3a5ecb0-cb82-11ec-a68b-dd96b1de2ab2",
+            "name": "1579c9dd-5975-414f-aa31-20e2c1d153f1:panel_1579c9dd-5975-414f-aa31-20e2c1d153f1",
+            "type": "visualization"
+        },
+        {
+            "id": "gcp-c6b63650-7462-11ec-adfa-5dd9fdfc6ea6",
+            "name": "tag-c6b63650-7462-11ec-adfa-5dd9fdfc6ea6",
+            "type": "tag"
+        }
+    ],
+    "type": "dashboard"
+}
