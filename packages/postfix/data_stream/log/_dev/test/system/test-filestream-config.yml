@@ -1,0 +1,8 @@
+service: postfix
+input: filestream
+data_stream:
+  vars:
+    paths:
+      - "{{SERVICE_LOGS_DIR}}/postfix.log"
+    preserve_original_event: true
+    tz_offset: -04:00

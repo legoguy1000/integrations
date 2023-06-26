@@ -1,0 +1,26 @@
+- name: postfix
+  type: group
+  fields:
+    - name: queueid
+      type: keyword
+      description: |
+        Queue ID of the message within the Postfix Server
+    - name: version
+      type: keyword
+      description: |
+        Version of Postfix Server
+    - name: bounce_queueid
+      type: keyword
+      description: |
+        Queue ID of the message that was bounced
+    - name: dnsbl
+      type: group
+      fields:
+        - name: domain
+          type: keyword
+          description: |
+            Blacklist domain
+        - name: result
+          type: ip
+          description: |
+            Blacklist IP

@@ -1,0 +1,8 @@
+version: '3.0'
+services:
+  postfix:
+    image: alpine
+    volumes:
+      - ./files:/sample_logs:ro
+      - ${SERVICE_LOGS_DIR}:/var/log
+    command: /bin/sh -c "cp /sample_logs/*.log /var/log/"

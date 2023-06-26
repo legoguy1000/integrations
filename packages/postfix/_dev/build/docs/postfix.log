@@ -1,0 +1,152 @@
+Oct 24 15:18:09 server postfix/cleanup[30021]: warning: request to update table btree:/var/spool/postfix/smtpd_scache in non-postfix directory /var/spool/postfix
+Oct 24 15:18:09 server postfix/cleanup[30021]: ADD961003206D: message-id==?UTF-8?B?PDE5?=? =?UTF-8?B?MTIyMDExMjkxNjYxMUBDbGllbnQtMDQ1LnJ1YmluZXR0ZXJpZS5sb2NhbD4=?=
+Oct 24 15:18:09 server postfix/cleanup[30021]: COMMAND LENGTH LIMIT from [67.43.156.18]:51796 after RCPT
+Oct 24 15:18:09 server postfix/cleanup[30021]: B0ADE20FC7: enabling PIX workarounds: disable_esmtp delay_dotcrlf for example.com[67.43.156.18]:25
+Oct 24 15:18:09 server postfix/cleanup[30021]: 0F5383D: removed
+Oct 24 15:18:09 server postfix/cleanup[30021]: 17CCA8044: sender n
+on-delivery notification: ADD2F8052
+Oct 24 15:18:09 server postfix/cleanup[30021]: PASS OLD [2A02:CF40:0:1::3]:52237
+Oct 24 15:18:09 server postfix/cleanup[30021]: NOQUEUE: reject: RCPT from news.zihan-promo.com[175.16.199.90]: 554 5.7.1 Service unavailable; Helo command [news.zihan-promo.com] blocked using dbl.spamhaus.org; http://www.spamhaus.org/query/dbl?domain=zihan-promo.com; from=<mark.alexander@zihan-promo.com> to=<tom@example.com> proto=ESMTP helo=<news.zihan-promo.com>
+Oct 24 15:18:09 server postfix/cleanup[30021]: 2DC5552A34: to=<user@yahoo.com>, relay=none, delay=63495, delays=63350/144/0/0, dsn=4.4.2, status=deferred (delivery temporarily suspended: lost connection with mta7.am0.yahoodns.net[98.136.216.22] while sending RCPT TO)
+Oct 24 15:18:09 server postfix/cleanup[30021]: Released from hold: 13 messages
+Oct 24 15:18:09 server postfix/cleanup[30021]: 2F6C83D: to=<user@example.org>, relay=dovecot, delay=5.1, delays=4.4/0.02/0/0.61, dsn=5.1.1, status=bounced (user unknown)
+Oct 24 15:18:09 server postfix/cleanup[30021]: NOQUEUE: reject: CONNECT from [67.43.156.18]:1337: too many connections
+Oct 24 15:18:09 server postfix/cleanup[30021]: 892A0205B6: to=ghdsgfhdslfh@localhost, relay=local, delay=0.05, delays=0.02/0/0/0.02, dsn=5.1.1, status=bounced (unknown user: "ghdsgfhdslfh")
+Oct 24 15:18:09 server postfix/cleanup[30021]: connect to intern.nl[1.128.15.15]:25: Connection timed out
+Oct 24 15:18:09 server postfix/cleanup[30021]: PASS NEW [2A02:CF40:4003:c01::23a]:36051
+Oct 24 15:18:09 server postfix/cleanup[30021]: ED59C3D: host mail2.example.com[67.43.156.18] said: 450 4.7.1 <user@example.com>: Recipient address rejected: Greylisted for 5 minutes (in reply to RCPT TO command)
+Oct 24 15:18:09 server postfix/cleanup[30021]: cache btree:/var/lib/postfix-in/postscreen_cache full cleanup: retained=242 dropped=7 entries
+Oct 24 15:18:09 server postfix/cleanup[30021]: NOQUEUE: reject: RCPT from 061238241086.static.ctinets.com[1.128.114.120]: 550 5.1.1 <toernooicommissie@example.com>: Recipient address rejected: User unknown in virtual mailbox table; from=<wumt5@cchfdc.com> to=<toernooicommissie@example.com> proto=ESMTP helo=<ecsolved.com>
+Oct 24 15:18:09 server postfix/cleanup[30021]: 2A22C263F6: to=user@hostname.example.com, orig_to=root@localhost, relay=local, delay=0.07, delays=0.04/0/0/0.03, dsn=2.0.0, status=sent (delivered to command: procmail -a "$EXTENSION")
+Oct 24 15:18:09 server postfix/cleanup[30021]: COMMAND TIME LIMIT from [67.43.156.18]:51799 after HELO
+Oct 24 15:18:09 server postfix/cleanup[30021]: warning: process /usr/local/libexec/postfix/smtpd pid 46234 killed by signal 11
+Oct 24 15:18:09 server postfix/cleanup[30021]: NOQUEUE: reject: VRFY from unknown[2A02:CF40:9999:20:88b:9b7d:2a54:2bd2]: 550 5.1.1 <does-not-exist@example.com>: Recipient address rejected: User unknown in virtual mailbox table; to=<does-not-exist@example.com> proto=SMTP helo=<me>
+Oct 24 15:18:09 server postfix/cleanup[30021]: NOQUEUE: filter: RCPT from unknown[1.128.114.120]: <mail@sender.com>: Sender address triggers FILTER smtp-amavis:[127.0.0.1]:10024; from=<mail@sender.com> to=<user@domain.com> proto=ESMTP helo=<plutoapp.biz>
+Oct 24 15:18:09 server postfix/cleanup[30021]: COMMAND TIME LIMIT from [67.43.156.18]:51799 after MAIL
+Oct 24 15:18:09 server postfix/cleanup[30021]: certificate verification failed for mail.example.com[89.160.20.127]:25: self-signed certificate.
+Oct 24 15:18:09 server postfix/cleanup[30021]: AD6E41CDC05C: to=<admin@example.com>, relay=sub1.example.com[private/dovecot-lmtp], delay=0.15, delays=0.04/0/0.02/0.08, dsn=2.0.0, status=sent (250 2.0.0 <admin@example.com> qYyyBMsl9FRuZQAAA15QOA Saved)
+Oct 24 15:18:09 server postfix/cleanup[30021]: statistics: max connection count 1 for (127.0.0.1:2525:127.0.0.1) at Oct 26 19:46:00
+Oct 24 15:18:09 server postfix/cleanup[30021]: Deleted: 115 messages
+Oct 24 15:18:09 server postfix/cleanup[30021]: D8B07E3DB6: warning: header Subject: https://drive.google.com/file/d/0B8wxcvprDYVdlVsdf1kzOVkdisarmed/view?usp=sharing from o1678917x173.outbound-mail.sendgrid.net[167.89.17.173]; from=<bounces+2320708-7653-frank.test=hsdjasdd.co.uk@sendgrid.net> to=<frank.test@hsdjasdd.co.uk> proto=ESMTP helo=<o1678917x173.outbound-mail.sendgrid.net>
+Oct 24 15:18:09 server postfix/cleanup[30021]: connect to aspmx.l.google.com[2a02:cf40:0:10:0:1::]:25: Network is unreachable
+Oct 24 15:18:09 server postfix/cleanup[30021]: Verified TLS connection established to mail.sys4.de[2a02:cf40:0:10:0:1::]:25: TLSv1 with cipher ECDHE-RSA-AES256-SHA (256/256 bits)
+Oct 24 15:18:09 server postfix/cleanup[30021]: NOQUEUE: reject: RCPT from [175.16.199.90]:4984: 550 5.7.1 Service unavailable; client [175.16.199.90] blocked using zen.spamhaus.org; from=<hcdvbnm@qhhn.com>, to=<4ECEA00F.9040306@example.com>, proto=ESMTP, helo=<qhhn.com>
+Oct 24 15:18:09 server postfix/cleanup[30021]: PREGREET 6 after 1.2 from [175.16.199.90]:43421: RSET
+Oct 24 15:18:09 server postfix/cleanup[30021]: 264FE1A18: sender delay notification: 0A87A1A08
+Oct 24 15:18:09 server postfix/cleanup[30021]: NOQUEUE: reject_warning: RCPT from example.com[67.43.156.18]: 553 5.7.1 <sender@example.com>: Sender address rejected: not owned by user ph123; from=<sender@example.com> to=<recipient@example.com> proto=ESMTP helo=<example.com>
+Oct 24 15:18:09 server postfix/cleanup[30021]: reload -- version 2.11.0, configuration /etc/postfix
+Oct 24 15:18:09 server postfix/cleanup[30021]: 0D9633D: to=<jos@example.com>, orig_to=<bestuur@example.com>, relay=mail1.example.net[10.74.103.11]:25, delay=11, delays=5.4/0.06/5.1/0.03, dsn=2.0.0, status=sent (250 2.0.0 Ok: queued as F12DF84004)
+Oct 24 15:18:09 server postfix/cleanup[30021]: 246884008A: message-id==?utf-8?B?PDIwMjAwNjEzXzE0MzE1Ml8xMDcyZjVhZDdlZjU0M2Q0OWQ0?=? =?utf-8?B?NzQxOGVkM2YyOGFjOEBuZXdzLWFpZ2xlLmNvbQ0KPg==?=
+Oct 24 15:18:09 server postfix/cleanup[30021]: 644D53D: host gmail-smtp-in.l.google.com[1.128.15.15] said: 421-4.7.0 [67.43.156.18      15] Our system has detected an unusual rate of 421-4.7.0 unsolicited mail originating from your IP address. To protect our 421-4.7.0 users from spam, mail sent from your IP address has been temporarily 421-4.7.0 rate limited. Please visit 421-4.7.0  https://support.google.com/mail/answer/81126 to review our Bulk Email 421 4.7.0 Senders Guidelines. bv15si15610322wjb.142 - gsmtp (in reply to end of DATA command)
+Oct 24 15:18:09 server postfix/cleanup[30021]: DNSBL rank 3 for [67.43.156.18]:1038
+Oct 24 15:18:09 server postfix/cleanup[30021]: statistics: start interval Dec  6 21:20:35
+Oct 24 15:18:09 server postfix/cleanup[30021]: D4F2023DB: requeued
+Oct 24 15:18:09 server postfix/cleanup[30021]: lost connection after STARTTLS from unknown[1.128.114.120]
+Oct 24 15:18:09 server postfix/cleanup[30021]: COMMAND PIPELINING from [1.128.114.120]:42606 after .: 
+Oct 24 15:18:09 server postfix/cleanup[30021]: B657F2DB195D: to=<postmaster@example.com>, relay=virtual, delay=0.52, delays=0.51/0.01/0/0, dsn=2.0.0, status=sent (delivered to maildir)
+Oct 24 15:18:09 server postfix/cleanup[30021]: 413E164734: info: header Content-Disposition: attachment;? filename="=?UTF-8?B?SU5WT0lDRV/Dtl/DpF/DvF/igqxfZGhrZmpzX2pkb2ZrYWpzbGRrZmpfbHNq?= =?UTF-8?B?ZGFsa2ZqaF9hZGprZnNhaGZkamtfR3LDvMOfZV9paGtmaHNha2pfZGZhaHNf?= =?UTF-8?B? from localhost[127.0.0.1]; from=<from@example.com> to=<to@example.com> proto=ESMTP helo=<localhost.localdomain>
+Oct 24 15:18:09 server postfix/cleanup[30021]: DISCONNECT [175.16.199.90]:43421
+Oct 24 15:18:09 server postfix/cleanup[30021]: NOQUEUE: reject: VRFY from unknown[2A02:CF40:9999:20:88b:9b7d:2a54:2bd2]: 454 4.7.1 <aap@henk.com>: Relay access denied; to=<aap@henk.com> proto=SMTP helo=<me>
+Oct 24 15:18:09 server postfix/cleanup[30021]: 48rT2v1hQrz1J0N: prepend: header X-Spam-Status: Yes, score=45.1 required=10.0 tests=ADVANCE_FE from mx2.example.org[175.16.199.90]; from=<SRS0=1sN3=5P=example.org=noreply@srs.example.org> to=<recipient@example.net> proto=ESMTP helo=<mx2.example.org>: X-Spam-Status: Yes
+Oct 24 15:18:09 server postfix/cleanup[30021]: WHITELISTED [1.128.114.120]:53024
+Oct 24 15:18:09 server postfix/cleanup[30021]: statistics: max cache size 1 at Oct 26 18:13:50
+Oct 24 15:18:09 server postfix/cleanup[30021]: statistics: max connection rate 1/60s for (127.0.0.1:2525:127.0.0.1) at Oct 26 18:13:50
+Oct 24 15:18:09 server postfix/cleanup[30021]: warning: bounce_queue_lifetime is larger than maximal_queue_lifetime - adjusting bounce_queue_lifetime
+Oct 24 15:18:09 server postfix/cleanup[30021]: lost connection after DATA (7774180 bytes) from unknown[1.128.114.120]
+Oct 24 15:18:09 server postfix/cleanup[30021]: D4F2023DB: released from hold
+Oct 24 15:18:09 server postfix/cleanup[30021]: 0F5383D: message-id=<544D2523.30609@rhsoft.net>
+Oct 24 15:18:09 server postfix/cleanup[30021]: D95341E50350: info: header Subject: =?utf-8?Q?Gr=C3=BC=C3=9Fe?= =?utf-8?Q?_=E2=80=92?= test from local; from=<from@example.com> to=<to@example.com>
+Oct 24 15:18:09 server postfix/cleanup[30021]: 153053D: to=<tom@example.com>, orig_to=<admin@example.com>, relay=dovecot, delay=3.4, delays=3.3/0.03/0/0.12, dsn=2.0.0, status=sent (delivered via dovecot service)
+Oct 24 15:18:09 server postfix/cleanup[30021]: Trusted TLS connection established to gmail-smtp-in.l.google.com[1.128.15.15]:25: TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits)
+Oct 24 15:18:09 server postfix/cleanup[30021]: fatal: root(0): message file too big
+Oct 24 15:18:09 server postfix/cleanup[30021]: statistics: max simultaneous domains=1 addresses=1 connection=1
+Oct 24 15:18:09 server postfix/cleanup[30021]: COMMAND TIME LIMIT from [67.43.156.18]:51799 after CONNECT
+Oct 24 15:18:09 server postfix/cleanup[30021]: SSL_accept error from ssl-tools.net[175.16.199.90]: -1
+Oct 24 15:18:09 server postfix/cleanup[30021]: certificate verification failed for mail.example.com[89.160.20.127]:25: untrusted issuer /C=de/L=XXX/O=XXX GmbH/CN=XX XX XXX CA/emailAddress=XX@XX
+Oct 24 15:18:09 server postfix/cleanup[30021]: SSL_connect error to mail.example.org[175.16.199.6]:25: -1
+Oct 24 15:18:09 server postfix/cleanup[30021]: NOQUEUE: discard: MAIL from ccm231.constantcontact.com[175.16.199.90]: <bsdbdsfbw==_4343_sdfbddw==@in.constantcontact.com>: Sender address SPAM; from=<bsdbdsfbw==_4343_sdfbddw==@in.constantcontact.com> proto=ESMTP helo=<ccm231.constantcontact.com>
+Oct 24 15:18:09 server postfix/cleanup[30021]: NOQUEUE: reject: CONNECT from [175.16.199.90]:1337: all server ports busy
+Oct 24 15:18:09 server postfix/cleanup[30021]: 7EE668039: to=<admin@example.com>, relay=127.0.0.1[127.0.0.1]:2525, delay=3.6, delays=0.2/0.02/0.04/3.3, dsn=2.0.0, status=sent (250 2.0.0 Ok: queued as 153053D)
+Oct 24 15:18:09 server postfix/cleanup[30021]: lost connection after RSET from unknown[1.128.114.120]
+Oct 24 15:18:09 server postfix/cleanup[30021]: WHITELIST VETO [1.128.114.120]:53024
+Oct 24 15:18:09 server postfix/cleanup[30021]: 66C15648577B: from=<uvnhbl@yahoo.com.tw>, status=expired, returned to sender
+Oct 24 15:18:09 server postfix/cleanup[30021]: NOQUEUE: reject: RCPT from [67.43.156.18]:2413: 550 5.5.1 Protocol error; from=<lvtowxfdp@yahoo.com>, to=<tom@example.com>, proto=SMTP, helo=<mx32.usaindiamunish.net>
+Oct 24 15:18:09 server postfix/cleanup[30021]: 0F5383D: from=<owner-postfix-users@postfix.org>, size=5360, nrcpt=1 (queue active)
+Oct 24 15:18:09 server postfix/cleanup[30021]: 78D6B41: conversation with mx00.gmx.com[67.43.156.18] timed out while receiving the initial server greeting
+Oct 24 15:18:09 server postfix/cleanup[30021]: SSL_accept error from eu-smtp-delivery-201.mimecast.com[175.16.199.90]: 0
+Oct 24 15:18:09 server postfix/cleanup[30021]: NOQUEUE: reject: RCPT from 061238241086.static.ctinets.com[1.128.114.120]: 550 5.12.345 <user@example.com>: Recipient address rejected: Some error message; from=<wumt5@cchfdc.com> to=<user@example.com> proto=ESMTP helo=<ecsolved.com>
+Oct 24 15:18:09 server postfix/cleanup[30021]: addr 2A02:CF40:4003:c01::23a listed by domain list.dnswl.org as 127.0.5.1
+Oct 24 15:18:09 server postfix/cleanup[30021]: 4104E3D: message-id=<>
+Oct 24 15:18:09 server postfix/cleanup[30021]: statistics: max connection count 1 for (smtpd:1.128.114.120) at Oct 26 18:13:50
+Oct 24 15:18:09 server postfix/cleanup[30021]: NOQUEUE: reject: RCPT from unknown[2A02:CF40:cfb1:1:82f:f74e:a45c:3033]: 504 5.5.2 <aap@henk>: Sender address rejected: need fully-qualified address; from=<aap@henk> to=<user@example.com> proto=SMTP helo=<test>
+Oct 24 15:18:09 server postfix/cleanup[30021]: BARE NEWLINE from [1.128.114.120]:42606 after .
+Oct 24 15:18:09 server postfix/cleanup[30021]: 3E29030F8637E: to=<user@yahoo.com>, relay=none, delay=0.01, delays=0.01/0/0/0, dsn=5.1.1, status=undeliverable-but-not-cached (User unknown in virtual alias table)
+Oct 24 15:18:09 server postfix/cleanup[30021]: proxy-reject: END-OF-MESSAGE: ; from=<user1@test.example.com> to=<user2@example2.com> proto=ESMTP helo=<[192.168.0.16]>
+Oct 24 15:18:09 server postfix/cleanup[30021]: warning: problem talking to service private/scache: Connection timed out
+Oct 24 15:18:09 server postfix/cleanup[30021]: 7EE668039: to=<admin@example.com>, relay=127.0.0.1[127.0.0.1]:2525, delay=3.6, delays=0.2/0.02/0.04/3.3, dsn=2.0.0, status=sent (250 2.0.0 Ok: queued as 153053D)
+Oct 24 15:18:09 server postfix/cleanup[30021]: statistics: domain lookup hits=0 miss=1 success=0%
+Oct 24 15:18:09 server postfix/cleanup[30021]: disconnect from unknown[1.128.114.120] ehlo=2 starttls=1 mail=1 rcpt=0/1 data=0/1 quit=1 commands=5/7
+Oct 24 15:18:09 server postfix/cleanup[30021]: D2FAE20586: uid=0 from=<fail2ban>
+Oct 24 15:18:09 server postfix/cleanup[30021]: statistics: max connection rate 1/60s for (smtpd:2A02:CF40:0:1::3) at Oct 26 17:46:59
+Oct 24 15:18:09 server postfix/cleanup[30021]: B99FE3D: lost connection with mx3.hotmail.com[67.43.156.18] while receiving the initial server greeting
+Oct 24 15:18:09 server postfix/cleanup[30021]: 25F2E5E061: to=<george.desantis@test.example.com>, relay=none, delay=0.05, delays=0.05/0/0/0, dsn=2.0.0, status=sent (test.example.com)
+Oct 24 15:18:09 server postfix/cleanup[30021]: proxy-reject: END-OF-MESSAGE: 554 5.7.0 Reject, contact postmaster@example.com, id=31619-02 - spam; from=<> to=<user2@example2.com> proto=SMTP helo=<17.33.12.53>
+Oct 24 15:18:09 server postfix/cleanup[30021]: timeout after END-OF-MESSAGE from unknown[1.128.114.120]
+Oct 24 15:18:09 server postfix/cleanup[30021]: DISCONNECT [1.128.114.120]:51637
+Oct 24 15:18:09 server postfix/cleanup[30021]: PASS OLD [1.128.114.120]:53024
+Oct 24 15:18:09 server postfix/cleanup[30021]: HANGUP after 0 from [1.128.114.120]:54017 in tests before SMTP handshake
+Oct 24 15:18:09 server postfix/cleanup[30021]: warning: virtual_alias_domains lookup failure
+Oct 24 15:18:09 server postfix/cleanup[30021]: CONNECT from [1.128.114.120]:53024 to [89.160.20.130]:25
+Oct 24 15:18:09 server postfix/cleanup[30021]: Requeued: 1 message
+Oct 24 15:18:09 server postfix/cleanup[30021]: HANGUP after 63 from [67.43.156.18]:1038 in tests after SMTP handshake
+Oct 24 15:18:09 server postfix/cleanup[30021]: lost connection after DATA (0 bytes) from unknown[1.128.114.120]
+Oct 24 15:18:09 server postfix/cleanup[30021]: NON-SMTP COMMAND from [1.128.114.120]:45284 after CONNECT: GET http://ipv4scan.com/hello/check.txt HTTP/1.1
+Oct 24 15:18:09 server postfix/cleanup[30021]: SSL_accept error from unknown[1.128.114.120]: lost connection
+Oct 24 15:18:09 server postfix/cleanup[30021]: 4104E3D: milter-reject: END-OF-MESSAGE from 061238241086.static.ctinets.com[1.128.114.120]: 5.7.1 Blocked by SpamAssassin; from=<wumt5@cchfdc.com> to=<voorzitter@example.com> proto=ESMTP helo=<ecsolved.com>
+Oct 24 15:18:09 server postfix/cleanup[30021]: Placed on hold: 67 messages
+Oct 24 15:18:09 server postfix/cleanup[30021]: statistics: address lookup hits=0 miss=1 success=0%
+Oct 24 15:18:09 server postfix/cleanup[30021]: warning: symlink leaves directory: /etc/postfix/./makedefs.out
+Oct 24 15:18:09 server postfix/cleanup[30021]: terminating on signal 15
+Oct 24 15:18:09 server postfix/cleanup[30021]: COMMAND TIME LIMIT from [67.43.156.18]:51796 after RCPT
+Oct 24 15:18:09 server postfix/cleanup[30021]: timeout after CONNECT from unknown[67.43.156.18]
+Oct 24 15:18:09 server postfix/cleanup[30021]: warning: hostname exemple.com does not resolve to address 185.14.29.32
+Oct 24 15:18:09 server postfix/cleanup[30021]: daemon started -- version 2.11.0, configuration /etc/postfix
+Oct 24 15:18:09 server postfix/cleanup[30021]: 1234ABCDEF: host relay.example.com[67.43.156.18] said: 450 4.1.8 root@localhost.localdomain: Sender address rejected: Domain not found (in reply to RCPT TO command)
+Oct 24 15:18:09 server postfix/cleanup[30021]: warning: getpeername: Transport endpoint is not connected -- dropping this connection
+Oct 24 15:18:09 server postfix/cleanup[30021]: warning: dict_nis_init: NIS domain name not set - NIS lookups disabled
+Oct 24 15:18:09 server postfix/cleanup[30021]: warning: dnsblog_query: lookup error for DNS query 198.204.82.110.list.dnswl.org: Host or domain name not found. Name service error for name=198.204.82.110.list.dnswl.org type=A: Host not found, try again
+Oct 24 15:18:09 server postfix/cleanup[30021]: D4F2023DB: removed
+Oct 24 15:18:09 server postfix/cleanup[30021]: proxy-accept: END-OF-MESSAGE: 250 2.0.0 from MTA(smtp:[127.0.0.1]:10013): 250 2.0.0 Ok: queued as DF66E940333; from=<user1@test.example.com> to=<user2@example2.com> proto=ESMTP helo=<[127.0.0.1]>
+Oct 24 15:18:09 server postfix/cleanup[30021]: Untrusted TLS connection established to mx4.hotmail.com[1.128.15.15]:25: TLSv1.2 with cipher ECDHE-RSA-AES256-SHA384 (256/256 bits)
+Oct 24 15:18:09 server postfix/cleanup[30021]: connect from 061238241086.static.ctinets.com[1.128.114.120]
+Oct 24 15:18:09 server postfix/cleanup[30021]: statistics: max connection rate 1/60s for (smtpd:1.128.114.120) at Oct 26 18:13:50
+Oct 24 15:18:09 server postfix/cleanup[30021]: 585BC3F: from=<>, status=expired, returned to sender
+Oct 24 15:18:09 server postfix/cleanup[30021]: COMMAND TIME LIMIT from [67.43.156.18]:51799 after EHLO
+Oct 24 15:18:09 server postfix/cleanup[30021]: 4E74613FE76: to=<redacted@gmail.com>, relay=gmail-smtp-in.l.google.com[2A02:CF40:400e:c04::1b]:25, delay=1.9, delays=0.05/0/1.1/0.71, dsn=5.7.1, status=bounced (host gmail-smtp-in.l.google.com[2A02:CF40:400e:c04::1b] said: 550-5.7.1 [2A02:CF40:3:25:100::2      12] Our system has detected that this 550-5.7.1 message is likely unsolicited mail. To reduce the amount of spam sent 550-5.7.1 to Gmail, this message has been blocked. Please visit 550-5.7.1 http://support.google.com/mail/bin/answer.py?hl=en&answer=188131 for 550 5.7.1 more information. qc12si8475009pab.211 - gsmtp (in reply to end of DATA command))
+Oct 24 15:18:09 server postfix/cleanup[30021]: BLACKLISTED [1.128.114.120]:53024
+Oct 24 15:18:09 server postfix/cleanup[30021]: A0E85200BD: to=<whatever-user@lists.example.org>, relay=open.example.nl[10.49.140.10]:25, delay=2.3, delays=0.25/0.05/2/0.04, dsn=4.2.0, status=deferred (host open.example.nl[10.49.140.10] said: 450 4.2.0 <whatever-user@lists.example.org>: Recipient address rejected: Greylisted, see http://postgrey.schweikert.ch/help/lists.example.org.html (in reply to RCPT TO command))
+Oct 24 15:18:09 server postfix/cleanup[30021]: 4104E3D: milter-header-redirect: header X-Spam-Status: Yes, score=39.3 required=5.0 tests=ADVANCE_FE from 061238241086.static.ctinets.com[1.128.114.120]; from=<wumt5@cchfdc.com> to=<voorzitter@example.com> proto=ESMTP helo=<ecsolved.com>: tom@example.com
+Oct 24 15:18:09 server postfix/cleanup[30021]: warning: /etc/postfix/conf.d/users.db: duplicate entry: "xxx@yyy.com"
+Oct 24 15:18:09 server postfix/cleanup[30021]: warning: dict_ldap_get_values[1]: DN uid=mguiraud,ou=people,dc=neotion,dc=com not found, skipping 
+Oct 24 15:18:09 server postfix/cleanup[30021]: CONNECT from [1.128.114.120]:51637
+Oct 24 15:18:09 server postfix/cleanup[30021]: Untrusted TLS connection established to 127.0.0.1[127.0.0.1]:2525: TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits)
+Oct 24 15:18:09 server postfix/cleanup[30021]: D4F2023DB: placed on hold
+Oct 24 15:18:09 server postfix/cleanup[30021]: SSL_accept error from unknown[1.128.114.120]: Connection timed out
+Oct 24 15:18:09 server postfix/cleanup[30021]: Anonymous TLS connection established from julie.example.com[10.163.89.202]: TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits)
+Oct 24 15:18:09 server postfix/cleanup[30021]: statistics: max connection count 1 for (smtpd:2A02:CF40:0:1::3) at Oct 26 17:46:59
+Oct 24 15:18:09 server postfix/cleanup[30021]: warning: ec2-3-84-57-208.compute-1.amazonaws.com[175.16.199.90]: SASL LOGIN authentication failed: UGFzc3dvcmQ6
+Oct 24 15:18:09 server postfix/cleanup[30021]: SSL_connect error to mail.example.org[175.16.199.6]:25: lost connection
+Oct 24 15:18:09 server postfix/cleanup[30021]: COMMAND TIME LIMIT from [67.43.156.18]:51799 after AUTH
+Oct 24 15:18:09 server postfix/cleanup[30021]: 65AFB8B5: sender delivery status notification: 1DF35917
+Oct 24 15:18:09 server postfix/cleanup[30021]: 4104E3D: client=061238241086.static.ctinets.com[1.128.114.120]
+Oct 24 15:18:09 server postfix/cleanup[30021]: addr 1.128.114.120 listed by domain psbl.surriel.com as 127.0.0.2
+Oct 24 15:18:09 server postfix/cleanup[30021]: D0F29603B4: SASL authentication failed; server xyz.example.com[67.43.156.18] said: 535 5.7.8 Error: authentication failed: authentication failure
+Oct 24 15:18:09 server postfix/cleanup[30021]: COMMAND COUNT LIMIT from [67.43.156.18]:51796 after RCPT
+Oct 24 15:18:09 server postfix/cleanup[30021]: disconnect from 061238241086.static.ctinets.com[1.128.114.120]
+Oct 24 15:18:09 server postfix/cleanup[30021]: connect to mail2.crabruzzo.it[67.43.156.18]:25: No route to host
+Oct 24 15:18:09 server postfix/cleanup[30021]: 2690D8044: host mta7.am0.yahoodns.net[67.43.156.18] said: 451 4.3.2 Internal error reading data (in reply to MAIL FROM command)
+Oct 24 15:18:09 server postfix/cleanup[30021]: warning: uid=0: File too large
+Oct 24 15:18:09 server postfix/cleanup[30021]: warning: dict_ldap_lookup: Search error -1: Can't contact LDAP server 
+Oct 24 15:18:09 server postfix/cleanup[30021]: lost connection after UNKNOWN from unknown[2A02:CF40:cfb1:1:f5d7:dead:beef:cafe]
+Oct 24 15:18:09 server postfix/cleanup[30021]: 95ECE24E0: to=<tom@example.com>, relay=dovecot, delay=0.12, delays=0.03/0/0/0.08, dsn=5.4.6, status=bounced (mail forwarding loop for tom@example.com)
+Oct 24 15:18:09 server postfix/cleanup[30021]: 0F5383D: to=<tom@example.com>, relay=dovecot, delay=4.3, delays=4.1/0.01/0/0.15, dsn=2.0.0, status=sent (delivered via dovecot service)
