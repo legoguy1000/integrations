@@ -11,7 +11,7 @@
 - external: ecs
   name: ecs.version
 - external: ecs
-  name: email.
+  name: email.message_id
 - external: ecs
   name: email.from.address
 - external: ecs
@@ -65,6 +65,10 @@
   name: server.ip
 - external: ecs
   name: server.port
+- external: ecs
+  name: server.address
+- external: ecs
+  name: server.domain
 - external: ecs
   name: service.address
 - external: ecs

@@ -3762,16 +3762,16 @@
             "message": "disconnect from unknown[1.128.114.120] ehlo=2 starttls=1 mail=1 rcpt=0/1 data=0/1 quit=1 commands=5/7",
             "postfix": {
                 "cmd": {
-                    "count": "7",
-                    "count_accepted": "5",
-                    "data": "1",
-                    "data_accepted": "0",
-                    "ehlo": "2",
-                    "mail": "1",
-                    "quit": "1",
-                    "rcpt": "1",
-                    "rcpt_accepted": "0",
-                    "starttls": "1"
+                    "count": 7,
+                    "count_accepted": 5,
+                    "data": 1,
+                    "data_accepted": 0,
+                    "ehlo": 2,
+                    "mail": 1,
+                    "quit": 1,
+                    "rcpt": 1,
+                    "rcpt_accepted": 0,
+                    "starttls": 1
                 }
             },
             "process": {

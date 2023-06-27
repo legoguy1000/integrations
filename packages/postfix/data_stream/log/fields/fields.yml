@@ -13,6 +13,22 @@
       type: keyword
       description: |
         Queue ID of the message that was bounced
+    - name: message
+      type: text
+      description: |
+        Message from Postfix Server
+    - name: helo
+      type: keyword
+      description: |
+        HELO identifier from server
+    - name: status
+      type: keyword
+      description: |
+        Status of email
+    - name: status_message
+      type: text
+      description: |
+        Status message
     - name: dnsbl
       type: group
       fields:
@@ -24,3 +40,65 @@
           type: ip
           description: |
             Blacklist IP
+    - name: relay
+      type: group
+      fields:
+        - name: ip
+          type: ip
+          description: |
+            SMTP Relay IP
+        - name: hostname
+          type: keyword
+          description: |
+            SMTP Relay Hostname
+        - name: port
+          type: long
+          description: |
+            SMTP Relay port
+        - name: service
+          type: keyword
+          description: |
+            SMTP Relay Service
+    - name: cmd
+      type: group
+      fields:
+        - name: count
+          type: int
+          description: |
+            s
+        - name: count_accepted
+          type: int
+          description: |
+            s
+        - name: data
+          type: int
+          description: |
+            s
+        - name: data_accepted
+          type: int
+          description: |
+            s
+        - name: ehlo
+          type: int
+          description: |
+            s
+        - name: mail
+          type: int
+          description: |
+            s
+        - name: quit
+          type: int
+          description: |
+            s
+        - name: rcpt
+          type: int
+          description: |
+            s
+        - name: rcpt_accepted
+          type: int
+          description: |
+            s
+        - name: starttls
+          type: int
+          description: |
+            s
