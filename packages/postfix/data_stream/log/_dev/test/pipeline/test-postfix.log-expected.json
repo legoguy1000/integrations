@@ -1062,7 +1062,6 @@
             "event": {
                 "kind": "event",
                 "original": "Oct 24 15:18:09 server postfix/cleanup[30021]: certificate verification failed for mail.example.com[89.160.20.127]:25: self-signed certificate.",
-                "outcome": "failure",
                 "timezone": "-04:00"
             },
             "host": {
@@ -1075,7 +1074,9 @@
                     "ip": "89.160.20.127",
                     "port": 25
                 },
-                "tls_error": "self-signed certificate."
+                "tls": {
+                    "error": "self-signed certificate."
+                }
             },
             "process": {
                 "name": "postfix/cleanup",
@@ -1180,8 +1181,8 @@
             "message": "statistics: max connection count 1 for (127.0.0.1:2525:127.0.0.1) at Oct 26 19:46:00",
             "postfix": {
                 "anvil": {
-                    "conn_count": "1",
-                    "timestamp": "Oct 26 19:46:00"
+                    "conn_count": 1,
+                    "timestamp": "2023-10-26T19:46:00.000-04:00"
                 }
             },
             "process": {
@@ -1334,7 +1335,9 @@
                     "ip": "2a02:cf40:0:10:0:1::",
                     "port": 25
                 },
-                "tls_cipher_size": "256/256"
+                "tls": {
+                    "cipher_size": "256/256"
+                }
             },
             "process": {
                 "name": "postfix/cleanup",
@@ -2217,8 +2220,8 @@
             "message": "statistics: max cache size 1 at Oct 26 18:13:50",
             "postfix": {
                 "anvil": {
-                    "cache_size": "1",
-                    "timestamp": "Oct 26 18:13:50"
+                    "cache_size": 1,
+                    "timestamp": "2023-10-26T18:13:50.000-04:00"
                 }
             },
             "process": {
@@ -2254,8 +2257,8 @@
             "postfix": {
                 "anvil": {
                     "conn_period": "60s",
-                    "conn_rate": "1",
-                    "timestamp": "Oct 26 18:13:50"
+                    "conn_rate": 1,
+                    "timestamp": "2023-10-26T18:13:50.000-04:00"
                 }
             },
             "process": {
@@ -2514,7 +2517,9 @@
                     "ip": "1.128.15.15",
                     "port": 25
                 },
-                "tls_cipher_size": "128/128"
+                "tls": {
+                    "cipher_size": "128/128"
+                }
             },
             "process": {
                 "name": "postfix/cleanup",
@@ -2705,7 +2710,6 @@
             "event": {
                 "kind": "event",
                 "original": "Oct 24 15:18:09 server postfix/cleanup[30021]: certificate verification failed for mail.example.com[89.160.20.127]:25: untrusted issuer /C=de/L=XXX/O=XXX GmbH/CN=XX XX XXX CA/emailAddress=XX@XX",
-                "outcome": "failure",
                 "timezone": "-04:00"
             },
             "host": {
@@ -2718,7 +2722,9 @@
                     "ip": "89.160.20.127",
                     "port": 25
                 },
-                "tls_error": "untrusted issuer /C=de/L=XXX/O=XXX GmbH/CN=XX XX XXX CA/emailAddress=XX@XX"
+                "tls": {
+                    "error": "untrusted issuer /C=de/L=XXX/O=XXX GmbH/CN=XX XX XXX CA/emailAddress=XX@XX"
+                }
             },
             "process": {
                 "name": "postfix/cleanup",
@@ -3396,8 +3402,8 @@
             "message": "statistics: max connection count 1 for (smtpd:1.128.114.120) at Oct 26 18:13:50",
             "postfix": {
                 "anvil": {
-                    "conn_count": "1",
-                    "timestamp": "Oct 26 18:13:50"
+                    "conn_count": 1,
+                    "timestamp": "2023-10-26T18:13:50.000-04:00"
                 }
             },
             "process": {
@@ -3844,8 +3850,8 @@
             "postfix": {
                 "anvil": {
                     "conn_period": "60s",
-                    "conn_rate": "1",
-                    "timestamp": "Oct 26 17:46:59"
+                    "conn_rate": 1,
+                    "timestamp": "2023-10-26T17:46:59.000-04:00"
                 }
             },
             "process": {
@@ -4477,8 +4483,10 @@
             },
             "postfix": {
                 "helo": "ecsolved.com",
-                "milter_message": "END-OF-MESSAGE from 061238241086.static.ctinets.com[1.128.114.120]: 5.7.1 Blocked by SpamAssassin",
-                "milter_result": "reject",
+                "milter": {
+                    "message": "END-OF-MESSAGE from 061238241086.static.ctinets.com[1.128.114.120]: 5.7.1 Blocked by SpamAssassin",
+                    "result": "reject"
+                },
                 "queueid": "4104E3D"
             },
             "process": {
@@ -5005,7 +5013,9 @@
                     "ip": "1.128.15.15",
                     "port": 25
                 },
-                "tls_cipher_size": "256/256"
+                "tls": {
+                    "cipher_size": "256/256"
+                }
             },
             "process": {
                 "name": "postfix/cleanup",
@@ -5098,8 +5108,8 @@
             "postfix": {
                 "anvil": {
                     "conn_period": "60s",
-                    "conn_rate": "1",
-                    "timestamp": "Oct 26 18:13:50"
+                    "conn_rate": 1,
+                    "timestamp": "2023-10-26T18:13:50.000-04:00"
                 }
             },
             "process": {
@@ -5390,9 +5400,11 @@
             },
             "postfix": {
                 "helo": "ecsolved.com",
-                "milter_data": "tom@example.com",
-                "milter_message": "header X-Spam-Status: Yes, score=39.3 required=5.0 tests=ADVANCE_FE from 061238241086.static.ctinets.com[1.128.114.120]",
-                "milter_result": "header-redirect",
+                "milter": {
+                    "data": "tom@example.com",
+                    "message": "header X-Spam-Status: Yes, score=39.3 required=5.0 tests=ADVANCE_FE from 061238241086.static.ctinets.com[1.128.114.120]",
+                    "result": "header-redirect"
+                },
                 "queueid": "4104E3D"
             },
             "process": {
@@ -5527,7 +5539,9 @@
                     "ip": "127.0.0.1",
                     "port": 2525
                 },
-                "tls_cipher_size": "256/256"
+                "tls": {
+                    "cipher_size": "256/256"
+                }
             },
             "process": {
                 "name": "postfix/cleanup",
@@ -5653,7 +5667,9 @@
             },
             "message": "Anonymous TLS connection established from julie.example.com[10.163.89.202]: TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits)",
             "postfix": {
-                "tls_cipher_size": "256/256"
+                "tls": {
+                    "cipher_size": "256/256"
+                }
             },
             "process": {
                 "name": "postfix/cleanup",
@@ -5700,8 +5716,8 @@
             "message": "statistics: max connection count 1 for (smtpd:2A02:CF40:0:1::3) at Oct 26 17:46:59",
             "postfix": {
                 "anvil": {
-                    "conn_count": "1",
-                    "timestamp": "Oct 26 17:46:59"
+                    "conn_count": 1,
+                    "timestamp": "2023-10-26T17:46:59.000-04:00"
                 }
             },
             "process": {

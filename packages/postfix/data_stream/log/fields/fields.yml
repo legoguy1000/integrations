@@ -14,7 +14,7 @@
       description: |
         Queue ID of the message that was bounced
     - name: message
-      type: text
+      type: match_only_text
       description: |
         Message from Postfix Server
     - name: helo
@@ -26,9 +26,21 @@
       description: |
         Status of email
     - name: status_message
-      type: text
+      type: match_only_text
       description: |
         Status message
+    - name: config_path
+      type: keyword
+      description: |
+        Configuration path
+    - name: dsn
+      type: keyword
+      description: |
+        DSN
+    - name: pix_workaround
+      type: keyword
+      description: |
+        PIX Workaround
     - name: dnsbl
       type: group
       fields:
@@ -63,42 +75,91 @@
       type: group
       fields:
         - name: count
-          type: int
+          type: integer
           description: |
-            s
+            Count
         - name: count_accepted
-          type: int
+          type: integer
           description: |
-            s
+            Count Accepts
         - name: data
-          type: int
+          type: integer
           description: |
-            s
+            Data
         - name: data_accepted
-          type: int
+          type: integer
           description: |
-            s
+            Data Accepted
         - name: ehlo
-          type: int
+          type: integer
           description: |
-            s
+            EHLO
         - name: mail
-          type: int
+          type: integer
           description: |
-            s
+            Mail
         - name: quit
-          type: int
+          type: integer
           description: |
-            s
+            Quit
         - name: rcpt
-          type: int
+          type: integer
           description: |
-            s
+            Receipt
         - name: rcpt_accepted
-          type: int
+          type: integer
           description: |
-            s
+            Receipt Accepted
         - name: starttls
-          type: int
+          type: integer
           description: |
-            s
+            STARTTLS
+    - name: tls
+      type: group
+      fields:
+        - name: error
+          type: match_only_text
+          description: |
+            TLS error message
+        - name: cipher_size
+          type: keyword
+          description: |
+            TLS Cipher size
+    - name: anvil
+      type: group
+      fields:
+        - name: cache_size
+          type: integer
+          description: |
+            Cache Size
+        - name: conn_count
+          type: integer
+          description: |
+            Connection Count
+        - name: conn_period
+          type: keyword
+          description: |
+            Period for stats
+        - name: conn_rate
+          type: integer
+          description: |
+            Rate of connections
+        - name: timestamp
+          type: date
+          description: |
+            Timestamp of stats
+    - name: milter
+      type: group
+      fields:
+        - name: data
+          type: keyword
+          description: |
+            Milter Data
+        - name: message
+          type: match_only_text
+          description: |
+            Milter Message
+        - name: result
+          type: keyword
+          description: |
+            Milter Result
