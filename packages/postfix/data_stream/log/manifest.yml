@@ -10,7 +10,7 @@ streams:
         title: Paths
         multi: true
         default:
-          - /var/log/maillog.log*
+          - /var/log/postfix.log*
       - name: tz_offset
         type: text
         title: Timezone Offset
