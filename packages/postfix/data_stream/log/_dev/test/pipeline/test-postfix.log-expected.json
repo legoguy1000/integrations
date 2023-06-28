@@ -68,6 +68,18 @@
             "@timestamp": "2023-10-24T15:18:09.000-04:00",
             "client": {
                 "address": "67.43.156.18",
+                "as": {
+                    "number": 35908
+                },
+                "geo": {
+                    "continent_name": "Asia",
+                    "country_iso_code": "BT",
+                    "country_name": "Bhutan",
+                    "location": {
+                        "lat": 27.5,
+                        "lon": 90.5
+                    }
+                },
                 "ip": "67.43.156.18",
                 "port": 51796
             },
@@ -83,6 +95,9 @@
                 "name": "server"
             },
             "message": "COMMAND LENGTH LIMIT from [67.43.156.18]:51796 after RCPT",
+            "network": {
+                "type": "ipv4"
+            },
             "postfix": {
                 "postscreen": {
                     "violation": "COMMAND LENGTH LIMIT"
@@ -102,12 +117,47 @@
                 "name": "postfix/cleanup",
                 "type": "postfix"
             },
+            "source": {
+                "address": "67.43.156.18",
+                "as": {
+                    "number": 35908
+                },
+                "geo": {
+                    "continent_name": "Asia",
+                    "country_iso_code": "BT",
+                    "country_name": "Bhutan",
+                    "location": {
+                        "lat": 27.5,
+                        "lon": 90.5
+                    }
+                },
+                "ip": "67.43.156.18",
+                "port": 51796
+            },
             "tags": [
                 "preserve_original_event"
             ]
         },
         {
             "@timestamp": "2023-10-24T15:18:09.000-04:00",
+            "destination": {
+                "address": "example.com",
+                "as": {
+                    "number": 35908
+                },
+                "domain": "example.com",
+                "geo": {
+                    "continent_name": "Asia",
+                    "country_iso_code": "BT",
+                    "country_name": "Bhutan",
+                    "location": {
+                        "lat": 27.5,
+                        "lon": 90.5
+                    }
+                },
+                "ip": "67.43.156.18",
+                "port": 25
+            },
             "ecs": {
                 "version": "8.8.0"
             },
@@ -120,6 +170,9 @@
                 "name": "server"
             },
             "message": "B0ADE20FC7: enabling PIX workarounds: disable_esmtp delay_dotcrlf for example.com[67.43.156.18]:25",
+            "network": {
+                "type": "ipv4"
+            },
             "postfix": {
                 "pix_workaround": "disable_esmtp delay_dotcrlf",
                 "queueid": "B0ADE20FC7",
@@ -143,7 +196,19 @@
             },
             "server": {
                 "address": "example.com",
+                "as": {
+                    "number": 35908
+                },
                 "domain": "example.com",
+                "geo": {
+                    "continent_name": "Asia",
+                    "country_iso_code": "BT",
+                    "country_name": "Bhutan",
+                    "location": {
+                        "lat": 27.5,
+                        "lon": 90.5
+                    }
+                },
                 "ip": "67.43.156.18",
                 "port": 25
             },
@@ -231,6 +296,15 @@
             "@timestamp": "2023-10-24T15:18:09.000-04:00",
             "client": {
                 "address": "2A02:CF40:0:1::3",
+                "geo": {
+                    "continent_name": "Europe",
+                    "country_iso_code": "NO",
+                    "country_name": "Norway",
+                    "location": {
+                        "lat": 62.0,
+                        "lon": 10.0
+                    }
+                },
                 "ip": "2A02:CF40:0:1::3",
                 "port": 52237
             },
@@ -246,6 +320,9 @@
                 "name": "server"
             },
             "message": "PASS OLD [2A02:CF40:0:1::3]:52237",
+            "network": {
+                "type": "ipv6"
+            },
             "postfix": {
                 "postscreen": {
                     "access": "PASS OLD"
@@ -264,6 +341,20 @@
                 "name": "postfix/cleanup",
                 "type": "postfix"
             },
+            "source": {
+                "address": "2A02:CF40:0:1::3",
+                "geo": {
+                    "continent_name": "Europe",
+                    "country_iso_code": "NO",
+                    "country_name": "Norway",
+                    "location": {
+                        "lat": 62.0,
+                        "lon": 10.0
+                    }
+                },
+                "ip": "2A02:CF40:0:1::3",
+                "port": 52237
+            },
             "tags": [
                 "preserve_original_event"
             ]
@@ -273,6 +364,18 @@
             "client": {
                 "address": "news.zihan-promo.com",
                 "domain": "news.zihan-promo.com",
+                "geo": {
+                    "city_name": "Changchun",
+                    "continent_name": "Asia",
+                    "country_iso_code": "CN",
+                    "country_name": "China",
+                    "location": {
+                        "lat": 43.88,
+                        "lon": 125.3228
+                    },
+                    "region_iso_code": "CN-22",
+                    "region_name": "Jilin Sheng"
+                },
                 "ip": "175.16.199.90"
             },
             "ecs": {
@@ -301,7 +404,8 @@
             },
             "message": "NOQUEUE: reject: RCPT from news.zihan-promo.com[175.16.199.90]: 554 5.7.1 Service unavailable; Helo command [news.zihan-promo.com] blocked using dbl.spamhaus.org; http://www.spamhaus.org/query/dbl?domain=zihan-promo.com; from=\u003cmark.alexander@zihan-promo.com\u003e to=\u003ctom@example.com\u003e proto=ESMTP helo=\u003cnews.zihan-promo.com\u003e",
             "network": {
-                "protocol": "ESMTP"
+                "protocol": "ESMTP",
+                "type": "ipv4"
             },
             "postfix": {
                 "helo": "news.zihan-promo.com",
@@ -324,6 +428,23 @@
             "service": {
                 "name": "postfix/cleanup",
                 "type": "postfix"
+            },
+            "source": {
+                "address": "news.zihan-promo.com",
+                "domain": "news.zihan-promo.com",
+                "geo": {
+                    "city_name": "Changchun",
+                    "continent_name": "Asia",
+                    "country_iso_code": "CN",
+                    "country_name": "China",
+                    "location": {
+                        "lat": 43.88,
+                        "lon": 125.3228
+                    },
+                    "region_iso_code": "CN-22",
+                    "region_name": "Jilin Sheng"
+                },
+                "ip": "175.16.199.90"
             },
             "tags": [
                 "preserve_original_event"
@@ -457,6 +578,18 @@
             "@timestamp": "2023-10-24T15:18:09.000-04:00",
             "client": {
                 "address": "67.43.156.18",
+                "as": {
+                    "number": 35908
+                },
+                "geo": {
+                    "continent_name": "Asia",
+                    "country_iso_code": "BT",
+                    "country_name": "Bhutan",
+                    "location": {
+                        "lat": 27.5,
+                        "lon": 90.5
+                    }
+                },
                 "ip": "67.43.156.18",
                 "port": 1337
             },
@@ -472,6 +605,9 @@
                 "name": "server"
             },
             "message": "NOQUEUE: reject: CONNECT from [67.43.156.18]:1337: too many connections",
+            "network": {
+                "type": "ipv4"
+            },
             "postfix": {
                 "postscreen": {
                     "toobusy_data": "too many connections"
@@ -489,6 +625,23 @@
             "service": {
                 "name": "postfix/cleanup",
                 "type": "postfix"
+            },
+            "source": {
+                "address": "67.43.156.18",
+                "as": {
+                    "number": 35908
+                },
+                "geo": {
+                    "continent_name": "Asia",
+                    "country_iso_code": "BT",
+                    "country_name": "Bhutan",
+                    "location": {
+                        "lat": 27.5,
+                        "lon": 90.5
+                    }
+                },
+                "ip": "67.43.156.18",
+                "port": 1337
             },
             "tags": [
                 "preserve_original_event"
@@ -543,6 +696,18 @@
         },
         {
             "@timestamp": "2023-10-24T15:18:09.000-04:00",
+            "destination": {
+                "address": "intern.nl",
+                "as": {
+                    "number": 1221,
+                    "organization": {
+                        "name": "Telstra Pty Ltd"
+                    }
+                },
+                "domain": "intern.nl",
+                "ip": "1.128.15.15",
+                "port": 25
+            },
             "ecs": {
                 "version": "8.8.0"
             },
@@ -556,6 +721,9 @@
                 "name": "server"
             },
             "message": "connect to intern.nl[1.128.15.15]:25: Connection timed out",
+            "network": {
+                "type": "ipv4"
+            },
             "postfix": {
                 "relay": {
                     "hostname": "intern.nl",
@@ -578,6 +746,12 @@
             },
             "server": {
                 "address": "intern.nl",
+                "as": {
+                    "number": 1221,
+                    "organization": {
+                        "name": "Telstra Pty Ltd"
+                    }
+                },
                 "domain": "intern.nl",
                 "ip": "1.128.15.15",
                 "port": 25
@@ -594,6 +768,15 @@
             "@timestamp": "2023-10-24T15:18:09.000-04:00",
             "client": {
                 "address": "2A02:CF40:4003:c01::23a",
+                "geo": {
+                    "continent_name": "Europe",
+                    "country_iso_code": "NO",
+                    "country_name": "Norway",
+                    "location": {
+                        "lat": 62.0,
+                        "lon": 10.0
+                    }
+                },
                 "ip": "2A02:CF40:4003:c01::23a",
                 "port": 36051
             },
@@ -609,6 +792,9 @@
                 "name": "server"
             },
             "message": "PASS NEW [2A02:CF40:4003:c01::23a]:36051",
+            "network": {
+                "type": "ipv6"
+            },
             "postfix": {
                 "postscreen": {
                     "access": "PASS NEW"
@@ -627,12 +813,43 @@
                 "name": "postfix/cleanup",
                 "type": "postfix"
             },
+            "source": {
+                "address": "2A02:CF40:4003:c01::23a",
+                "geo": {
+                    "continent_name": "Europe",
+                    "country_iso_code": "NO",
+                    "country_name": "Norway",
+                    "location": {
+                        "lat": 62.0,
+                        "lon": 10.0
+                    }
+                },
+                "ip": "2A02:CF40:4003:c01::23a",
+                "port": 36051
+            },
             "tags": [
                 "preserve_original_event"
             ]
         },
         {
             "@timestamp": "2023-10-24T15:18:09.000-04:00",
+            "destination": {
+                "address": "mail2.example.com",
+                "as": {
+                    "number": 35908
+                },
+                "domain": "mail2.example.com",
+                "geo": {
+                    "continent_name": "Asia",
+                    "country_iso_code": "BT",
+                    "country_name": "Bhutan",
+                    "location": {
+                        "lat": 27.5,
+                        "lon": 90.5
+                    }
+                },
+                "ip": "67.43.156.18"
+            },
             "ecs": {
                 "version": "8.8.0"
             },
@@ -645,6 +862,9 @@
                 "name": "server"
             },
             "message": "ED59C3D: host mail2.example.com[67.43.156.18] said: 450 4.7.1 \u003cuser@example.com\u003e: Recipient address rejected: Greylisted for 5 minutes (in reply to RCPT TO command)",
+            "network": {
+                "type": "ipv4"
+            },
             "postfix": {
                 "queueid": "ED59C3D",
                 "relay": {
@@ -668,7 +888,19 @@
             },
             "server": {
                 "address": "mail2.example.com",
+                "as": {
+                    "number": 35908
+                },
                 "domain": "mail2.example.com",
+                "geo": {
+                    "continent_name": "Asia",
+                    "country_iso_code": "BT",
+                    "country_name": "Bhutan",
+                    "location": {
+                        "lat": 27.5,
+                        "lon": 90.5
+                    }
+                },
                 "ip": "67.43.156.18"
             },
             "service": {
@@ -715,6 +947,12 @@
             "@timestamp": "2023-10-24T15:18:09.000-04:00",
             "client": {
                 "address": "061238241086.static.ctinets.com",
+                "as": {
+                    "number": 1221,
+                    "organization": {
+                        "name": "Telstra Pty Ltd"
+                    }
+                },
                 "domain": "061238241086.static.ctinets.com",
                 "ip": "1.128.114.120"
             },
@@ -744,7 +982,8 @@
             },
             "message": "NOQUEUE: reject: RCPT from 061238241086.static.ctinets.com[1.128.114.120]: 550 5.1.1 \u003ctoernooicommissie@example.com\u003e: Recipient address rejected: User unknown in virtual mailbox table; from=\u003cwumt5@cchfdc.com\u003e to=\u003ctoernooicommissie@example.com\u003e proto=ESMTP helo=\u003cecsolved.com\u003e",
             "network": {
-                "protocol": "ESMTP"
+                "protocol": "ESMTP",
+                "type": "ipv4"
             },
             "postfix": {
                 "helo": "ecsolved.com",
@@ -767,6 +1006,17 @@
             "service": {
                 "name": "postfix/cleanup",
                 "type": "postfix"
+            },
+            "source": {
+                "address": "061238241086.static.ctinets.com",
+                "as": {
+                    "number": 1221,
+                    "organization": {
+                        "name": "Telstra Pty Ltd"
+                    }
+                },
+                "domain": "061238241086.static.ctinets.com",
+                "ip": "1.128.114.120"
             },
             "tags": [
                 "preserve_original_event"
@@ -824,6 +1074,18 @@
             "@timestamp": "2023-10-24T15:18:09.000-04:00",
             "client": {
                 "address": "67.43.156.18",
+                "as": {
+                    "number": 35908
+                },
+                "geo": {
+                    "continent_name": "Asia",
+                    "country_iso_code": "BT",
+                    "country_name": "Bhutan",
+                    "location": {
+                        "lat": 27.5,
+                        "lon": 90.5
+                    }
+                },
                 "ip": "67.43.156.18",
                 "port": 51799
             },
@@ -839,6 +1101,9 @@
                 "name": "server"
             },
             "message": "COMMAND TIME LIMIT from [67.43.156.18]:51799 after HELO",
+            "network": {
+                "type": "ipv4"
+            },
             "postfix": {
                 "postscreen": {
                     "violation": "COMMAND TIME LIMIT"
@@ -857,6 +1122,23 @@
             "service": {
                 "name": "postfix/cleanup",
                 "type": "postfix"
+            },
+            "source": {
+                "address": "67.43.156.18",
+                "as": {
+                    "number": 35908
+                },
+                "geo": {
+                    "continent_name": "Asia",
+                    "country_iso_code": "BT",
+                    "country_name": "Bhutan",
+                    "location": {
+                        "lat": 27.5,
+                        "lon": 90.5
+                    }
+                },
+                "ip": "67.43.156.18",
+                "port": 51799
             },
             "tags": [
                 "preserve_original_event"
@@ -899,6 +1181,15 @@
             "client": {
                 "address": "unknown",
                 "domain": "unknown",
+                "geo": {
+                    "continent_name": "Europe",
+                    "country_iso_code": "NO",
+                    "country_name": "Norway",
+                    "location": {
+                        "lat": 62.0,
+                        "lon": 10.0
+                    }
+                },
                 "ip": "2A02:CF40:9999:20:88b:9b7d:2a54:2bd2"
             },
             "ecs": {
@@ -922,7 +1213,8 @@
             },
             "message": "NOQUEUE: reject: VRFY from unknown[2A02:CF40:9999:20:88b:9b7d:2a54:2bd2]: 550 5.1.1 \u003cdoes-not-exist@example.com\u003e: Recipient address rejected: User unknown in virtual mailbox table; to=\u003cdoes-not-exist@example.com\u003e proto=SMTP helo=\u003cme\u003e",
             "network": {
-                "protocol": "SMTP"
+                "protocol": "SMTP",
+                "type": "ipv6"
             },
             "postfix": {
                 "helo": "me",
@@ -946,6 +1238,20 @@
                 "name": "postfix/cleanup",
                 "type": "postfix"
             },
+            "source": {
+                "address": "unknown",
+                "domain": "unknown",
+                "geo": {
+                    "continent_name": "Europe",
+                    "country_iso_code": "NO",
+                    "country_name": "Norway",
+                    "location": {
+                        "lat": 62.0,
+                        "lon": 10.0
+                    }
+                },
+                "ip": "2A02:CF40:9999:20:88b:9b7d:2a54:2bd2"
+            },
             "tags": [
                 "preserve_original_event"
             ]
@@ -954,6 +1260,12 @@
             "@timestamp": "2023-10-24T15:18:09.000-04:00",
             "client": {
                 "address": "unknown",
+                "as": {
+                    "number": 1221,
+                    "organization": {
+                        "name": "Telstra Pty Ltd"
+                    }
+                },
                 "domain": "unknown",
                 "ip": "1.128.114.120"
             },
@@ -983,7 +1295,8 @@
             },
             "message": "NOQUEUE: filter: RCPT from unknown[1.128.114.120]: \u003cmail@sender.com\u003e: Sender address triggers FILTER smtp-amavis:[127.0.0.1]:10024; from=\u003cmail@sender.com\u003e to=\u003cuser@domain.com\u003e proto=ESMTP helo=\u003cplutoapp.biz\u003e",
             "network": {
-                "protocol": "ESMTP"
+                "protocol": "ESMTP",
+                "type": "ipv4"
             },
             "postfix": {
                 "helo": "plutoapp.biz",
@@ -1008,6 +1321,17 @@
                 "name": "postfix/cleanup",
                 "type": "postfix"
             },
+            "source": {
+                "address": "unknown",
+                "as": {
+                    "number": 1221,
+                    "organization": {
+                        "name": "Telstra Pty Ltd"
+                    }
+                },
+                "domain": "unknown",
+                "ip": "1.128.114.120"
+            },
             "tags": [
                 "preserve_original_event"
             ]
@@ -1016,6 +1340,18 @@
             "@timestamp": "2023-10-24T15:18:09.000-04:00",
             "client": {
                 "address": "67.43.156.18",
+                "as": {
+                    "number": 35908
+                },
+                "geo": {
+                    "continent_name": "Asia",
+                    "country_iso_code": "BT",
+                    "country_name": "Bhutan",
+                    "location": {
+                        "lat": 27.5,
+                        "lon": 90.5
+                    }
+                },
                 "ip": "67.43.156.18",
                 "port": 51799
             },
@@ -1031,6 +1367,9 @@
                 "name": "server"
             },
             "message": "COMMAND TIME LIMIT from [67.43.156.18]:51799 after MAIL",
+            "network": {
+                "type": "ipv4"
+            },
             "postfix": {
                 "postscreen": {
                     "violation": "COMMAND TIME LIMIT"
@@ -1050,12 +1389,53 @@
                 "name": "postfix/cleanup",
                 "type": "postfix"
             },
+            "source": {
+                "address": "67.43.156.18",
+                "as": {
+                    "number": 35908
+                },
+                "geo": {
+                    "continent_name": "Asia",
+                    "country_iso_code": "BT",
+                    "country_name": "Bhutan",
+                    "location": {
+                        "lat": 27.5,
+                        "lon": 90.5
+                    }
+                },
+                "ip": "67.43.156.18",
+                "port": 51799
+            },
             "tags": [
                 "preserve_original_event"
             ]
         },
         {
             "@timestamp": "2023-10-24T15:18:09.000-04:00",
+            "destination": {
+                "address": "mail.example.com",
+                "as": {
+                    "number": 29518,
+                    "organization": {
+                        "name": "Bredband2 AB"
+                    }
+                },
+                "domain": "mail.example.com",
+                "geo": {
+                    "city_name": "Linköping",
+                    "continent_name": "Europe",
+                    "country_iso_code": "SE",
+                    "country_name": "Sweden",
+                    "location": {
+                        "lat": 58.4167,
+                        "lon": 15.6167
+                    },
+                    "region_iso_code": "SE-E",
+                    "region_name": "Östergötland County"
+                },
+                "ip": "89.160.20.127",
+                "port": 25
+            },
             "ecs": {
                 "version": "8.8.0"
             },
@@ -1068,6 +1448,9 @@
                 "name": "server"
             },
             "message": "certificate verification failed for mail.example.com[89.160.20.127]:25: self-signed certificate.",
+            "network": {
+                "type": "ipv4"
+            },
             "postfix": {
                 "relay": {
                     "hostname": "mail.example.com",
@@ -1092,7 +1475,25 @@
             },
             "server": {
                 "address": "mail.example.com",
+                "as": {
+                    "number": 29518,
+                    "organization": {
+                        "name": "Bredband2 AB"
+                    }
+                },
                 "domain": "mail.example.com",
+                "geo": {
+                    "city_name": "Linköping",
+                    "continent_name": "Europe",
+                    "country_iso_code": "SE",
+                    "country_name": "Sweden",
+                    "location": {
+                        "lat": 58.4167,
+                        "lon": 15.6167
+                    },
+                    "region_iso_code": "SE-E",
+                    "region_name": "Östergötland County"
+                },
                 "ip": "89.160.20.127",
                 "port": 25
             },
@@ -1106,6 +1507,10 @@
         },
         {
             "@timestamp": "2023-10-24T15:18:09.000-04:00",
+            "destination": {
+                "address": "sub1.example.com",
+                "domain": "sub1.example.com"
+            },
             "ecs": {
                 "version": "8.8.0"
             },
@@ -1179,6 +1584,9 @@
                 "name": "server"
             },
             "message": "statistics: max connection count 1 for (127.0.0.1:2525:127.0.0.1) at Oct 26 19:46:00",
+            "network": {
+                "type": "ipv4"
+            },
             "postfix": {
                 "anvil": {
                     "conn_count": 1,
@@ -1198,6 +1606,10 @@
                 "address": "127.0.0.1:2525",
                 "name": "postfix/cleanup",
                 "type": "postfix"
+            },
+            "source": {
+                "address": "127.0.0.1",
+                "ip": "127.0.0.1"
             },
             "tags": [
                 "preserve_original_event"
@@ -1268,6 +1680,21 @@
         },
         {
             "@timestamp": "2023-10-24T15:18:09.000-04:00",
+            "destination": {
+                "address": "aspmx.l.google.com",
+                "domain": "aspmx.l.google.com",
+                "geo": {
+                    "continent_name": "Europe",
+                    "country_iso_code": "NO",
+                    "country_name": "Norway",
+                    "location": {
+                        "lat": 62.0,
+                        "lon": 10.0
+                    }
+                },
+                "ip": "2a02:cf40:0:10:0:1::",
+                "port": 25
+            },
             "ecs": {
                 "version": "8.8.0"
             },
@@ -1281,6 +1708,9 @@
                 "name": "server"
             },
             "message": "connect to aspmx.l.google.com[2a02:cf40:0:10:0:1::]:25: Network is unreachable",
+            "network": {
+                "type": "ipv6"
+            },
             "postfix": {
                 "relay": {
                     "hostname": "aspmx.l.google.com",
@@ -1304,6 +1734,15 @@
             "server": {
                 "address": "aspmx.l.google.com",
                 "domain": "aspmx.l.google.com",
+                "geo": {
+                    "continent_name": "Europe",
+                    "country_iso_code": "NO",
+                    "country_name": "Norway",
+                    "location": {
+                        "lat": 62.0,
+                        "lon": 10.0
+                    }
+                },
                 "ip": "2a02:cf40:0:10:0:1::",
                 "port": 25
             },
@@ -1317,6 +1756,21 @@
         },
         {
             "@timestamp": "2023-10-24T15:18:09.000-04:00",
+            "destination": {
+                "address": "mail.sys4.de",
+                "domain": "mail.sys4.de",
+                "geo": {
+                    "continent_name": "Europe",
+                    "country_iso_code": "NO",
+                    "country_name": "Norway",
+                    "location": {
+                        "lat": 62.0,
+                        "lon": 10.0
+                    }
+                },
+                "ip": "2a02:cf40:0:10:0:1::",
+                "port": 25
+            },
             "ecs": {
                 "version": "8.8.0"
             },
@@ -1329,6 +1783,9 @@
                 "name": "server"
             },
             "message": "Verified TLS connection established to mail.sys4.de[2a02:cf40:0:10:0:1::]:25: TLSv1 with cipher ECDHE-RSA-AES256-SHA (256/256 bits)",
+            "network": {
+                "type": "ipv6"
+            },
             "postfix": {
                 "relay": {
                     "hostname": "mail.sys4.de",
@@ -1354,6 +1811,15 @@
             "server": {
                 "address": "mail.sys4.de",
                 "domain": "mail.sys4.de",
+                "geo": {
+                    "continent_name": "Europe",
+                    "country_iso_code": "NO",
+                    "country_name": "Norway",
+                    "location": {
+                        "lat": 62.0,
+                        "lon": 10.0
+                    }
+                },
                 "ip": "2a02:cf40:0:10:0:1::",
                 "port": 25
             },
@@ -1374,6 +1840,18 @@
             "@timestamp": "2023-10-24T15:18:09.000-04:00",
             "client": {
                 "address": "175.16.199.90",
+                "geo": {
+                    "city_name": "Changchun",
+                    "continent_name": "Asia",
+                    "country_iso_code": "CN",
+                    "country_name": "China",
+                    "location": {
+                        "lat": 43.88,
+                        "lon": 125.3228
+                    },
+                    "region_iso_code": "CN-22",
+                    "region_name": "Jilin Sheng"
+                },
                 "ip": "175.16.199.90",
                 "port": 4984
             },
@@ -1403,7 +1881,8 @@
             },
             "message": "NOQUEUE: reject: RCPT from [175.16.199.90]:4984: 550 5.7.1 Service unavailable; client [175.16.199.90] blocked using zen.spamhaus.org; from=\u003chcdvbnm@qhhn.com\u003e, to=\u003c4ECEA00F.9040306@example.com\u003e, proto=ESMTP, helo=\u003cqhhn.com\u003e",
             "network": {
-                "protocol": "ESMTP"
+                "protocol": "ESMTP",
+                "type": "ipv4"
             },
             "postfix": {
                 "helo": "qhhn.com",
@@ -1424,6 +1903,23 @@
                 "name": "postfix/cleanup",
                 "type": "postfix"
             },
+            "source": {
+                "address": "175.16.199.90",
+                "geo": {
+                    "city_name": "Changchun",
+                    "continent_name": "Asia",
+                    "country_iso_code": "CN",
+                    "country_name": "China",
+                    "location": {
+                        "lat": 43.88,
+                        "lon": 125.3228
+                    },
+                    "region_iso_code": "CN-22",
+                    "region_name": "Jilin Sheng"
+                },
+                "ip": "175.16.199.90",
+                "port": 4984
+            },
             "tags": [
                 "preserve_original_event"
             ]
@@ -1432,6 +1928,18 @@
             "@timestamp": "2023-10-24T15:18:09.000-04:00",
             "client": {
                 "address": "175.16.199.90",
+                "geo": {
+                    "city_name": "Changchun",
+                    "continent_name": "Asia",
+                    "country_iso_code": "CN",
+                    "country_name": "China",
+                    "location": {
+                        "lat": 43.88,
+                        "lon": 125.3228
+                    },
+                    "region_iso_code": "CN-22",
+                    "region_name": "Jilin Sheng"
+                },
                 "ip": "175.16.199.90",
                 "port": 43421
             },
@@ -1447,6 +1955,9 @@
                 "name": "server"
             },
             "message": "PREGREET 6 after 1.2 from [175.16.199.90]:43421: RSET",
+            "network": {
+                "type": "ipv4"
+            },
             "postfix": {
                 "postscreen": {
                     "data": "RSET",
@@ -1466,6 +1977,23 @@
             "service": {
                 "name": "postfix/cleanup",
                 "type": "postfix"
+            },
+            "source": {
+                "address": "175.16.199.90",
+                "geo": {
+                    "city_name": "Changchun",
+                    "continent_name": "Asia",
+                    "country_iso_code": "CN",
+                    "country_name": "China",
+                    "location": {
+                        "lat": 43.88,
+                        "lon": 125.3228
+                    },
+                    "region_iso_code": "CN-22",
+                    "region_name": "Jilin Sheng"
+                },
+                "ip": "175.16.199.90",
+                "port": 43421
             },
             "tags": [
                 "preserve_original_event"
@@ -1505,7 +2033,19 @@
             "@timestamp": "2023-10-24T15:18:09.000-04:00",
             "client": {
                 "address": "example.com",
+                "as": {
+                    "number": 35908
+                },
                 "domain": "example.com",
+                "geo": {
+                    "continent_name": "Asia",
+                    "country_iso_code": "BT",
+                    "country_name": "Bhutan",
+                    "location": {
+                        "lat": 27.5,
+                        "lon": 90.5
+                    }
+                },
                 "ip": "67.43.156.18"
             },
             "ecs": {
@@ -1534,7 +2074,8 @@
             },
             "message": "NOQUEUE: reject_warning: RCPT from example.com[67.43.156.18]: 553 5.7.1 \u003csender@example.com\u003e: Sender address rejected: not owned by user ph123; from=\u003csender@example.com\u003e to=\u003crecipient@example.com\u003e proto=ESMTP helo=\u003cexample.com\u003e",
             "network": {
-                "protocol": "ESMTP"
+                "protocol": "ESMTP",
+                "type": "ipv4"
             },
             "postfix": {
                 "helo": "example.com",
@@ -1557,6 +2098,23 @@
             "service": {
                 "name": "postfix/cleanup",
                 "type": "postfix"
+            },
+            "source": {
+                "address": "example.com",
+                "as": {
+                    "number": 35908
+                },
+                "domain": "example.com",
+                "geo": {
+                    "continent_name": "Asia",
+                    "country_iso_code": "BT",
+                    "country_name": "Bhutan",
+                    "location": {
+                        "lat": 27.5,
+                        "lon": 90.5
+                    }
+                },
+                "ip": "67.43.156.18"
             },
             "tags": [
                 "preserve_original_event"
@@ -1594,6 +2152,12 @@
         },
         {
             "@timestamp": "2023-10-24T15:18:09.000-04:00",
+            "destination": {
+                "address": "mail1.example.net",
+                "domain": "mail1.example.net",
+                "ip": "10.74.103.11",
+                "port": 25
+            },
             "ecs": {
                 "version": "8.8.0"
             },
@@ -1614,6 +2178,9 @@
                 "name": "server"
             },
             "message": "0D9633D: to=\u003cjos@example.com\u003e, orig_to=\u003cbestuur@example.com\u003e, relay=mail1.example.net[10.74.103.11]:25, delay=11, delays=5.4/0.06/5.1/0.03, dsn=2.0.0, status=sent (250 2.0.0 Ok: queued as F12DF84004)",
+            "network": {
+                "type": "ipv4"
+            },
             "postfix": {
                 "delay": "11",
                 "delay_before_qmgr": "5.4",
@@ -1690,6 +2257,17 @@
         },
         {
             "@timestamp": "2023-10-24T15:18:09.000-04:00",
+            "destination": {
+                "address": "gmail-smtp-in.l.google.com",
+                "as": {
+                    "number": 1221,
+                    "organization": {
+                        "name": "Telstra Pty Ltd"
+                    }
+                },
+                "domain": "gmail-smtp-in.l.google.com",
+                "ip": "1.128.15.15"
+            },
             "ecs": {
                 "version": "8.8.0"
             },
@@ -1702,6 +2280,9 @@
                 "name": "server"
             },
             "message": "644D53D: host gmail-smtp-in.l.google.com[1.128.15.15] said: 421-4.7.0 [67.43.156.18      15] Our system has detected an unusual rate of 421-4.7.0 unsolicited mail originating from your IP address. To protect our 421-4.7.0 users from spam, mail sent from your IP address has been temporarily 421-4.7.0 rate limited. Please visit 421-4.7.0  https://support.google.com/mail/answer/81126 to review our Bulk Email 421 4.7.0 Senders Guidelines. bv15si15610322wjb.142 - gsmtp (in reply to end of DATA command)",
+            "network": {
+                "type": "ipv4"
+            },
             "postfix": {
                 "queueid": "644D53D",
                 "relay": {
@@ -1725,6 +2306,12 @@
             },
             "server": {
                 "address": "gmail-smtp-in.l.google.com",
+                "as": {
+                    "number": 1221,
+                    "organization": {
+                        "name": "Telstra Pty Ltd"
+                    }
+                },
                 "domain": "gmail-smtp-in.l.google.com",
                 "ip": "1.128.15.15"
             },
@@ -1740,6 +2327,18 @@
             "@timestamp": "2023-10-24T15:18:09.000-04:00",
             "client": {
                 "address": "67.43.156.18",
+                "as": {
+                    "number": 35908
+                },
+                "geo": {
+                    "continent_name": "Asia",
+                    "country_iso_code": "BT",
+                    "country_name": "Bhutan",
+                    "location": {
+                        "lat": 27.5,
+                        "lon": 90.5
+                    }
+                },
                 "ip": "67.43.156.18",
                 "port": 1038
             },
@@ -1755,6 +2354,9 @@
                 "name": "server"
             },
             "message": "DNSBL rank 3 for [67.43.156.18]:1038",
+            "network": {
+                "type": "ipv4"
+            },
             "postfix": {
                 "postscreen": {
                     "dnsbl": {
@@ -1775,6 +2377,23 @@
             "service": {
                 "name": "postfix/cleanup",
                 "type": "postfix"
+            },
+            "source": {
+                "address": "67.43.156.18",
+                "as": {
+                    "number": 35908
+                },
+                "geo": {
+                    "continent_name": "Asia",
+                    "country_iso_code": "BT",
+                    "country_name": "Bhutan",
+                    "location": {
+                        "lat": 27.5,
+                        "lon": 90.5
+                    }
+                },
+                "ip": "67.43.156.18",
+                "port": 1038
             },
             "tags": [
                 "preserve_original_event"
@@ -1845,6 +2464,12 @@
             "@timestamp": "2023-10-24T15:18:09.000-04:00",
             "client": {
                 "address": "unknown",
+                "as": {
+                    "number": 1221,
+                    "organization": {
+                        "name": "Telstra Pty Ltd"
+                    }
+                },
                 "domain": "unknown",
                 "ip": "1.128.114.120"
             },
@@ -1860,6 +2485,9 @@
                 "name": "server"
             },
             "message": "lost connection after STARTTLS from unknown[1.128.114.120]",
+            "network": {
+                "type": "ipv4"
+            },
             "postfix": {
                 "smtp_stage": "STARTTLS",
                 "smtpd_lostconn_data": "lost connection"
@@ -1880,6 +2508,17 @@
                 "name": "postfix/cleanup",
                 "type": "postfix"
             },
+            "source": {
+                "address": "unknown",
+                "as": {
+                    "number": 1221,
+                    "organization": {
+                        "name": "Telstra Pty Ltd"
+                    }
+                },
+                "domain": "unknown",
+                "ip": "1.128.114.120"
+            },
             "tags": [
                 "preserve_original_event"
             ]
@@ -1888,6 +2527,12 @@
             "@timestamp": "2023-10-24T15:18:09.000-04:00",
             "client": {
                 "address": "1.128.114.120",
+                "as": {
+                    "number": 1221,
+                    "organization": {
+                        "name": "Telstra Pty Ltd"
+                    }
+                },
                 "ip": "1.128.114.120",
                 "port": 42606
             },
@@ -1903,6 +2548,9 @@
                 "name": "server"
             },
             "message": "COMMAND PIPELINING from [1.128.114.120]:42606 after .: ",
+            "network": {
+                "type": "ipv4"
+            },
             "postfix": {
                 "postscreen": {
                     "violation": "COMMAND PIPELINING"
@@ -1920,6 +2568,17 @@
             "service": {
                 "name": "postfix/cleanup",
                 "type": "postfix"
+            },
+            "source": {
+                "address": "1.128.114.120",
+                "as": {
+                    "number": 1221,
+                    "organization": {
+                        "name": "Telstra Pty Ltd"
+                    }
+                },
+                "ip": "1.128.114.120",
+                "port": 42606
             },
             "tags": [
                 "preserve_original_event"
@@ -2009,6 +2668,18 @@
             "@timestamp": "2023-10-24T15:18:09.000-04:00",
             "client": {
                 "address": "175.16.199.90",
+                "geo": {
+                    "city_name": "Changchun",
+                    "continent_name": "Asia",
+                    "country_iso_code": "CN",
+                    "country_name": "China",
+                    "location": {
+                        "lat": 43.88,
+                        "lon": 125.3228
+                    },
+                    "region_iso_code": "CN-22",
+                    "region_name": "Jilin Sheng"
+                },
                 "ip": "175.16.199.90",
                 "port": 43421
             },
@@ -2024,6 +2695,9 @@
                 "name": "server"
             },
             "message": "DISCONNECT [175.16.199.90]:43421",
+            "network": {
+                "type": "ipv4"
+            },
             "postfix": {
                 "postscreen": {
                     "access": "DISCONNECT"
@@ -2042,6 +2716,23 @@
                 "name": "postfix/cleanup",
                 "type": "postfix"
             },
+            "source": {
+                "address": "175.16.199.90",
+                "geo": {
+                    "city_name": "Changchun",
+                    "continent_name": "Asia",
+                    "country_iso_code": "CN",
+                    "country_name": "China",
+                    "location": {
+                        "lat": 43.88,
+                        "lon": 125.3228
+                    },
+                    "region_iso_code": "CN-22",
+                    "region_name": "Jilin Sheng"
+                },
+                "ip": "175.16.199.90",
+                "port": 43421
+            },
             "tags": [
                 "preserve_original_event"
             ]
@@ -2051,6 +2742,15 @@
             "client": {
                 "address": "unknown",
                 "domain": "unknown",
+                "geo": {
+                    "continent_name": "Europe",
+                    "country_iso_code": "NO",
+                    "country_name": "Norway",
+                    "location": {
+                        "lat": 62.0,
+                        "lon": 10.0
+                    }
+                },
                 "ip": "2A02:CF40:9999:20:88b:9b7d:2a54:2bd2"
             },
             "ecs": {
@@ -2074,7 +2774,8 @@
             },
             "message": "NOQUEUE: reject: VRFY from unknown[2A02:CF40:9999:20:88b:9b7d:2a54:2bd2]: 454 4.7.1 \u003caap@henk.com\u003e: Relay access denied; to=\u003caap@henk.com\u003e proto=SMTP helo=\u003cme\u003e",
             "network": {
-                "protocol": "SMTP"
+                "protocol": "SMTP",
+                "type": "ipv6"
             },
             "postfix": {
                 "helo": "me",
@@ -2098,6 +2799,20 @@
                 "name": "postfix/cleanup",
                 "type": "postfix"
             },
+            "source": {
+                "address": "unknown",
+                "domain": "unknown",
+                "geo": {
+                    "continent_name": "Europe",
+                    "country_iso_code": "NO",
+                    "country_name": "Norway",
+                    "location": {
+                        "lat": 62.0,
+                        "lon": 10.0
+                    }
+                },
+                "ip": "2A02:CF40:9999:20:88b:9b7d:2a54:2bd2"
+            },
             "tags": [
                 "preserve_original_event"
             ]
@@ -2107,6 +2822,18 @@
             "client": {
                 "address": "mx2.example.org",
                 "domain": "mx2.example.org",
+                "geo": {
+                    "city_name": "Changchun",
+                    "continent_name": "Asia",
+                    "country_iso_code": "CN",
+                    "country_name": "China",
+                    "location": {
+                        "lat": 43.88,
+                        "lon": 125.3228
+                    },
+                    "region_iso_code": "CN-22",
+                    "region_name": "Jilin Sheng"
+                },
                 "ip": "175.16.199.90"
             },
             "ecs": {
@@ -2134,7 +2861,8 @@
             },
             "message": "48rT2v1hQrz1J0N: prepend: header X-Spam-Status: Yes, score=45.1 required=10.0 tests=ADVANCE_FE from mx2.example.org[175.16.199.90]; from=\u003cSRS0=1sN3=5P=example.org=noreply@srs.example.org\u003e to=\u003crecipient@example.net\u003e proto=ESMTP helo=\u003cmx2.example.org\u003e: X-Spam-Status: Yes",
             "network": {
-                "protocol": "ESMTP"
+                "protocol": "ESMTP",
+                "type": "ipv4"
             },
             "postfix": {
                 "helo": "mx2.example.org",
@@ -2159,6 +2887,23 @@
                 "name": "postfix/cleanup",
                 "type": "postfix"
             },
+            "source": {
+                "address": "mx2.example.org",
+                "domain": "mx2.example.org",
+                "geo": {
+                    "city_name": "Changchun",
+                    "continent_name": "Asia",
+                    "country_iso_code": "CN",
+                    "country_name": "China",
+                    "location": {
+                        "lat": 43.88,
+                        "lon": 125.3228
+                    },
+                    "region_iso_code": "CN-22",
+                    "region_name": "Jilin Sheng"
+                },
+                "ip": "175.16.199.90"
+            },
             "tags": [
                 "preserve_original_event"
             ]
@@ -2167,6 +2912,12 @@
             "@timestamp": "2023-10-24T15:18:09.000-04:00",
             "client": {
                 "address": "1.128.114.120",
+                "as": {
+                    "number": 1221,
+                    "organization": {
+                        "name": "Telstra Pty Ltd"
+                    }
+                },
                 "ip": "1.128.114.120",
                 "port": 53024
             },
@@ -2182,6 +2933,9 @@
                 "name": "server"
             },
             "message": "WHITELISTED [1.128.114.120]:53024",
+            "network": {
+                "type": "ipv4"
+            },
             "postfix": {
                 "postscreen": {
                     "access": "WHITELISTED"
@@ -2199,6 +2953,17 @@
             "service": {
                 "name": "postfix/cleanup",
                 "type": "postfix"
+            },
+            "source": {
+                "address": "1.128.114.120",
+                "as": {
+                    "number": 1221,
+                    "organization": {
+                        "name": "Telstra Pty Ltd"
+                    }
+                },
+                "ip": "1.128.114.120",
+                "port": 53024
             },
             "tags": [
                 "preserve_original_event"
@@ -2254,6 +3019,9 @@
                 "name": "server"
             },
             "message": "statistics: max connection rate 1/60s for (127.0.0.1:2525:127.0.0.1) at Oct 26 18:13:50",
+            "network": {
+                "type": "ipv4"
+            },
             "postfix": {
                 "anvil": {
                     "conn_period": "60s",
@@ -2274,6 +3042,10 @@
                 "address": "127.0.0.1:2525",
                 "name": "postfix/cleanup",
                 "type": "postfix"
+            },
+            "source": {
+                "address": "127.0.0.1",
+                "ip": "127.0.0.1"
             },
             "tags": [
                 "preserve_original_event"
@@ -2315,6 +3087,12 @@
             "@timestamp": "2023-10-24T15:18:09.000-04:00",
             "client": {
                 "address": "unknown",
+                "as": {
+                    "number": 1221,
+                    "organization": {
+                        "name": "Telstra Pty Ltd"
+                    }
+                },
                 "domain": "unknown",
                 "ip": "1.128.114.120"
             },
@@ -2330,6 +3108,9 @@
                 "name": "server"
             },
             "message": "lost connection after DATA (7774180 bytes) from unknown[1.128.114.120]",
+            "network": {
+                "type": "ipv4"
+            },
             "postfix": {
                 "smtp_stage": "DATA",
                 "smtpd_lostconn_data": "lost connection"
@@ -2349,6 +3130,17 @@
             "service": {
                 "name": "postfix/cleanup",
                 "type": "postfix"
+            },
+            "source": {
+                "address": "unknown",
+                "as": {
+                    "number": 1221,
+                    "organization": {
+                        "name": "Telstra Pty Ltd"
+                    }
+                },
+                "domain": "unknown",
+                "ip": "1.128.114.120"
             },
             "tags": [
                 "preserve_original_event"
@@ -2499,6 +3291,18 @@
         },
         {
             "@timestamp": "2023-10-24T15:18:09.000-04:00",
+            "destination": {
+                "address": "gmail-smtp-in.l.google.com",
+                "as": {
+                    "number": 1221,
+                    "organization": {
+                        "name": "Telstra Pty Ltd"
+                    }
+                },
+                "domain": "gmail-smtp-in.l.google.com",
+                "ip": "1.128.15.15",
+                "port": 25
+            },
             "ecs": {
                 "version": "8.8.0"
             },
@@ -2511,6 +3315,9 @@
                 "name": "server"
             },
             "message": "Trusted TLS connection established to gmail-smtp-in.l.google.com[1.128.15.15]:25: TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits)",
+            "network": {
+                "type": "ipv4"
+            },
             "postfix": {
                 "relay": {
                     "hostname": "gmail-smtp-in.l.google.com",
@@ -2535,6 +3342,12 @@
             },
             "server": {
                 "address": "gmail-smtp-in.l.google.com",
+                "as": {
+                    "number": 1221,
+                    "organization": {
+                        "name": "Telstra Pty Ltd"
+                    }
+                },
                 "domain": "gmail-smtp-in.l.google.com",
                 "ip": "1.128.15.15",
                 "port": 25
@@ -2621,6 +3434,18 @@
             "@timestamp": "2023-10-24T15:18:09.000-04:00",
             "client": {
                 "address": "67.43.156.18",
+                "as": {
+                    "number": 35908
+                },
+                "geo": {
+                    "continent_name": "Asia",
+                    "country_iso_code": "BT",
+                    "country_name": "Bhutan",
+                    "location": {
+                        "lat": 27.5,
+                        "lon": 90.5
+                    }
+                },
                 "ip": "67.43.156.18",
                 "port": 51799
             },
@@ -2636,6 +3461,9 @@
                 "name": "server"
             },
             "message": "COMMAND TIME LIMIT from [67.43.156.18]:51799 after CONNECT",
+            "network": {
+                "type": "ipv4"
+            },
             "postfix": {
                 "postscreen": {
                     "violation": "COMMAND TIME LIMIT"
@@ -2655,6 +3483,23 @@
                 "name": "postfix/cleanup",
                 "type": "postfix"
             },
+            "source": {
+                "address": "67.43.156.18",
+                "as": {
+                    "number": 35908
+                },
+                "geo": {
+                    "continent_name": "Asia",
+                    "country_iso_code": "BT",
+                    "country_name": "Bhutan",
+                    "location": {
+                        "lat": 27.5,
+                        "lon": 90.5
+                    }
+                },
+                "ip": "67.43.156.18",
+                "port": 51799
+            },
             "tags": [
                 "preserve_original_event"
             ]
@@ -2664,6 +3509,18 @@
             "client": {
                 "address": "ssl-tools.net",
                 "domain": "ssl-tools.net",
+                "geo": {
+                    "city_name": "Changchun",
+                    "continent_name": "Asia",
+                    "country_iso_code": "CN",
+                    "country_name": "China",
+                    "location": {
+                        "lat": 43.88,
+                        "lon": 125.3228
+                    },
+                    "region_iso_code": "CN-22",
+                    "region_name": "Jilin Sheng"
+                },
                 "ip": "175.16.199.90"
             },
             "ecs": {
@@ -2678,6 +3535,9 @@
                 "name": "server"
             },
             "message": "SSL_accept error from ssl-tools.net[175.16.199.90]: -1",
+            "network": {
+                "type": "ipv4"
+            },
             "postfix": {
                 "smtpd_lostconn_data": "SSL_accept error",
                 "smtpd_lostconn_reason": "-1"
@@ -2698,12 +3558,53 @@
                 "name": "postfix/cleanup",
                 "type": "postfix"
             },
+            "source": {
+                "address": "ssl-tools.net",
+                "domain": "ssl-tools.net",
+                "geo": {
+                    "city_name": "Changchun",
+                    "continent_name": "Asia",
+                    "country_iso_code": "CN",
+                    "country_name": "China",
+                    "location": {
+                        "lat": 43.88,
+                        "lon": 125.3228
+                    },
+                    "region_iso_code": "CN-22",
+                    "region_name": "Jilin Sheng"
+                },
+                "ip": "175.16.199.90"
+            },
             "tags": [
                 "preserve_original_event"
             ]
         },
         {
             "@timestamp": "2023-10-24T15:18:09.000-04:00",
+            "destination": {
+                "address": "mail.example.com",
+                "as": {
+                    "number": 29518,
+                    "organization": {
+                        "name": "Bredband2 AB"
+                    }
+                },
+                "domain": "mail.example.com",
+                "geo": {
+                    "city_name": "Linköping",
+                    "continent_name": "Europe",
+                    "country_iso_code": "SE",
+                    "country_name": "Sweden",
+                    "location": {
+                        "lat": 58.4167,
+                        "lon": 15.6167
+                    },
+                    "region_iso_code": "SE-E",
+                    "region_name": "Östergötland County"
+                },
+                "ip": "89.160.20.127",
+                "port": 25
+            },
             "ecs": {
                 "version": "8.8.0"
             },
@@ -2716,6 +3617,9 @@
                 "name": "server"
             },
             "message": "certificate verification failed for mail.example.com[89.160.20.127]:25: untrusted issuer /C=de/L=XXX/O=XXX GmbH/CN=XX XX XXX CA/emailAddress=XX@XX",
+            "network": {
+                "type": "ipv4"
+            },
             "postfix": {
                 "relay": {
                     "hostname": "mail.example.com",
@@ -2740,7 +3644,25 @@
             },
             "server": {
                 "address": "mail.example.com",
+                "as": {
+                    "number": 29518,
+                    "organization": {
+                        "name": "Bredband2 AB"
+                    }
+                },
                 "domain": "mail.example.com",
+                "geo": {
+                    "city_name": "Linköping",
+                    "continent_name": "Europe",
+                    "country_iso_code": "SE",
+                    "country_name": "Sweden",
+                    "location": {
+                        "lat": 58.4167,
+                        "lon": 15.6167
+                    },
+                    "region_iso_code": "SE-E",
+                    "region_name": "Östergötland County"
+                },
                 "ip": "89.160.20.127",
                 "port": 25
             },
@@ -2754,6 +3676,24 @@
         },
         {
             "@timestamp": "2023-10-24T15:18:09.000-04:00",
+            "destination": {
+                "address": "mail.example.org",
+                "domain": "mail.example.org",
+                "geo": {
+                    "city_name": "Changchun",
+                    "continent_name": "Asia",
+                    "country_iso_code": "CN",
+                    "country_name": "China",
+                    "location": {
+                        "lat": 43.88,
+                        "lon": 125.3228
+                    },
+                    "region_iso_code": "CN-22",
+                    "region_name": "Jilin Sheng"
+                },
+                "ip": "175.16.199.6",
+                "port": 25
+            },
             "ecs": {
                 "version": "8.8.0"
             },
@@ -2767,6 +3707,9 @@
                 "name": "server"
             },
             "message": "SSL_connect error to mail.example.org[175.16.199.6]:25: -1",
+            "network": {
+                "type": "ipv4"
+            },
             "postfix": {
                 "relay": {
                     "hostname": "mail.example.org",
@@ -2790,6 +3733,18 @@
             "server": {
                 "address": "mail.example.org",
                 "domain": "mail.example.org",
+                "geo": {
+                    "city_name": "Changchun",
+                    "continent_name": "Asia",
+                    "country_iso_code": "CN",
+                    "country_name": "China",
+                    "location": {
+                        "lat": 43.88,
+                        "lon": 125.3228
+                    },
+                    "region_iso_code": "CN-22",
+                    "region_name": "Jilin Sheng"
+                },
                 "ip": "175.16.199.6",
                 "port": 25
             },
@@ -2806,6 +3761,18 @@
             "client": {
                 "address": "ccm231.constantcontact.com",
                 "domain": "ccm231.constantcontact.com",
+                "geo": {
+                    "city_name": "Changchun",
+                    "continent_name": "Asia",
+                    "country_iso_code": "CN",
+                    "country_name": "China",
+                    "location": {
+                        "lat": 43.88,
+                        "lon": 125.3228
+                    },
+                    "region_iso_code": "CN-22",
+                    "region_name": "Jilin Sheng"
+                },
                 "ip": "175.16.199.90"
             },
             "ecs": {
@@ -2822,7 +3789,8 @@
             },
             "message": "NOQUEUE: discard: MAIL from ccm231.constantcontact.com[175.16.199.90]: \u003cbsdbdsfbw==_4343_sdfbddw==@in.constantcontact.com\u003e: Sender address SPAM; from=\u003cbsdbdsfbw==_4343_sdfbddw==@in.constantcontact.com\u003e proto=ESMTP helo=\u003cccm231.constantcontact.com\u003e",
             "network": {
-                "protocol": "ESMTP"
+                "protocol": "ESMTP",
+                "type": "ipv4"
             },
             "postfix": {
                 "helo": "ccm231.constantcontact.com",
@@ -2847,6 +3815,23 @@
                 "name": "postfix/cleanup",
                 "type": "postfix"
             },
+            "source": {
+                "address": "ccm231.constantcontact.com",
+                "domain": "ccm231.constantcontact.com",
+                "geo": {
+                    "city_name": "Changchun",
+                    "continent_name": "Asia",
+                    "country_iso_code": "CN",
+                    "country_name": "China",
+                    "location": {
+                        "lat": 43.88,
+                        "lon": 125.3228
+                    },
+                    "region_iso_code": "CN-22",
+                    "region_name": "Jilin Sheng"
+                },
+                "ip": "175.16.199.90"
+            },
             "tags": [
                 "preserve_original_event"
             ]
@@ -2855,6 +3840,18 @@
             "@timestamp": "2023-10-24T15:18:09.000-04:00",
             "client": {
                 "address": "175.16.199.90",
+                "geo": {
+                    "city_name": "Changchun",
+                    "continent_name": "Asia",
+                    "country_iso_code": "CN",
+                    "country_name": "China",
+                    "location": {
+                        "lat": 43.88,
+                        "lon": 125.3228
+                    },
+                    "region_iso_code": "CN-22",
+                    "region_name": "Jilin Sheng"
+                },
                 "ip": "175.16.199.90",
                 "port": 1337
             },
@@ -2870,6 +3867,9 @@
                 "name": "server"
             },
             "message": "NOQUEUE: reject: CONNECT from [175.16.199.90]:1337: all server ports busy",
+            "network": {
+                "type": "ipv4"
+            },
             "postfix": {
                 "postscreen": {
                     "toobusy_data": "all server ports busy"
@@ -2888,12 +3888,35 @@
                 "name": "postfix/cleanup",
                 "type": "postfix"
             },
+            "source": {
+                "address": "175.16.199.90",
+                "geo": {
+                    "city_name": "Changchun",
+                    "continent_name": "Asia",
+                    "country_iso_code": "CN",
+                    "country_name": "China",
+                    "location": {
+                        "lat": 43.88,
+                        "lon": 125.3228
+                    },
+                    "region_iso_code": "CN-22",
+                    "region_name": "Jilin Sheng"
+                },
+                "ip": "175.16.199.90",
+                "port": 1337
+            },
             "tags": [
                 "preserve_original_event"
             ]
         },
         {
             "@timestamp": "2023-10-24T15:18:09.000-04:00",
+            "destination": {
+                "address": "127.0.0.1",
+                "domain": "127.0.0.1",
+                "ip": "127.0.0.1",
+                "port": 2525
+            },
             "ecs": {
                 "version": "8.8.0"
             },
@@ -2913,6 +3936,9 @@
                 "name": "server"
             },
             "message": "7EE668039: to=\u003cadmin@example.com\u003e, relay=127.0.0.1[127.0.0.1]:2525, delay=3.6, delays=0.2/0.02/0.04/3.3, dsn=2.0.0, status=sent (250 2.0.0 Ok: queued as 153053D)",
+            "network": {
+                "type": "ipv4"
+            },
             "postfix": {
                 "delay": "3.6",
                 "delay_before_qmgr": "0.2",
@@ -2959,6 +3985,12 @@
             "@timestamp": "2023-10-24T15:18:09.000-04:00",
             "client": {
                 "address": "unknown",
+                "as": {
+                    "number": 1221,
+                    "organization": {
+                        "name": "Telstra Pty Ltd"
+                    }
+                },
                 "domain": "unknown",
                 "ip": "1.128.114.120"
             },
@@ -2974,6 +4006,9 @@
                 "name": "server"
             },
             "message": "lost connection after RSET from unknown[1.128.114.120]",
+            "network": {
+                "type": "ipv4"
+            },
             "postfix": {
                 "smtp_stage": "RSET",
                 "smtpd_lostconn_data": "lost connection"
@@ -2994,6 +4029,17 @@
                 "name": "postfix/cleanup",
                 "type": "postfix"
             },
+            "source": {
+                "address": "unknown",
+                "as": {
+                    "number": 1221,
+                    "organization": {
+                        "name": "Telstra Pty Ltd"
+                    }
+                },
+                "domain": "unknown",
+                "ip": "1.128.114.120"
+            },
             "tags": [
                 "preserve_original_event"
             ]
@@ -3002,6 +4048,12 @@
             "@timestamp": "2023-10-24T15:18:09.000-04:00",
             "client": {
                 "address": "1.128.114.120",
+                "as": {
+                    "number": 1221,
+                    "organization": {
+                        "name": "Telstra Pty Ltd"
+                    }
+                },
                 "ip": "1.128.114.120",
                 "port": 53024
             },
@@ -3017,6 +4069,9 @@
                 "name": "server"
             },
             "message": "WHITELIST VETO [1.128.114.120]:53024",
+            "network": {
+                "type": "ipv4"
+            },
             "postfix": {
                 "postscreen": {
                     "access": "WHITELIST VETO"
@@ -3034,6 +4089,17 @@
             "service": {
                 "name": "postfix/cleanup",
                 "type": "postfix"
+            },
+            "source": {
+                "address": "1.128.114.120",
+                "as": {
+                    "number": 1221,
+                    "organization": {
+                        "name": "Telstra Pty Ltd"
+                    }
+                },
+                "ip": "1.128.114.120",
+                "port": 53024
             },
             "tags": [
                 "preserve_original_event"
@@ -3073,6 +4139,18 @@
             "@timestamp": "2023-10-24T15:18:09.000-04:00",
             "client": {
                 "address": "67.43.156.18",
+                "as": {
+                    "number": 35908
+                },
+                "geo": {
+                    "continent_name": "Asia",
+                    "country_iso_code": "BT",
+                    "country_name": "Bhutan",
+                    "location": {
+                        "lat": 27.5,
+                        "lon": 90.5
+                    }
+                },
                 "ip": "67.43.156.18",
                 "port": 2413
             },
@@ -3102,7 +4180,8 @@
             },
             "message": "NOQUEUE: reject: RCPT from [67.43.156.18]:2413: 550 5.5.1 Protocol error; from=\u003clvtowxfdp@yahoo.com\u003e, to=\u003ctom@example.com\u003e, proto=SMTP, helo=\u003cmx32.usaindiamunish.net\u003e",
             "network": {
-                "protocol": "SMTP"
+                "protocol": "SMTP",
+                "type": "ipv4"
             },
             "postfix": {
                 "helo": "mx32.usaindiamunish.net",
@@ -3122,6 +4201,23 @@
             "service": {
                 "name": "postfix/cleanup",
                 "type": "postfix"
+            },
+            "source": {
+                "address": "67.43.156.18",
+                "as": {
+                    "number": 35908
+                },
+                "geo": {
+                    "continent_name": "Asia",
+                    "country_iso_code": "BT",
+                    "country_name": "Bhutan",
+                    "location": {
+                        "lat": 27.5,
+                        "lon": 90.5
+                    }
+                },
+                "ip": "67.43.156.18",
+                "port": 2413
             },
             "tags": [
                 "preserve_original_event"
@@ -3159,6 +4255,23 @@
         },
         {
             "@timestamp": "2023-10-24T15:18:09.000-04:00",
+            "destination": {
+                "address": "mx00.gmx.com",
+                "as": {
+                    "number": 35908
+                },
+                "domain": "mx00.gmx.com",
+                "geo": {
+                    "continent_name": "Asia",
+                    "country_iso_code": "BT",
+                    "country_name": "Bhutan",
+                    "location": {
+                        "lat": 27.5,
+                        "lon": 90.5
+                    }
+                },
+                "ip": "67.43.156.18"
+            },
             "ecs": {
                 "version": "8.8.0"
             },
@@ -3171,6 +4284,9 @@
                 "name": "server"
             },
             "message": "78D6B41: conversation with mx00.gmx.com[67.43.156.18] timed out while receiving the initial server greeting",
+            "network": {
+                "type": "ipv4"
+            },
             "postfix": {
                 "queueid": "78D6B41",
                 "relay": {
@@ -3193,7 +4309,19 @@
             },
             "server": {
                 "address": "mx00.gmx.com",
+                "as": {
+                    "number": 35908
+                },
                 "domain": "mx00.gmx.com",
+                "geo": {
+                    "continent_name": "Asia",
+                    "country_iso_code": "BT",
+                    "country_name": "Bhutan",
+                    "location": {
+                        "lat": 27.5,
+                        "lon": 90.5
+                    }
+                },
                 "ip": "67.43.156.18"
             },
             "service": {
@@ -3209,6 +4337,18 @@
             "client": {
                 "address": "eu-smtp-delivery-201.mimecast.com",
                 "domain": "eu-smtp-delivery-201.mimecast.com",
+                "geo": {
+                    "city_name": "Changchun",
+                    "continent_name": "Asia",
+                    "country_iso_code": "CN",
+                    "country_name": "China",
+                    "location": {
+                        "lat": 43.88,
+                        "lon": 125.3228
+                    },
+                    "region_iso_code": "CN-22",
+                    "region_name": "Jilin Sheng"
+                },
                 "ip": "175.16.199.90"
             },
             "ecs": {
@@ -3223,6 +4363,9 @@
                 "name": "server"
             },
             "message": "SSL_accept error from eu-smtp-delivery-201.mimecast.com[175.16.199.90]: 0",
+            "network": {
+                "type": "ipv4"
+            },
             "postfix": {
                 "smtpd_lostconn_data": "SSL_accept error",
                 "smtpd_lostconn_reason": "0"
@@ -3243,6 +4386,23 @@
                 "name": "postfix/cleanup",
                 "type": "postfix"
             },
+            "source": {
+                "address": "eu-smtp-delivery-201.mimecast.com",
+                "domain": "eu-smtp-delivery-201.mimecast.com",
+                "geo": {
+                    "city_name": "Changchun",
+                    "continent_name": "Asia",
+                    "country_iso_code": "CN",
+                    "country_name": "China",
+                    "location": {
+                        "lat": 43.88,
+                        "lon": 125.3228
+                    },
+                    "region_iso_code": "CN-22",
+                    "region_name": "Jilin Sheng"
+                },
+                "ip": "175.16.199.90"
+            },
             "tags": [
                 "preserve_original_event"
             ]
@@ -3251,6 +4411,12 @@
             "@timestamp": "2023-10-24T15:18:09.000-04:00",
             "client": {
                 "address": "061238241086.static.ctinets.com",
+                "as": {
+                    "number": 1221,
+                    "organization": {
+                        "name": "Telstra Pty Ltd"
+                    }
+                },
                 "domain": "061238241086.static.ctinets.com",
                 "ip": "1.128.114.120"
             },
@@ -3280,7 +4446,8 @@
             },
             "message": "NOQUEUE: reject: RCPT from 061238241086.static.ctinets.com[1.128.114.120]: 550 5.12.345 \u003cuser@example.com\u003e: Recipient address rejected: Some error message; from=\u003cwumt5@cchfdc.com\u003e to=\u003cuser@example.com\u003e proto=ESMTP helo=\u003cecsolved.com\u003e",
             "network": {
-                "protocol": "ESMTP"
+                "protocol": "ESMTP",
+                "type": "ipv4"
             },
             "postfix": {
                 "helo": "ecsolved.com",
@@ -3304,6 +4471,17 @@
                 "name": "postfix/cleanup",
                 "type": "postfix"
             },
+            "source": {
+                "address": "061238241086.static.ctinets.com",
+                "as": {
+                    "number": 1221,
+                    "organization": {
+                        "name": "Telstra Pty Ltd"
+                    }
+                },
+                "domain": "061238241086.static.ctinets.com",
+                "ip": "1.128.114.120"
+            },
             "tags": [
                 "preserve_original_event"
             ]
@@ -3312,6 +4490,15 @@
             "@timestamp": "2023-10-24T15:18:09.000-04:00",
             "client": {
                 "address": "2A02:CF40:4003:c01::23a",
+                "geo": {
+                    "continent_name": "Europe",
+                    "country_iso_code": "NO",
+                    "country_name": "Norway",
+                    "location": {
+                        "lat": 62.0,
+                        "lon": 10.0
+                    }
+                },
                 "ip": "2A02:CF40:4003:c01::23a"
             },
             "ecs": {
@@ -3326,6 +4513,9 @@
                 "name": "server"
             },
             "message": "addr 2A02:CF40:4003:c01::23a listed by domain list.dnswl.org as 127.0.5.1",
+            "network": {
+                "type": "ipv6"
+            },
             "postfix": {
                 "dnsbl": {
                     "domain": "list.dnswl.org",
@@ -3348,6 +4538,19 @@
             "service": {
                 "name": "postfix/cleanup",
                 "type": "postfix"
+            },
+            "source": {
+                "address": "2A02:CF40:4003:c01::23a",
+                "geo": {
+                    "continent_name": "Europe",
+                    "country_iso_code": "NO",
+                    "country_name": "Norway",
+                    "location": {
+                        "lat": 62.0,
+                        "lon": 10.0
+                    }
+                },
+                "ip": "2A02:CF40:4003:c01::23a"
             },
             "tags": [
                 "preserve_original_event"
@@ -3386,6 +4589,12 @@
             "@timestamp": "2023-10-24T15:18:09.000-04:00",
             "client": {
                 "address": "1.128.114.120",
+                "as": {
+                    "number": 1221,
+                    "organization": {
+                        "name": "Telstra Pty Ltd"
+                    }
+                },
                 "ip": "1.128.114.120"
             },
             "ecs": {
@@ -3400,6 +4609,9 @@
                 "name": "server"
             },
             "message": "statistics: max connection count 1 for (smtpd:1.128.114.120) at Oct 26 18:13:50",
+            "network": {
+                "type": "ipv4"
+            },
             "postfix": {
                 "anvil": {
                     "conn_count": 1,
@@ -3420,6 +4632,16 @@
                 "name": "postfix/cleanup",
                 "type": "postfix"
             },
+            "source": {
+                "address": "1.128.114.120",
+                "as": {
+                    "number": 1221,
+                    "organization": {
+                        "name": "Telstra Pty Ltd"
+                    }
+                },
+                "ip": "1.128.114.120"
+            },
             "tags": [
                 "preserve_original_event"
             ]
@@ -3429,6 +4651,15 @@
             "client": {
                 "address": "unknown",
                 "domain": "unknown",
+                "geo": {
+                    "continent_name": "Europe",
+                    "country_iso_code": "NO",
+                    "country_name": "Norway",
+                    "location": {
+                        "lat": 62.0,
+                        "lon": 10.0
+                    }
+                },
                 "ip": "2A02:CF40:cfb1:1:82f:f74e:a45c:3033"
             },
             "ecs": {
@@ -3457,7 +4688,8 @@
             },
             "message": "NOQUEUE: reject: RCPT from unknown[2A02:CF40:cfb1:1:82f:f74e:a45c:3033]: 504 5.5.2 \u003caap@henk\u003e: Sender address rejected: need fully-qualified address; from=\u003caap@henk\u003e to=\u003cuser@example.com\u003e proto=SMTP helo=\u003ctest\u003e",
             "network": {
-                "protocol": "SMTP"
+                "protocol": "SMTP",
+                "type": "ipv6"
             },
             "postfix": {
                 "helo": "test",
@@ -3481,6 +4713,20 @@
                 "name": "postfix/cleanup",
                 "type": "postfix"
             },
+            "source": {
+                "address": "unknown",
+                "domain": "unknown",
+                "geo": {
+                    "continent_name": "Europe",
+                    "country_iso_code": "NO",
+                    "country_name": "Norway",
+                    "location": {
+                        "lat": 62.0,
+                        "lon": 10.0
+                    }
+                },
+                "ip": "2A02:CF40:cfb1:1:82f:f74e:a45c:3033"
+            },
             "tags": [
                 "preserve_original_event"
             ]
@@ -3489,6 +4735,12 @@
             "@timestamp": "2023-10-24T15:18:09.000-04:00",
             "client": {
                 "address": "1.128.114.120",
+                "as": {
+                    "number": 1221,
+                    "organization": {
+                        "name": "Telstra Pty Ltd"
+                    }
+                },
                 "ip": "1.128.114.120",
                 "port": 42606
             },
@@ -3504,6 +4756,9 @@
                 "name": "server"
             },
             "message": "BARE NEWLINE from [1.128.114.120]:42606 after .",
+            "network": {
+                "type": "ipv4"
+            },
             "postfix": {
                 "postscreen": {
                     "violation": "BARE NEWLINE"
@@ -3521,6 +4776,17 @@
             "service": {
                 "name": "postfix/cleanup",
                 "type": "postfix"
+            },
+            "source": {
+                "address": "1.128.114.120",
+                "as": {
+                    "number": 1221,
+                    "organization": {
+                        "name": "Telstra Pty Ltd"
+                    }
+                },
+                "ip": "1.128.114.120",
+                "port": 42606
             },
             "tags": [
                 "preserve_original_event"
@@ -3653,6 +4919,12 @@
         },
         {
             "@timestamp": "2023-10-24T15:18:09.000-04:00",
+            "destination": {
+                "address": "127.0.0.1",
+                "domain": "127.0.0.1",
+                "ip": "127.0.0.1",
+                "port": 2525
+            },
             "ecs": {
                 "version": "8.8.0"
             },
@@ -3672,6 +4944,9 @@
                 "name": "server"
             },
             "message": "7EE668039: to=\u003cadmin@example.com\u003e, relay=127.0.0.1[127.0.0.1]:2525, delay=3.6, delays=0.2/0.02/0.04/3.3, dsn=2.0.0, status=sent (250 2.0.0 Ok: queued as 153053D)",
+            "network": {
+                "type": "ipv4"
+            },
             "postfix": {
                 "delay": "3.6",
                 "delay_before_qmgr": "0.2",
@@ -3751,6 +5026,12 @@
             "@timestamp": "2023-10-24T15:18:09.000-04:00",
             "client": {
                 "address": "unknown",
+                "as": {
+                    "number": 1221,
+                    "organization": {
+                        "name": "Telstra Pty Ltd"
+                    }
+                },
                 "domain": "unknown",
                 "ip": "1.128.114.120"
             },
@@ -3766,6 +5047,9 @@
                 "name": "server"
             },
             "message": "disconnect from unknown[1.128.114.120] ehlo=2 starttls=1 mail=1 rcpt=0/1 data=0/1 quit=1 commands=5/7",
+            "network": {
+                "type": "ipv4"
+            },
             "postfix": {
                 "cmd": {
                     "count": 7,
@@ -3795,6 +5079,17 @@
             "service": {
                 "name": "postfix/cleanup",
                 "type": "postfix"
+            },
+            "source": {
+                "address": "unknown",
+                "as": {
+                    "number": 1221,
+                    "organization": {
+                        "name": "Telstra Pty Ltd"
+                    }
+                },
+                "domain": "unknown",
+                "ip": "1.128.114.120"
             },
             "tags": [
                 "preserve_original_event"
@@ -3833,6 +5128,15 @@
             "@timestamp": "2023-10-24T15:18:09.000-04:00",
             "client": {
                 "address": "2A02:CF40:0:1::3",
+                "geo": {
+                    "continent_name": "Europe",
+                    "country_iso_code": "NO",
+                    "country_name": "Norway",
+                    "location": {
+                        "lat": 62.0,
+                        "lon": 10.0
+                    }
+                },
                 "ip": "2A02:CF40:0:1::3"
             },
             "ecs": {
@@ -3847,6 +5151,9 @@
                 "name": "server"
             },
             "message": "statistics: max connection rate 1/60s for (smtpd:2A02:CF40:0:1::3) at Oct 26 17:46:59",
+            "network": {
+                "type": "ipv6"
+            },
             "postfix": {
                 "anvil": {
                     "conn_period": "60s",
@@ -3868,12 +5175,42 @@
                 "name": "postfix/cleanup",
                 "type": "postfix"
             },
+            "source": {
+                "address": "2A02:CF40:0:1::3",
+                "geo": {
+                    "continent_name": "Europe",
+                    "country_iso_code": "NO",
+                    "country_name": "Norway",
+                    "location": {
+                        "lat": 62.0,
+                        "lon": 10.0
+                    }
+                },
+                "ip": "2A02:CF40:0:1::3"
+            },
             "tags": [
                 "preserve_original_event"
             ]
         },
         {
             "@timestamp": "2023-10-24T15:18:09.000-04:00",
+            "destination": {
+                "address": "mx3.hotmail.com",
+                "as": {
+                    "number": 35908
+                },
+                "domain": "mx3.hotmail.com",
+                "geo": {
+                    "continent_name": "Asia",
+                    "country_iso_code": "BT",
+                    "country_name": "Bhutan",
+                    "location": {
+                        "lat": 27.5,
+                        "lon": 90.5
+                    }
+                },
+                "ip": "67.43.156.18"
+            },
             "ecs": {
                 "version": "8.8.0"
             },
@@ -3887,6 +5224,9 @@
                 "name": "server"
             },
             "message": "B99FE3D: lost connection with mx3.hotmail.com[67.43.156.18] while receiving the initial server greeting",
+            "network": {
+                "type": "ipv4"
+            },
             "postfix": {
                 "queueid": "B99FE3D",
                 "relay": {
@@ -3910,7 +5250,19 @@
             },
             "server": {
                 "address": "mx3.hotmail.com",
+                "as": {
+                    "number": 35908
+                },
                 "domain": "mx3.hotmail.com",
+                "geo": {
+                    "continent_name": "Asia",
+                    "country_iso_code": "BT",
+                    "country_name": "Bhutan",
+                    "location": {
+                        "lat": 27.5,
+                        "lon": 90.5
+                    }
+                },
                 "ip": "67.43.156.18"
             },
             "service": {
@@ -4014,6 +5366,12 @@
             "@timestamp": "2023-10-24T15:18:09.000-04:00",
             "client": {
                 "address": "unknown",
+                "as": {
+                    "number": 1221,
+                    "organization": {
+                        "name": "Telstra Pty Ltd"
+                    }
+                },
                 "domain": "unknown",
                 "ip": "1.128.114.120"
             },
@@ -4029,6 +5387,9 @@
                 "name": "server"
             },
             "message": "timeout after END-OF-MESSAGE from unknown[1.128.114.120]",
+            "network": {
+                "type": "ipv4"
+            },
             "postfix": {
                 "smtp_stage": "END-OF-MESSAGE",
                 "smtpd_lostconn_data": "timeout"
@@ -4049,6 +5410,17 @@
                 "name": "postfix/cleanup",
                 "type": "postfix"
             },
+            "source": {
+                "address": "unknown",
+                "as": {
+                    "number": 1221,
+                    "organization": {
+                        "name": "Telstra Pty Ltd"
+                    }
+                },
+                "domain": "unknown",
+                "ip": "1.128.114.120"
+            },
             "tags": [
                 "preserve_original_event"
             ]
@@ -4057,6 +5429,12 @@
             "@timestamp": "2023-10-24T15:18:09.000-04:00",
             "client": {
                 "address": "1.128.114.120",
+                "as": {
+                    "number": 1221,
+                    "organization": {
+                        "name": "Telstra Pty Ltd"
+                    }
+                },
                 "ip": "1.128.114.120",
                 "port": 51637
             },
@@ -4072,6 +5450,9 @@
                 "name": "server"
             },
             "message": "DISCONNECT [1.128.114.120]:51637",
+            "network": {
+                "type": "ipv4"
+            },
             "postfix": {
                 "postscreen": {
                     "access": "DISCONNECT"
@@ -4090,6 +5471,17 @@
                 "name": "postfix/cleanup",
                 "type": "postfix"
             },
+            "source": {
+                "address": "1.128.114.120",
+                "as": {
+                    "number": 1221,
+                    "organization": {
+                        "name": "Telstra Pty Ltd"
+                    }
+                },
+                "ip": "1.128.114.120",
+                "port": 51637
+            },
             "tags": [
                 "preserve_original_event"
             ]
@@ -4098,6 +5490,12 @@
             "@timestamp": "2023-10-24T15:18:09.000-04:00",
             "client": {
                 "address": "1.128.114.120",
+                "as": {
+                    "number": 1221,
+                    "organization": {
+                        "name": "Telstra Pty Ltd"
+                    }
+                },
                 "ip": "1.128.114.120",
                 "port": 53024
             },
@@ -4113,6 +5511,9 @@
                 "name": "server"
             },
             "message": "PASS OLD [1.128.114.120]:53024",
+            "network": {
+                "type": "ipv4"
+            },
             "postfix": {
                 "postscreen": {
                     "access": "PASS OLD"
@@ -4131,6 +5532,17 @@
                 "name": "postfix/cleanup",
                 "type": "postfix"
             },
+            "source": {
+                "address": "1.128.114.120",
+                "as": {
+                    "number": 1221,
+                    "organization": {
+                        "name": "Telstra Pty Ltd"
+                    }
+                },
+                "ip": "1.128.114.120",
+                "port": 53024
+            },
             "tags": [
                 "preserve_original_event"
             ]
@@ -4139,6 +5551,12 @@
             "@timestamp": "2023-10-24T15:18:09.000-04:00",
             "client": {
                 "address": "1.128.114.120",
+                "as": {
+                    "number": 1221,
+                    "organization": {
+                        "name": "Telstra Pty Ltd"
+                    }
+                },
                 "ip": "1.128.114.120",
                 "port": 54017
             },
@@ -4154,6 +5572,9 @@
                 "name": "server"
             },
             "message": "HANGUP after 0 from [1.128.114.120]:54017 in tests before SMTP handshake",
+            "network": {
+                "type": "ipv4"
+            },
             "postfix": {
                 "postscreen": {
                     "violation": "HANGUP",
@@ -4172,6 +5593,17 @@
             "service": {
                 "name": "postfix/cleanup",
                 "type": "postfix"
+            },
+            "source": {
+                "address": "1.128.114.120",
+                "as": {
+                    "number": 1221,
+                    "organization": {
+                        "name": "Telstra Pty Ltd"
+                    }
+                },
+                "ip": "1.128.114.120",
+                "port": 54017
             },
             "tags": [
                 "preserve_original_event"
@@ -4213,8 +5645,37 @@
             "@timestamp": "2023-10-24T15:18:09.000-04:00",
             "client": {
                 "address": "1.128.114.120",
+                "as": {
+                    "number": 1221,
+                    "organization": {
+                        "name": "Telstra Pty Ltd"
+                    }
+                },
                 "ip": "1.128.114.120",
                 "port": 53024
+            },
+            "destination": {
+                "address": "89.160.20.130",
+                "as": {
+                    "number": 29518,
+                    "organization": {
+                        "name": "Bredband2 AB"
+                    }
+                },
+                "geo": {
+                    "city_name": "Linköping",
+                    "continent_name": "Europe",
+                    "country_iso_code": "SE",
+                    "country_name": "Sweden",
+                    "location": {
+                        "lat": 58.4167,
+                        "lon": 15.6167
+                    },
+                    "region_iso_code": "SE-E",
+                    "region_name": "Östergötland County"
+                },
+                "ip": "89.160.20.130",
+                "port": 25
             },
             "ecs": {
                 "version": "8.8.0"
@@ -4228,6 +5689,9 @@
                 "name": "server"
             },
             "message": "CONNECT from [1.128.114.120]:53024 to [89.160.20.130]:25",
+            "network": {
+                "type": "ipv4"
+            },
             "process": {
                 "name": "postfix/cleanup",
                 "pid": 30021
@@ -4240,12 +5704,41 @@
             },
             "server": {
                 "address": "89.160.20.130",
+                "as": {
+                    "number": 29518,
+                    "organization": {
+                        "name": "Bredband2 AB"
+                    }
+                },
+                "geo": {
+                    "city_name": "Linköping",
+                    "continent_name": "Europe",
+                    "country_iso_code": "SE",
+                    "country_name": "Sweden",
+                    "location": {
+                        "lat": 58.4167,
+                        "lon": 15.6167
+                    },
+                    "region_iso_code": "SE-E",
+                    "region_name": "Östergötland County"
+                },
                 "ip": "89.160.20.130",
                 "port": 25
             },
             "service": {
                 "name": "postfix/cleanup",
                 "type": "postfix"
+            },
+            "source": {
+                "address": "1.128.114.120",
+                "as": {
+                    "number": 1221,
+                    "organization": {
+                        "name": "Telstra Pty Ltd"
+                    }
+                },
+                "ip": "1.128.114.120",
+                "port": 53024
             },
             "tags": [
                 "preserve_original_event"
@@ -4285,6 +5778,18 @@
             "@timestamp": "2023-10-24T15:18:09.000-04:00",
             "client": {
                 "address": "67.43.156.18",
+                "as": {
+                    "number": 35908
+                },
+                "geo": {
+                    "continent_name": "Asia",
+                    "country_iso_code": "BT",
+                    "country_name": "Bhutan",
+                    "location": {
+                        "lat": 27.5,
+                        "lon": 90.5
+                    }
+                },
                 "ip": "67.43.156.18",
                 "port": 1038
             },
@@ -4300,6 +5805,9 @@
                 "name": "server"
             },
             "message": "HANGUP after 63 from [67.43.156.18]:1038 in tests after SMTP handshake",
+            "network": {
+                "type": "ipv4"
+            },
             "postfix": {
                 "postscreen": {
                     "violation": "HANGUP",
@@ -4319,6 +5827,23 @@
                 "name": "postfix/cleanup",
                 "type": "postfix"
             },
+            "source": {
+                "address": "67.43.156.18",
+                "as": {
+                    "number": 35908
+                },
+                "geo": {
+                    "continent_name": "Asia",
+                    "country_iso_code": "BT",
+                    "country_name": "Bhutan",
+                    "location": {
+                        "lat": 27.5,
+                        "lon": 90.5
+                    }
+                },
+                "ip": "67.43.156.18",
+                "port": 1038
+            },
             "tags": [
                 "preserve_original_event"
             ]
@@ -4327,6 +5852,12 @@
             "@timestamp": "2023-10-24T15:18:09.000-04:00",
             "client": {
                 "address": "unknown",
+                "as": {
+                    "number": 1221,
+                    "organization": {
+                        "name": "Telstra Pty Ltd"
+                    }
+                },
                 "domain": "unknown",
                 "ip": "1.128.114.120"
             },
@@ -4342,6 +5873,9 @@
                 "name": "server"
             },
             "message": "lost connection after DATA (0 bytes) from unknown[1.128.114.120]",
+            "network": {
+                "type": "ipv4"
+            },
             "postfix": {
                 "smtp_stage": "DATA",
                 "smtpd_lostconn_data": "lost connection"
@@ -4362,6 +5896,17 @@
                 "name": "postfix/cleanup",
                 "type": "postfix"
             },
+            "source": {
+                "address": "unknown",
+                "as": {
+                    "number": 1221,
+                    "organization": {
+                        "name": "Telstra Pty Ltd"
+                    }
+                },
+                "domain": "unknown",
+                "ip": "1.128.114.120"
+            },
             "tags": [
                 "preserve_original_event"
             ]
@@ -4370,6 +5915,12 @@
             "@timestamp": "2023-10-24T15:18:09.000-04:00",
             "client": {
                 "address": "1.128.114.120",
+                "as": {
+                    "number": 1221,
+                    "organization": {
+                        "name": "Telstra Pty Ltd"
+                    }
+                },
                 "ip": "1.128.114.120",
                 "port": 45284
             },
@@ -4385,6 +5936,9 @@
                 "name": "server"
             },
             "message": "NON-SMTP COMMAND from [1.128.114.120]:45284 after CONNECT: GET http://ipv4scan.com/hello/check.txt HTTP/1.1",
+            "network": {
+                "type": "ipv4"
+            },
             "postfix": {
                 "postscreen": {
                     "data": "GET http://ipv4scan.com/hello/check.txt HTTP/1.1",
@@ -4405,6 +5959,17 @@
                 "name": "postfix/cleanup",
                 "type": "postfix"
             },
+            "source": {
+                "address": "1.128.114.120",
+                "as": {
+                    "number": 1221,
+                    "organization": {
+                        "name": "Telstra Pty Ltd"
+                    }
+                },
+                "ip": "1.128.114.120",
+                "port": 45284
+            },
             "tags": [
                 "preserve_original_event"
             ]
@@ -4413,6 +5978,12 @@
             "@timestamp": "2023-10-24T15:18:09.000-04:00",
             "client": {
                 "address": "unknown",
+                "as": {
+                    "number": 1221,
+                    "organization": {
+                        "name": "Telstra Pty Ltd"
+                    }
+                },
                 "domain": "unknown",
                 "ip": "1.128.114.120"
             },
@@ -4428,6 +5999,9 @@
                 "name": "server"
             },
             "message": "SSL_accept error from unknown[1.128.114.120]: lost connection",
+            "network": {
+                "type": "ipv4"
+            },
             "postfix": {
                 "smtpd_lostconn_data": "SSL_accept error",
                 "smtpd_lostconn_reason": "lost connection"
@@ -4447,6 +6021,17 @@
             "service": {
                 "name": "postfix/cleanup",
                 "type": "postfix"
+            },
+            "source": {
+                "address": "unknown",
+                "as": {
+                    "number": 1221,
+                    "organization": {
+                        "name": "Telstra Pty Ltd"
+                    }
+                },
+                "domain": "unknown",
+                "ip": "1.128.114.120"
             },
             "tags": [
                 "preserve_original_event"
@@ -4629,6 +6214,18 @@
             "@timestamp": "2023-10-24T15:18:09.000-04:00",
             "client": {
                 "address": "67.43.156.18",
+                "as": {
+                    "number": 35908
+                },
+                "geo": {
+                    "continent_name": "Asia",
+                    "country_iso_code": "BT",
+                    "country_name": "Bhutan",
+                    "location": {
+                        "lat": 27.5,
+                        "lon": 90.5
+                    }
+                },
                 "ip": "67.43.156.18",
                 "port": 51796
             },
@@ -4644,6 +6241,9 @@
                 "name": "server"
             },
             "message": "COMMAND TIME LIMIT from [67.43.156.18]:51796 after RCPT",
+            "network": {
+                "type": "ipv4"
+            },
             "postfix": {
                 "postscreen": {
                     "violation": "COMMAND TIME LIMIT"
@@ -4663,6 +6263,23 @@
                 "name": "postfix/cleanup",
                 "type": "postfix"
             },
+            "source": {
+                "address": "67.43.156.18",
+                "as": {
+                    "number": 35908
+                },
+                "geo": {
+                    "continent_name": "Asia",
+                    "country_iso_code": "BT",
+                    "country_name": "Bhutan",
+                    "location": {
+                        "lat": 27.5,
+                        "lon": 90.5
+                    }
+                },
+                "ip": "67.43.156.18",
+                "port": 51796
+            },
             "tags": [
                 "preserve_original_event"
             ]
@@ -4671,7 +6288,19 @@
             "@timestamp": "2023-10-24T15:18:09.000-04:00",
             "client": {
                 "address": "unknown",
+                "as": {
+                    "number": 35908
+                },
                 "domain": "unknown",
+                "geo": {
+                    "continent_name": "Asia",
+                    "country_iso_code": "BT",
+                    "country_name": "Bhutan",
+                    "location": {
+                        "lat": 27.5,
+                        "lon": 90.5
+                    }
+                },
                 "ip": "67.43.156.18"
             },
             "ecs": {
@@ -4686,6 +6315,9 @@
                 "name": "server"
             },
             "message": "timeout after CONNECT from unknown[67.43.156.18]",
+            "network": {
+                "type": "ipv4"
+            },
             "postfix": {
                 "smtp_stage": "CONNECT",
                 "smtpd_lostconn_data": "timeout"
@@ -4705,6 +6337,23 @@
             "service": {
                 "name": "postfix/cleanup",
                 "type": "postfix"
+            },
+            "source": {
+                "address": "unknown",
+                "as": {
+                    "number": 35908
+                },
+                "domain": "unknown",
+                "geo": {
+                    "continent_name": "Asia",
+                    "country_iso_code": "BT",
+                    "country_name": "Bhutan",
+                    "location": {
+                        "lat": 27.5,
+                        "lon": 90.5
+                    }
+                },
+                "ip": "67.43.156.18"
             },
             "tags": [
                 "preserve_original_event"
@@ -4774,6 +6423,23 @@
         },
         {
             "@timestamp": "2023-10-24T15:18:09.000-04:00",
+            "destination": {
+                "address": "relay.example.com",
+                "as": {
+                    "number": 35908
+                },
+                "domain": "relay.example.com",
+                "geo": {
+                    "continent_name": "Asia",
+                    "country_iso_code": "BT",
+                    "country_name": "Bhutan",
+                    "location": {
+                        "lat": 27.5,
+                        "lon": 90.5
+                    }
+                },
+                "ip": "67.43.156.18"
+            },
             "ecs": {
                 "version": "8.8.0"
             },
@@ -4786,6 +6452,9 @@
                 "name": "server"
             },
             "message": "1234ABCDEF: host relay.example.com[67.43.156.18] said: 450 4.1.8 root@localhost.localdomain: Sender address rejected: Domain not found (in reply to RCPT TO command)",
+            "network": {
+                "type": "ipv4"
+            },
             "postfix": {
                 "queueid": "1234ABCDEF",
                 "relay": {
@@ -4809,7 +6478,19 @@
             },
             "server": {
                 "address": "relay.example.com",
+                "as": {
+                    "number": 35908
+                },
                 "domain": "relay.example.com",
+                "geo": {
+                    "continent_name": "Asia",
+                    "country_iso_code": "BT",
+                    "country_name": "Bhutan",
+                    "location": {
+                        "lat": 27.5,
+                        "lon": 90.5
+                    }
+                },
                 "ip": "67.43.156.18"
             },
             "service": {
@@ -4995,6 +6676,18 @@
         },
         {
             "@timestamp": "2023-10-24T15:18:09.000-04:00",
+            "destination": {
+                "address": "mx4.hotmail.com",
+                "as": {
+                    "number": 1221,
+                    "organization": {
+                        "name": "Telstra Pty Ltd"
+                    }
+                },
+                "domain": "mx4.hotmail.com",
+                "ip": "1.128.15.15",
+                "port": 25
+            },
             "ecs": {
                 "version": "8.8.0"
             },
@@ -5007,6 +6700,9 @@
                 "name": "server"
             },
             "message": "Untrusted TLS connection established to mx4.hotmail.com[1.128.15.15]:25: TLSv1.2 with cipher ECDHE-RSA-AES256-SHA384 (256/256 bits)",
+            "network": {
+                "type": "ipv4"
+            },
             "postfix": {
                 "relay": {
                     "hostname": "mx4.hotmail.com",
@@ -5031,6 +6727,12 @@
             },
             "server": {
                 "address": "mx4.hotmail.com",
+                "as": {
+                    "number": 1221,
+                    "organization": {
+                        "name": "Telstra Pty Ltd"
+                    }
+                },
                 "domain": "mx4.hotmail.com",
                 "ip": "1.128.15.15",
                 "port": 25
@@ -5052,6 +6754,12 @@
             "@timestamp": "2023-10-24T15:18:09.000-04:00",
             "client": {
                 "address": "061238241086.static.ctinets.com",
+                "as": {
+                    "number": 1221,
+                    "organization": {
+                        "name": "Telstra Pty Ltd"
+                    }
+                },
                 "domain": "061238241086.static.ctinets.com",
                 "ip": "1.128.114.120"
             },
@@ -5067,6 +6775,9 @@
                 "name": "server"
             },
             "message": "connect from 061238241086.static.ctinets.com[1.128.114.120]",
+            "network": {
+                "type": "ipv4"
+            },
             "process": {
                 "name": "postfix/cleanup",
                 "pid": 30021
@@ -5083,6 +6794,17 @@
                 "name": "postfix/cleanup",
                 "type": "postfix"
             },
+            "source": {
+                "address": "061238241086.static.ctinets.com",
+                "as": {
+                    "number": 1221,
+                    "organization": {
+                        "name": "Telstra Pty Ltd"
+                    }
+                },
+                "domain": "061238241086.static.ctinets.com",
+                "ip": "1.128.114.120"
+            },
             "tags": [
                 "preserve_original_event"
             ]
@@ -5091,6 +6813,12 @@
             "@timestamp": "2023-10-24T15:18:09.000-04:00",
             "client": {
                 "address": "1.128.114.120",
+                "as": {
+                    "number": 1221,
+                    "organization": {
+                        "name": "Telstra Pty Ltd"
+                    }
+                },
                 "ip": "1.128.114.120"
             },
             "ecs": {
@@ -5105,6 +6833,9 @@
                 "name": "server"
             },
             "message": "statistics: max connection rate 1/60s for (smtpd:1.128.114.120) at Oct 26 18:13:50",
+            "network": {
+                "type": "ipv4"
+            },
             "postfix": {
                 "anvil": {
                     "conn_period": "60s",
@@ -5125,6 +6856,16 @@
                 "address": "smtpd",
                 "name": "postfix/cleanup",
                 "type": "postfix"
+            },
+            "source": {
+                "address": "1.128.114.120",
+                "as": {
+                    "number": 1221,
+                    "organization": {
+                        "name": "Telstra Pty Ltd"
+                    }
+                },
+                "ip": "1.128.114.120"
             },
             "tags": [
                 "preserve_original_event"
@@ -5164,6 +6905,18 @@
             "@timestamp": "2023-10-24T15:18:09.000-04:00",
             "client": {
                 "address": "67.43.156.18",
+                "as": {
+                    "number": 35908
+                },
+                "geo": {
+                    "continent_name": "Asia",
+                    "country_iso_code": "BT",
+                    "country_name": "Bhutan",
+                    "location": {
+                        "lat": 27.5,
+                        "lon": 90.5
+                    }
+                },
                 "ip": "67.43.156.18",
                 "port": 51799
             },
@@ -5179,6 +6932,9 @@
                 "name": "server"
             },
             "message": "COMMAND TIME LIMIT from [67.43.156.18]:51799 after EHLO",
+            "network": {
+                "type": "ipv4"
+            },
             "postfix": {
                 "postscreen": {
                     "violation": "COMMAND TIME LIMIT"
@@ -5198,12 +6954,44 @@
                 "name": "postfix/cleanup",
                 "type": "postfix"
             },
+            "source": {
+                "address": "67.43.156.18",
+                "as": {
+                    "number": 35908
+                },
+                "geo": {
+                    "continent_name": "Asia",
+                    "country_iso_code": "BT",
+                    "country_name": "Bhutan",
+                    "location": {
+                        "lat": 27.5,
+                        "lon": 90.5
+                    }
+                },
+                "ip": "67.43.156.18",
+                "port": 51799
+            },
             "tags": [
                 "preserve_original_event"
             ]
         },
         {
             "@timestamp": "2023-10-24T15:18:09.000-04:00",
+            "destination": {
+                "address": "gmail-smtp-in.l.google.com",
+                "domain": "gmail-smtp-in.l.google.com",
+                "geo": {
+                    "continent_name": "Europe",
+                    "country_iso_code": "NO",
+                    "country_name": "Norway",
+                    "location": {
+                        "lat": 62.0,
+                        "lon": 10.0
+                    }
+                },
+                "ip": "2A02:CF40:400e:c04::1b",
+                "port": 25
+            },
             "ecs": {
                 "version": "8.8.0"
             },
@@ -5223,6 +7011,9 @@
                 "name": "server"
             },
             "message": "4E74613FE76: to=\u003credacted@gmail.com\u003e, relay=gmail-smtp-in.l.google.com[2A02:CF40:400e:c04::1b]:25, delay=1.9, delays=0.05/0/1.1/0.71, dsn=5.7.1, status=bounced (host gmail-smtp-in.l.google.com[2A02:CF40:400e:c04::1b] said: 550-5.7.1 [2A02:CF40:3:25:100::2      12] Our system has detected that this 550-5.7.1 message is likely unsolicited mail. To reduce the amount of spam sent 550-5.7.1 to Gmail, this message has been blocked. Please visit 550-5.7.1 http://support.google.com/mail/bin/answer.py?hl=en\u0026answer=188131 for 550 5.7.1 more information. qc12si8475009pab.211 - gsmtp (in reply to end of DATA command))",
+            "network": {
+                "type": "ipv6"
+            },
             "postfix": {
                 "delay": "1.9",
                 "delay_before_qmgr": "0.05",
@@ -5254,6 +7045,15 @@
             "server": {
                 "address": "gmail-smtp-in.l.google.com",
                 "domain": "gmail-smtp-in.l.google.com",
+                "geo": {
+                    "continent_name": "Europe",
+                    "country_iso_code": "NO",
+                    "country_name": "Norway",
+                    "location": {
+                        "lat": 62.0,
+                        "lon": 10.0
+                    }
+                },
                 "ip": "2A02:CF40:400e:c04::1b",
                 "port": 25
             },
@@ -5269,6 +7069,12 @@
             "@timestamp": "2023-10-24T15:18:09.000-04:00",
             "client": {
                 "address": "1.128.114.120",
+                "as": {
+                    "number": 1221,
+                    "organization": {
+                        "name": "Telstra Pty Ltd"
+                    }
+                },
                 "ip": "1.128.114.120",
                 "port": 53024
             },
@@ -5284,6 +7090,9 @@
                 "name": "server"
             },
             "message": "BLACKLISTED [1.128.114.120]:53024",
+            "network": {
+                "type": "ipv4"
+            },
             "postfix": {
                 "postscreen": {
                     "access": "BLACKLISTED"
@@ -5302,12 +7111,29 @@
                 "name": "postfix/cleanup",
                 "type": "postfix"
             },
+            "source": {
+                "address": "1.128.114.120",
+                "as": {
+                    "number": 1221,
+                    "organization": {
+                        "name": "Telstra Pty Ltd"
+                    }
+                },
+                "ip": "1.128.114.120",
+                "port": 53024
+            },
             "tags": [
                 "preserve_original_event"
             ]
         },
         {
             "@timestamp": "2023-10-24T15:18:09.000-04:00",
+            "destination": {
+                "address": "open.example.nl",
+                "domain": "open.example.nl",
+                "ip": "10.49.140.10",
+                "port": 25
+            },
             "ecs": {
                 "version": "8.8.0"
             },
@@ -5327,6 +7153,9 @@
                 "name": "server"
             },
             "message": "A0E85200BD: to=\u003cwhatever-user@lists.example.org\u003e, relay=open.example.nl[10.49.140.10]:25, delay=2.3, delays=0.25/0.05/2/0.04, dsn=4.2.0, status=deferred (host open.example.nl[10.49.140.10] said: 450 4.2.0 \u003cwhatever-user@lists.example.org\u003e: Recipient address rejected: Greylisted, see http://postgrey.schweikert.ch/help/lists.example.org.html (in reply to RCPT TO command))",
+            "network": {
+                "type": "ipv4"
+            },
             "postfix": {
                 "delay": "2.3",
                 "delay_before_qmgr": "0.25",
@@ -5487,6 +7316,12 @@
             "@timestamp": "2023-10-24T15:18:09.000-04:00",
             "client": {
                 "address": "1.128.114.120",
+                "as": {
+                    "number": 1221,
+                    "organization": {
+                        "name": "Telstra Pty Ltd"
+                    }
+                },
                 "ip": "1.128.114.120",
                 "port": 51637
             },
@@ -5502,6 +7337,9 @@
                 "name": "server"
             },
             "message": "CONNECT from [1.128.114.120]:51637",
+            "network": {
+                "type": "ipv4"
+            },
             "process": {
                 "name": "postfix/cleanup",
                 "pid": 30021
@@ -5515,12 +7353,29 @@
                 "name": "postfix/cleanup",
                 "type": "postfix"
             },
+            "source": {
+                "address": "1.128.114.120",
+                "as": {
+                    "number": 1221,
+                    "organization": {
+                        "name": "Telstra Pty Ltd"
+                    }
+                },
+                "ip": "1.128.114.120",
+                "port": 51637
+            },
             "tags": [
                 "preserve_original_event"
             ]
         },
         {
             "@timestamp": "2023-10-24T15:18:09.000-04:00",
+            "destination": {
+                "address": "127.0.0.1",
+                "domain": "127.0.0.1",
+                "ip": "127.0.0.1",
+                "port": 2525
+            },
             "ecs": {
                 "version": "8.8.0"
             },
@@ -5533,6 +7388,9 @@
                 "name": "server"
             },
             "message": "Untrusted TLS connection established to 127.0.0.1[127.0.0.1]:2525: TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits)",
+            "network": {
+                "type": "ipv4"
+            },
             "postfix": {
                 "relay": {
                     "hostname": "127.0.0.1",
@@ -5608,6 +7466,12 @@
             "@timestamp": "2023-10-24T15:18:09.000-04:00",
             "client": {
                 "address": "unknown",
+                "as": {
+                    "number": 1221,
+                    "organization": {
+                        "name": "Telstra Pty Ltd"
+                    }
+                },
                 "domain": "unknown",
                 "ip": "1.128.114.120"
             },
@@ -5623,6 +7487,9 @@
                 "name": "server"
             },
             "message": "SSL_accept error from unknown[1.128.114.120]: Connection timed out",
+            "network": {
+                "type": "ipv4"
+            },
             "postfix": {
                 "smtpd_lostconn_data": "SSL_accept error",
                 "smtpd_lostconn_reason": "Connection timed out"
@@ -5642,6 +7509,17 @@
             "service": {
                 "name": "postfix/cleanup",
                 "type": "postfix"
+            },
+            "source": {
+                "address": "unknown",
+                "as": {
+                    "number": 1221,
+                    "organization": {
+                        "name": "Telstra Pty Ltd"
+                    }
+                },
+                "domain": "unknown",
+                "ip": "1.128.114.120"
             },
             "tags": [
                 "preserve_original_event"
@@ -5666,6 +7544,9 @@
                 "name": "server"
             },
             "message": "Anonymous TLS connection established from julie.example.com[10.163.89.202]: TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits)",
+            "network": {
+                "type": "ipv4"
+            },
             "postfix": {
                 "tls": {
                     "cipher_size": "256/256"
@@ -5687,6 +7568,11 @@
                 "name": "postfix/cleanup",
                 "type": "postfix"
             },
+            "source": {
+                "address": "julie.example.com",
+                "domain": "julie.example.com",
+                "ip": "10.163.89.202"
+            },
             "tags": [
                 "preserve_original_event"
             ],
@@ -5700,6 +7586,15 @@
             "@timestamp": "2023-10-24T15:18:09.000-04:00",
             "client": {
                 "address": "2A02:CF40:0:1::3",
+                "geo": {
+                    "continent_name": "Europe",
+                    "country_iso_code": "NO",
+                    "country_name": "Norway",
+                    "location": {
+                        "lat": 62.0,
+                        "lon": 10.0
+                    }
+                },
                 "ip": "2A02:CF40:0:1::3"
             },
             "ecs": {
@@ -5714,6 +7609,9 @@
                 "name": "server"
             },
             "message": "statistics: max connection count 1 for (smtpd:2A02:CF40:0:1::3) at Oct 26 17:46:59",
+            "network": {
+                "type": "ipv6"
+            },
             "postfix": {
                 "anvil": {
                     "conn_count": 1,
@@ -5734,6 +7632,19 @@
                 "name": "postfix/cleanup",
                 "type": "postfix"
             },
+            "source": {
+                "address": "2A02:CF40:0:1::3",
+                "geo": {
+                    "continent_name": "Europe",
+                    "country_iso_code": "NO",
+                    "country_name": "Norway",
+                    "location": {
+                        "lat": 62.0,
+                        "lon": 10.0
+                    }
+                },
+                "ip": "2A02:CF40:0:1::3"
+            },
             "tags": [
                 "preserve_original_event"
             ]
@@ -5743,6 +7654,18 @@
             "client": {
                 "address": "ec2-3-84-57-208.compute-1.amazonaws.com",
                 "domain": "ec2-3-84-57-208.compute-1.amazonaws.com",
+                "geo": {
+                    "city_name": "Changchun",
+                    "continent_name": "Asia",
+                    "country_iso_code": "CN",
+                    "country_name": "China",
+                    "location": {
+                        "lat": 43.88,
+                        "lon": 125.3228
+                    },
+                    "region_iso_code": "CN-22",
+                    "region_name": "Jilin Sheng"
+                },
                 "ip": "175.16.199.90"
             },
             "ecs": {
@@ -5760,6 +7683,9 @@
                 "level": "warning"
             },
             "message": "warning: ec2-3-84-57-208.compute-1.amazonaws.com[175.16.199.90]: SASL LOGIN authentication failed: UGFzc3dvcmQ6",
+            "network": {
+                "type": "ipv4"
+            },
             "postfix": {
                 "message": "SASL LOGIN authentication failed: UGFzc3dvcmQ6"
             },
@@ -5779,12 +7705,47 @@
                 "name": "postfix/cleanup",
                 "type": "postfix"
             },
+            "source": {
+                "address": "ec2-3-84-57-208.compute-1.amazonaws.com",
+                "domain": "ec2-3-84-57-208.compute-1.amazonaws.com",
+                "geo": {
+                    "city_name": "Changchun",
+                    "continent_name": "Asia",
+                    "country_iso_code": "CN",
+                    "country_name": "China",
+                    "location": {
+                        "lat": 43.88,
+                        "lon": 125.3228
+                    },
+                    "region_iso_code": "CN-22",
+                    "region_name": "Jilin Sheng"
+                },
+                "ip": "175.16.199.90"
+            },
             "tags": [
                 "preserve_original_event"
             ]
         },
         {
             "@timestamp": "2023-10-24T15:18:09.000-04:00",
+            "destination": {
+                "address": "mail.example.org",
+                "domain": "mail.example.org",
+                "geo": {
+                    "city_name": "Changchun",
+                    "continent_name": "Asia",
+                    "country_iso_code": "CN",
+                    "country_name": "China",
+                    "location": {
+                        "lat": 43.88,
+                        "lon": 125.3228
+                    },
+                    "region_iso_code": "CN-22",
+                    "region_name": "Jilin Sheng"
+                },
+                "ip": "175.16.199.6",
+                "port": 25
+            },
             "ecs": {
                 "version": "8.8.0"
             },
@@ -5798,6 +7759,9 @@
                 "name": "server"
             },
             "message": "SSL_connect error to mail.example.org[175.16.199.6]:25: lost connection",
+            "network": {
+                "type": "ipv4"
+            },
             "postfix": {
                 "relay": {
                     "hostname": "mail.example.org",
@@ -5821,6 +7785,18 @@
             "server": {
                 "address": "mail.example.org",
                 "domain": "mail.example.org",
+                "geo": {
+                    "city_name": "Changchun",
+                    "continent_name": "Asia",
+                    "country_iso_code": "CN",
+                    "country_name": "China",
+                    "location": {
+                        "lat": 43.88,
+                        "lon": 125.3228
+                    },
+                    "region_iso_code": "CN-22",
+                    "region_name": "Jilin Sheng"
+                },
                 "ip": "175.16.199.6",
                 "port": 25
             },
@@ -5836,6 +7812,18 @@
             "@timestamp": "2023-10-24T15:18:09.000-04:00",
             "client": {
                 "address": "67.43.156.18",
+                "as": {
+                    "number": 35908
+                },
+                "geo": {
+                    "continent_name": "Asia",
+                    "country_iso_code": "BT",
+                    "country_name": "Bhutan",
+                    "location": {
+                        "lat": 27.5,
+                        "lon": 90.5
+                    }
+                },
                 "ip": "67.43.156.18",
                 "port": 51799
             },
@@ -5851,6 +7839,9 @@
                 "name": "server"
             },
             "message": "COMMAND TIME LIMIT from [67.43.156.18]:51799 after AUTH",
+            "network": {
+                "type": "ipv4"
+            },
             "postfix": {
                 "postscreen": {
                     "violation": "COMMAND TIME LIMIT"
@@ -5869,6 +7860,23 @@
             "service": {
                 "name": "postfix/cleanup",
                 "type": "postfix"
+            },
+            "source": {
+                "address": "67.43.156.18",
+                "as": {
+                    "number": 35908
+                },
+                "geo": {
+                    "continent_name": "Asia",
+                    "country_iso_code": "BT",
+                    "country_name": "Bhutan",
+                    "location": {
+                        "lat": 27.5,
+                        "lon": 90.5
+                    }
+                },
+                "ip": "67.43.156.18",
+                "port": 51799
             },
             "tags": [
                 "preserve_original_event"
@@ -5908,6 +7916,12 @@
             "@timestamp": "2023-10-24T15:18:09.000-04:00",
             "client": {
                 "address": "061238241086.static.ctinets.com",
+                "as": {
+                    "number": 1221,
+                    "organization": {
+                        "name": "Telstra Pty Ltd"
+                    }
+                },
                 "domain": "061238241086.static.ctinets.com",
                 "ip": "1.128.114.120"
             },
@@ -5923,6 +7937,9 @@
                 "name": "server"
             },
             "message": "4104E3D: client=061238241086.static.ctinets.com[1.128.114.120]",
+            "network": {
+                "type": "ipv4"
+            },
             "postfix": {
                 "queueid": "4104E3D"
             },
@@ -5942,6 +7959,17 @@
                 "name": "postfix/cleanup",
                 "type": "postfix"
             },
+            "source": {
+                "address": "061238241086.static.ctinets.com",
+                "as": {
+                    "number": 1221,
+                    "organization": {
+                        "name": "Telstra Pty Ltd"
+                    }
+                },
+                "domain": "061238241086.static.ctinets.com",
+                "ip": "1.128.114.120"
+            },
             "tags": [
                 "preserve_original_event"
             ]
@@ -5950,6 +7978,12 @@
             "@timestamp": "2023-10-24T15:18:09.000-04:00",
             "client": {
                 "address": "1.128.114.120",
+                "as": {
+                    "number": 1221,
+                    "organization": {
+                        "name": "Telstra Pty Ltd"
+                    }
+                },
                 "ip": "1.128.114.120"
             },
             "ecs": {
@@ -5964,6 +7998,9 @@
                 "name": "server"
             },
             "message": "addr 1.128.114.120 listed by domain psbl.surriel.com as 127.0.0.2",
+            "network": {
+                "type": "ipv4"
+            },
             "postfix": {
                 "dnsbl": {
                     "domain": "psbl.surriel.com",
@@ -5987,12 +8024,39 @@
                 "name": "postfix/cleanup",
                 "type": "postfix"
             },
+            "source": {
+                "address": "1.128.114.120",
+                "as": {
+                    "number": 1221,
+                    "organization": {
+                        "name": "Telstra Pty Ltd"
+                    }
+                },
+                "ip": "1.128.114.120"
+            },
             "tags": [
                 "preserve_original_event"
             ]
         },
         {
             "@timestamp": "2023-10-24T15:18:09.000-04:00",
+            "destination": {
+                "address": "xyz.example.com",
+                "as": {
+                    "number": 35908
+                },
+                "domain": "xyz.example.com",
+                "geo": {
+                    "continent_name": "Asia",
+                    "country_iso_code": "BT",
+                    "country_name": "Bhutan",
+                    "location": {
+                        "lat": 27.5,
+                        "lon": 90.5
+                    }
+                },
+                "ip": "67.43.156.18"
+            },
             "ecs": {
                 "version": "8.8.0"
             },
@@ -6005,6 +8069,9 @@
                 "name": "server"
             },
             "message": "D0F29603B4: SASL authentication failed; server xyz.example.com[67.43.156.18] said: 535 5.7.8 Error: authentication failed: authentication failure",
+            "network": {
+                "type": "ipv4"
+            },
             "postfix": {
                 "queueid": "D0F29603B4",
                 "relay": {
@@ -6027,7 +8094,19 @@
             },
             "server": {
                 "address": "xyz.example.com",
+                "as": {
+                    "number": 35908
+                },
                 "domain": "xyz.example.com",
+                "geo": {
+                    "continent_name": "Asia",
+                    "country_iso_code": "BT",
+                    "country_name": "Bhutan",
+                    "location": {
+                        "lat": 27.5,
+                        "lon": 90.5
+                    }
+                },
                 "ip": "67.43.156.18"
             },
             "service": {
@@ -6042,6 +8121,18 @@
             "@timestamp": "2023-10-24T15:18:09.000-04:00",
             "client": {
                 "address": "67.43.156.18",
+                "as": {
+                    "number": 35908
+                },
+                "geo": {
+                    "continent_name": "Asia",
+                    "country_iso_code": "BT",
+                    "country_name": "Bhutan",
+                    "location": {
+                        "lat": 27.5,
+                        "lon": 90.5
+                    }
+                },
                 "ip": "67.43.156.18",
                 "port": 51796
             },
@@ -6057,6 +8148,9 @@
                 "name": "server"
             },
             "message": "COMMAND COUNT LIMIT from [67.43.156.18]:51796 after RCPT",
+            "network": {
+                "type": "ipv4"
+            },
             "postfix": {
                 "postscreen": {
                     "violation": "COMMAND COUNT LIMIT"
@@ -6076,6 +8170,23 @@
                 "name": "postfix/cleanup",
                 "type": "postfix"
             },
+            "source": {
+                "address": "67.43.156.18",
+                "as": {
+                    "number": 35908
+                },
+                "geo": {
+                    "continent_name": "Asia",
+                    "country_iso_code": "BT",
+                    "country_name": "Bhutan",
+                    "location": {
+                        "lat": 27.5,
+                        "lon": 90.5
+                    }
+                },
+                "ip": "67.43.156.18",
+                "port": 51796
+            },
             "tags": [
                 "preserve_original_event"
             ]
@@ -6084,6 +8195,12 @@
             "@timestamp": "2023-10-24T15:18:09.000-04:00",
             "client": {
                 "address": "061238241086.static.ctinets.com",
+                "as": {
+                    "number": 1221,
+                    "organization": {
+                        "name": "Telstra Pty Ltd"
+                    }
+                },
                 "domain": "061238241086.static.ctinets.com",
                 "ip": "1.128.114.120"
             },
@@ -6099,6 +8216,9 @@
                 "name": "server"
             },
             "message": "disconnect from 061238241086.static.ctinets.com[1.128.114.120]",
+            "network": {
+                "type": "ipv4"
+            },
             "process": {
                 "name": "postfix/cleanup",
                 "pid": 30021
@@ -6115,12 +8235,41 @@
                 "name": "postfix/cleanup",
                 "type": "postfix"
             },
+            "source": {
+                "address": "061238241086.static.ctinets.com",
+                "as": {
+                    "number": 1221,
+                    "organization": {
+                        "name": "Telstra Pty Ltd"
+                    }
+                },
+                "domain": "061238241086.static.ctinets.com",
+                "ip": "1.128.114.120"
+            },
             "tags": [
                 "preserve_original_event"
             ]
         },
         {
             "@timestamp": "2023-10-24T15:18:09.000-04:00",
+            "destination": {
+                "address": "mail2.crabruzzo.it",
+                "as": {
+                    "number": 35908
+                },
+                "domain": "mail2.crabruzzo.it",
+                "geo": {
+                    "continent_name": "Asia",
+                    "country_iso_code": "BT",
+                    "country_name": "Bhutan",
+                    "location": {
+                        "lat": 27.5,
+                        "lon": 90.5
+                    }
+                },
+                "ip": "67.43.156.18",
+                "port": 25
+            },
             "ecs": {
                 "version": "8.8.0"
             },
@@ -6134,6 +8283,9 @@
                 "name": "server"
             },
             "message": "connect to mail2.crabruzzo.it[67.43.156.18]:25: No route to host",
+            "network": {
+                "type": "ipv4"
+            },
             "postfix": {
                 "relay": {
                     "hostname": "mail2.crabruzzo.it",
@@ -6156,7 +8308,19 @@
             },
             "server": {
                 "address": "mail2.crabruzzo.it",
+                "as": {
+                    "number": 35908
+                },
                 "domain": "mail2.crabruzzo.it",
+                "geo": {
+                    "continent_name": "Asia",
+                    "country_iso_code": "BT",
+                    "country_name": "Bhutan",
+                    "location": {
+                        "lat": 27.5,
+                        "lon": 90.5
+                    }
+                },
                 "ip": "67.43.156.18",
                 "port": 25
             },
@@ -6170,6 +8334,23 @@
         },
         {
             "@timestamp": "2023-10-24T15:18:09.000-04:00",
+            "destination": {
+                "address": "mta7.am0.yahoodns.net",
+                "as": {
+                    "number": 35908
+                },
+                "domain": "mta7.am0.yahoodns.net",
+                "geo": {
+                    "continent_name": "Asia",
+                    "country_iso_code": "BT",
+                    "country_name": "Bhutan",
+                    "location": {
+                        "lat": 27.5,
+                        "lon": 90.5
+                    }
+                },
+                "ip": "67.43.156.18"
+            },
             "ecs": {
                 "version": "8.8.0"
             },
@@ -6182,6 +8363,9 @@
                 "name": "server"
             },
             "message": "2690D8044: host mta7.am0.yahoodns.net[67.43.156.18] said: 451 4.3.2 Internal error reading data (in reply to MAIL FROM command)",
+            "network": {
+                "type": "ipv4"
+            },
             "postfix": {
                 "queueid": "2690D8044",
                 "relay": {
@@ -6205,7 +8389,19 @@
             },
             "server": {
                 "address": "mta7.am0.yahoodns.net",
+                "as": {
+                    "number": 35908
+                },
                 "domain": "mta7.am0.yahoodns.net",
+                "geo": {
+                    "continent_name": "Asia",
+                    "country_iso_code": "BT",
+                    "country_name": "Bhutan",
+                    "location": {
+                        "lat": 27.5,
+                        "lon": 90.5
+                    }
+                },
                 "ip": "67.43.156.18"
             },
             "service": {
@@ -6285,6 +8481,15 @@
             "client": {
                 "address": "unknown",
                 "domain": "unknown",
+                "geo": {
+                    "continent_name": "Europe",
+                    "country_iso_code": "NO",
+                    "country_name": "Norway",
+                    "location": {
+                        "lat": 62.0,
+                        "lon": 10.0
+                    }
+                },
                 "ip": "2A02:CF40:cfb1:1:f5d7:dead:beef:cafe"
             },
             "ecs": {
@@ -6299,6 +8504,9 @@
                 "name": "server"
             },
             "message": "lost connection after UNKNOWN from unknown[2A02:CF40:cfb1:1:f5d7:dead:beef:cafe]",
+            "network": {
+                "type": "ipv6"
+            },
             "postfix": {
                 "smtp_stage": "UNKNOWN",
                 "smtpd_lostconn_data": "lost connection"
@@ -6318,6 +8526,20 @@
             "service": {
                 "name": "postfix/cleanup",
                 "type": "postfix"
+            },
+            "source": {
+                "address": "unknown",
+                "domain": "unknown",
+                "geo": {
+                    "continent_name": "Europe",
+                    "country_iso_code": "NO",
+                    "country_name": "Norway",
+                    "location": {
+                        "lat": 62.0,
+                        "lon": 10.0
+                    }
+                },
+                "ip": "2A02:CF40:cfb1:1:f5d7:dead:beef:cafe"
             },
             "tags": [
                 "preserve_original_event"

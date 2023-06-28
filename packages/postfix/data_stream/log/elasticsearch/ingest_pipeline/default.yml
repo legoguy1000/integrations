@@ -312,11 +312,67 @@ processors:
       field: server.address
       copy_from: server.ip
       if: ctx.server?.address == null && ctx.server?.ip != null
+  - geoip:
+      field: client.ip
+      target_field: client.geo
+      ignore_missing: true
+  - geoip:
+      field: server.ip
+      target_field: server.geo
+      ignore_missing: true
+  - geoip:
+      ignore_missing: true
+      database_file: GeoLite2-ASN.mmdb
+      field: client.ip
+      target_field: client.as
+      properties:
+      - asn
+      - organization_name
+  - geoip:
+      database_file: GeoLite2-ASN.mmdb
+      field: server.ip
+      target_field: server.as
+      properties:
+      - asn
+      - organization_name
+      ignore_missing: true
+  - rename:
+      field: client.as.asn
+      target_field: client.as.number
+      ignore_missing: true
+  - rename:
+      field: client.as.organization_name
+      target_field: client.as.organization.name
+      ignore_missing: true
+  - rename:
+      field: server.as.asn
+      target_field: server.as.number
+      ignore_missing: true
+  - rename:
+      field: server.as.organization_name
+      target_field: server.as.organization.name
+      ignore_missing: true
   - convert:
       field: postfix.relay.port
       target_field: server.port
       type: long
       if: ctx.postfix?.relay?.port != null
+  - set:
+      field: source
+      copy_from: client
+      ignore_empty_value: true
+  - set:
+      field: destination
+      copy_from: server
+      ignore_empty_value: true
+  - set:
+      field: network.type
+      value: ipv6
+      if: '(ctx.source?.ip != null && ctx.source.ip.contains(":")) || (ctx.destination?.ip != null && ctx.destination.ip.contains(":"))'
+  - set:
+      field: network.type
+      value: ipv4
+      if: '(ctx.source?.ip != null && ctx.source.ip.contains(".")) || (ctx.destination?.ip != null && ctx.destination.ip.contains("."))'
   - rename:
       field: postfix.service
       target_field: service.address
